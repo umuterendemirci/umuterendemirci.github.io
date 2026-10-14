@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Brushfall · Umut Eren Demirci</title>
+<meta name="description" content="Brushfall: Thirty seconds of match-3 charge a paint spirit, the climb turns its power into paint, and the paint drains a famous painting out of the sand. Design summary, documents and screenshots.">
+<meta name="theme-color" content="#0b0f18">
+<meta property="og:title" content="Brushfall · Umut Eren Demirci">
+<meta property="og:description" content="Brushfall: Thirty seconds of match-3 charge a paint spirit, the climb turns its power into paint, and the paint drains a famous painting out of the sand. Design summary, documents and screenshots.">
+<meta property="og:image" content="assets/clips/brushfall.jpg">
+<link rel="icon" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="2" y="2" width="60" height="60" rx="14" fill="#1a2336" stroke="rgba(255,255,255,.14)"/>
+<g transform="translate(1.5 0)"><path d="M9 20v13a6 6 0 0 0 12 0V20" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M27 20v24M27 20h9M27 32h7M27 44h9" fill="none" stroke="#ff7a33" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M42 20v24h3a9 12 0 0 0 0-24z" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/></g></svg><span>Umut Eren Demirci</span></a>
+<nav><a href="index.html#about">About</a><a href="index.html#games">Games</a><a href="index.html#more">More work</a><a href="index.html#contact">Contact</a><a class="cv" href="docs/Umut_Eren_Demirci_CV_2026.pdf">CV</a></nav>
+</div></header>
+<main>
+<section class="ghero" style="--g:#3ec6ff"><div class="wrap">
+<div>
+<a class="crumb" href="index.html#games">← All games</a>
+<div class="kicker" style="margin-top:22px">Hybrid-casual puzzle · Unity 6 · Android and browser</div><h1>Brushfall</h1><p class="tagline">Charge it. Climb it. Paint it.</p>
+<p class="lead">A hybrid-casual puzzle game that chains four genres with one currency per step. Thirty seconds of match-3 charge a small paint spirit; on the climb it eats every monster smaller than itself and banks their paint by colour; every third level that paint becomes coloured buckets that drain a famous painting turned to sand, until a brush sweeps it clean and you name the masterpiece for your gallery.</p><p class="role">I designed the chain, the climb and its levels, the sand restoration, a daily painting, a weekend Grand Climb and the skins economy, and balanced all of it with bots that play the real rules at human speed.</p>
+<a class="btn primary" href="https://ueren.itch.io/brushfall">Play in your browser</a><a class="btn" href="docs/Brushfall_GDD.pdf">Read the GDD</a><a class="btn" href="docs/Brushfall_OnePager.pdf">One-pager</a>
+<div class="stats"><div><b>1–2</b>extra climbs a chapter for a weak player, down from 9</div><div><b>90%+</b>climb wins for an average player</div><div><b>138</b>automated rule and play tests</div></div>
+</div>
+<div class="phone"><video muted loop playsinline autoplay preload="metadata" poster="assets/clips/brushfall.jpg"><source src="assets/clips/brushfall.mp4" type="video/mp4"></video></div>
+</div></section>
+
+<section class="block design" id="design" style="--g:#3ec6ff"><div class="wrap">
+<nav class="toc" aria-label="Design summary"><span class="kicker">Design summary</span><ol><li><a href="#s1">One chain, four kinds of fun</a></li><li><a href="#s2">Stage 1: the charge</a></li><li><a href="#s3">Stage 2: the climb</a></li><li><a href="#s4">Stage 3: the restoration</a></li><li><a href="#s5">Chapters, the finale and the gallery</a></li><li><a href="#s6">The meta: daily, Grand Climb, skins</a></li><li><a href="#s7">Economy and balance</a></li><li><a href="#s8">Ads the player chooses</a></li><li><a href="#s9">Art, audio and feel</a></li><li><a href="#s10">UX and onboarding</a></li><li><a href="#s11">Technology, process and roadmap</a></li></ol></nav>
+<div>
+<div class="kicker" style="color:var(--g)">Game design document, summarised</div>
+<h2 style="margin:6px 0 10px">How it's designed</h2>
+<p class="design-intro">Each part below condenses one chapter of the game design document. Every summary ends with a link to
+the full chapter in the PDF.</p>
+<article class="summary" id="s1"><h3><span class="n">01</span>One chain, four kinds of fun</h3>
+<p>Each stage spends what the last one earned: board → power → paint → painting → gallery. A level is about two minutes: a 30-second charge, one continuous camera turn, a minute of climbing and a guardian at the top; every third level is a restoration.</p><ul><li><b>One currency per step:</b> a lazy charge is felt on the climb, a timid climb in the restoration.</li><li><b>The board decides how bold you can be:</b> a strong charge opens the rich lane.</li><li><b>An ad that is the game:</b> every ad frame is captured from the build.</li></ul>
+<a class="full" href="docs/Brushfall_GDD.pdf#page=2">Read the full chapter in the GDD (page 2)</a></article>
+<article class="summary" id="s2"><h3><span class="n">02</span>Stage 1: the charge</h3>
+<p>Thirty seconds on a 7×7 board of six tiles: five paints and a clump of grey sand. Power starts at 10 and grows by 1.1 a tile and 8 a special; a special-plus-special combo multiplies the whole charge by 1.4. A star special gives a shield, a colour bomb a magnet with three pulls.</p><p>Tuned twice: a fast bot first reached about 200 power against climbs built for 50–140, and a playtest found the board too generous (73% of moves cascaded). A sixth tile and a refill that avoids ready-made lines brought cascades to 42%, with medians of 52 / 98 / 122 power for weak, average and strong players.</p>
+<a class="full" href="docs/Brushfall_GDD.pdf#page=3">Read the full chapter in the GDD (page 3)</a></article>
+<article class="summary" id="s3"><h3><span class="n">03</span>Stage 2: the climb</h3>
+<p>The hero walks up three lanes. Smaller monsters are eaten and drop √power paint in their colour; bigger ones eat the hero unless a shield takes the hit; glass gates add, multiply or subtract; the guardian at the arch pays a jackpot. Every row offers a safe snack, a rich meal and a danger, one lane step apart.</p><p>Guardians are set by a careful weak player's route, not the perfect one. Weak players win 53–95% of normal climbs, average players 91–100%. A playtest caught the magnet eating both side lanes on every row; it now has three pulls.</p>
+<a class="full" href="docs/Brushfall_GDD.pdf#page=4">Read the full chapter in the GDD (page 4)</a></article>
+<article class="summary" id="s4"><h3><span class="n">04</span>Stage 3: the restoration</h3>
+<p>A quarter of a painting turned into 40×54 grains of sand. A bucket placed under one of four funnels drains its paint (and the dust) out of the picture; the sand above slumps into the gaps. Buckets cost 6, 10 and 15 paint by chapter, early swaps refund their unused share, and 80% drained wins: a brush sweeps the rest away.</p><p>Redesigned after the first playable: sand bands with stone plugs read as a sorting puzzle unrelated to the art. The painting itself as sand is the version that shipped, and the reason to collect.</p>
+<a class="full" href="docs/Brushfall_GDD.pdf#page=5">Read the full chapter in the GDD (page 5)</a></article>
+<article class="summary" id="s5"><h3><span class="n">05</span>Chapters, the finale and the gallery</h3>
+<p>Three chapters, one public-domain masterpiece each: Hokusai's <i>The Great Wave</i>, Van Gogh's <i>Wheat Field with Cypresses</i> and Vermeer's <i>The Milkmaid</i>. A chapter is 12 levels (two of them hard climbs) and a finale where the player spells the painting's name from letter tiles. The finale can't be failed: it's the payoff, not a gate. Then the painting hangs in a gilt frame in the gallery.</p>
+<a class="full" href="docs/Brushfall_GDD.pdf#page=6">Read the full chapter in the GDD (page 6)</a></article>
+<article class="summary" id="s6"><h3><span class="n">06</span>The meta: daily, Grand Climb, skins</h3>
+<ul><li><b>Daily painting:</b> one quarter a day, the same for everyone, restored from its own box of buckets (what the bot needs ×1.3 plus a spare). A streak pays buckets for your next restoration.</li><li><b>Weekend Grand Climb:</b> a generated 20-row climb with bronze, silver and gold lines; weak players reach bronze about 90% of the time, average players split silver and gold.</li><li><b>Skins:</b> eight heroes from 300 to 2,500 paint, paid from your biggest piles: the sink for off-colour paint.</li></ul>
+<a class="full" href="docs/Brushfall_GDD.pdf#page=7">Read the full chapter in the GDD (page 7)</a></article>
+<article class="summary" id="s7"><h3><span class="n">07</span>Economy and balance</h3>
+<p>Bots play whole chapters, replaying lost climbs and climbing again when short of paint. Before tuning, a bucket cost 5 everywhere and climbs paid 5–10 times what restorations needed, yet a weak player was nine climbs short in chapter 2: the paint came in the wrong colours.</p><p>Three changes fixed it: each chapter's monsters drop the colours its painting needs, bucket prices rise by chapter, and a restoration keeps the sand already drained. Now weak players need 0.7–2 extra climbs a chapter and average players none.</p>
+<a class="full" href="docs/Brushfall_GDD.pdf#page=8">Read the full chapter in the GDD (page 8)</a></article>
+<article class="summary" id="s8"><h3><span class="n">08</span>Ads the player chooses</h3>
+<p>Rewarded ads are optional and capped at 12 a day: a revive, double paint, a refill of the paint a painting needs most, and extra Grand Climb tries. Interstitials only appear after a won climb from level 8, at most every third climb and three minutes apart, and never for paying players. A starter pack, ad removal and a paint chest are the purchases. All of it goes through IStoreService and IAdService, with the rules unit-tested in pure C#.</p>
+<a class="full" href="docs/Brushfall_GDD.pdf#page=9">Read the full chapter in the GDD (page 9)</a></article>
+<article class="summary" id="s9"><h3><span class="n">09</span>Art, audio and feel</h3>
+<p>The genre's look, readable at a glance: a floating grass track, chunky low-poly monsters, huge outlined numbers (green if you can eat it, red if it eats you), glass gates. The five paints are the same five colours on tiles, monsters, counters and buckets, and every tile has its own shape for colour-blind players. Bites chomp higher with every row in a row, near-wins slow time, and every sound and both music loops are synthesized in the editor.</p>
+<a class="full" href="docs/Brushfall_GDD.pdf#page=10">Read the full chapter in the GDD (page 10)</a></article>
+<article class="summary" id="s10"><h3><span class="n">10</span>UX and onboarding</h3>
+<p>Level 1 teaches itself; one new idea arrives at a time (minus gates on level 3, the first restoration on level 3, the first hard climb on level 5), and the meta opens only after the first restoration. Nothing is lost for good. Targets for the first session: level 1 in under two minutes, the first restoration by minute 6, the first painting named by about minute 30.</p>
+<a class="full" href="docs/Brushfall_GDD.pdf#page=11">Read the full chapter in the GDD (page 11)</a></article>
+<article class="summary" id="s11"><h3><span class="n">11</span>Technology, process and roadmap</h3>
+<p>Every rule lives in pure C# with no UnityEngine, covered by 133 EditMode tests; 5 PlayMode tests play the real scene with bots. The same core compiles into a console simulator that plays thousands of charges, climbs, restorations and whole chapters. Eight phases, each a playable checkpoint; I designed and directed, an AI coding assistant (Claude) wrote most of the code to my specs.</p>
+<a class="full" href="docs/Brushfall_GDD.pdf#page=12">Read the full chapter in the GDD (page 12)</a></article>
+</div>
+</div></section>
+
+<section class="block" id="screens"><div class="wrap">
+<div class="block-head"><div><div class="kicker" style="color:#3ec6ff">From the build</div><h2>Screenshots</h2></div>
+<p>Every image is captured from the game itself.</p></div>
+<div class="gallery"><img src="assets/bf-charge.png" alt="The charge: sparks fly from a cascade into the hero" loading="lazy"><img src="assets/bf-climb.png" alt="The climb: three bites in a row" loading="lazy"><img src="assets/bf-guardian.png" alt="The guardian, beaten by a hair" loading="lazy"><img src="assets/bf-restore.png" alt="The restoration: sand pouring off the Great Wave into buckets" loading="lazy"><img src="assets/bf-named.png" alt="The finale: the painting named" loading="lazy"><img src="assets/bf-grand.png" alt="The weekend Grand Climb" loading="lazy"><img src="assets/bf-shop.png" alt="The skins shop" loading="lazy"></div>
+</div></section>
+
+<section class="block" id="documents" style="--g:#3ec6ff"><div class="wrap">
+<div class="block-head"><div><div class="kicker" style="color:var(--g)">Design documents</div><h2>Read more</h2></div></div>
+<div class="docs"><a class="doc" href="docs/Brushfall_OnePager.pdf"><span class="pdf">PDF</span><b>One-pager</b><span>The game on one page</span></a><a class="doc" href="docs/Brushfall_GDD.pdf"><span class="pdf">PDF</span><b>Game design document</b><span>12 pages</span></a><a class="doc" href="docs/Brushfall_Flowcharts.pdf"><span class="pdf">PDF</span><b>Flowcharts</b><span>Loops, screens and systems</span></a><a class="doc" href="docs/Brushfall_Balance_Economy.pdf"><span class="pdf">PDF</span><b>Balance workbook</b><span>Every table behind the economy</span></a><a class="doc" href="docs/Brushfall_Ad_and_KPI_Plan.pdf"><span class="pdf">PDF</span><b>Ad test and KPI plan</b><span>Storyboard, CPI test, funnel</span></a></div>
+<p class="note" style="margin-top:18px">Built with an AI coding assistant (Claude). I designed the game, set the rules and tuning, ran the balance simulations and reviewed every build phase; the sound and music are synthesized, the paintings are public domain.</p>
+</div></section>
+
+<section class="block"><div class="wrap pager">
+<a href="the-mouth-of-silence.html"><small>← Previous</small><b>The Mouth of Silence</b></a>
+<a class="next" href="arcana-siege.html"><small>Next →</small><b>Arcana Siege</b></a>
+</div></section>
+</main>
+<footer class="site-foot"><div class="wrap"><span>Umut Eren Demirci · Game Designer · Ankara, Türkiye</span>
+<span><a href="mailto:umuterendemirci@gmail.com">umuterendemirci@gmail.com</a></span></div></footer>
+<div id="lb" role="dialog" aria-modal="true" aria-label="Screenshot viewer">
+<button class="x" aria-label="Close">&times;</button><button class="prev" aria-label="Previous">&#8249;</button>
+<img alt=""><button class="next" aria-label="Next">&#8250;</button><p></p></div>
+<script src="site.js" defer></script>
+</body>
+</html>

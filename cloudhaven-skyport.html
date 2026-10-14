@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cloudhaven Skyport · Umut Eren Demirci</title>
+<meta name="description" content="Cloudhaven Skyport: Run an airship port on a floating island: serve travellers, carry the coins on your back and build it up. Design summary, documents and screenshots.">
+<meta name="theme-color" content="#0b0f18">
+<meta property="og:title" content="Cloudhaven Skyport · Umut Eren Demirci">
+<meta property="og:description" content="Cloudhaven Skyport: Run an airship port on a floating island: serve travellers, carry the coins on your back and build it up. Design summary, documents and screenshots.">
+<meta property="og:image" content="assets/clips/skyport.jpg">
+<link rel="icon" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="2" y="2" width="60" height="60" rx="14" fill="#1a2336" stroke="rgba(255,255,255,.14)"/>
+<g transform="translate(1.5 0)"><path d="M9 20v13a6 6 0 0 0 12 0V20" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M27 20v24M27 20h9M27 32h7M27 44h9" fill="none" stroke="#ff7a33" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M42 20v24h3a9 12 0 0 0 0-24z" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/></g></svg><span>Umut Eren Demirci</span></a>
+<nav><a href="index.html#about">About</a><a href="index.html#games">Games</a><a href="index.html#more">More work</a><a href="index.html#contact">Contact</a><a class="cv" href="docs/Umut_Eren_Demirci_CV_2026.pdf">CV</a></nav>
+</div></header>
+<main>
+<section class="ghero" style="--g:#5fd4c4"><div class="wrap">
+<div>
+<a class="crumb" href="index.html#games">← All games</a>
+<div class="kicker" style="margin-top:22px">Arcade idle management · Unity 6 · mobile and browser</div><h1>Cloudhaven Skyport</h1><p class="tagline">Serve travellers, carry the coins, build the port.</p>
+<p class="lead">An arcade idle management game for phones. You run an airship port on a floating island: airships dock every forty seconds, travellers queue at customs, tickets, bag drop and security, and every counter serves only while someone stands behind it. You serve, carry the coins on your back, and walk them onto build pads.</p><p class="role">I designed the counter chain, 22 build pads and 10 goals per island, staff and second counters, a timetable with Grand Liners, three islands with their own twists, offline earnings and daily events, with opt-in rewarded ads only. An economy simulator played every island with three kinds of bot to set the pacing.</p>
+<a class="btn primary" href="https://ueren.itch.io/cloudhaven-skyport">Play in your browser</a><a class="btn" href="docs/CloudhavenSkyport_GDD.pdf">Read the GDD</a><a class="btn" href="docs/CloudhavenSkyport_OnePager.pdf">One-pager</a>
+<div class="stats"><div><b>15 → 53 min</b>first island, once demand upgrades made skill matter</div><div><b>10%</b>of travellers turn grumpy (down from 46% mid-tuning)</div><div><b>360</b>bot playthroughs per balance pass</div></div>
+</div>
+<div class="phone"><video muted loop playsinline autoplay preload="metadata" poster="assets/clips/skyport.jpg"><source src="assets/clips/skyport.mp4" type="video/mp4"></video></div>
+</div></section>
+
+<section class="block design" id="design" style="--g:#5fd4c4"><div class="wrap">
+<nav class="toc" aria-label="Design summary"><span class="kicker">Design summary</span><ol><li><a href="#s1">The game in one screen</a></li><li><a href="#s2">Core loop: serve, pick up, spend</a></li><li><a href="#s3">The island: three zones, 22 pads</a></li><li><a href="#s4">Travellers: queues you can read</a></li><li><a href="#s5">The timetable: supply is the pacing lever</a></li><li><a href="#s6">Economy and balance: bots play the real rules</a></li><li><a href="#s7">Campaign and meta</a></li><li><a href="#s8">Art, audio and feel</a></li><li><a href="#s9">UX: teach by doing</a></li><li><a href="#s10">Technology and roadmap</a></li></ol></nav>
+<div>
+<div class="kicker" style="color:var(--g)">Game design document, summarised</div>
+<h2 style="margin:6px 0 10px">How it's designed</h2>
+<p class="design-intro">Each part below condenses one chapter of the game design document. Every summary ends with a link to
+the full chapter in the PDF.</p>
+<article class="summary" id="s1"><h3><span class="n">01</span>The game in one screen</h3>
+<p>A floating island seen from above: airships dock at the south end, the town gate is at the north, and in between runs a chain of counters the player builds, staffs and upgrades.</p><ul><li><b>Walking is routing:</b> the player's time is the scarce resource; no chores exist only to add friction.</li><li><b>Always something to buy:</b> a new pad every one to five minutes.</li><li><b>Ads are opt-in boosts:</b> no upgrade sits behind an ad.</li></ul>
+<a class="full" href="docs/CloudhavenSkyport_GDD.pdf#page=2">Read the full chapter in the GDD (page 2)</a></article>
+<article class="summary" id="s2"><h3><span class="n">02</span>Core loop: serve, pick up, spend</h3>
+<p>Stand behind a counter and a bar fills; the fare lands as coins (a traveller served by the harbourmaster himself tips 50%). Walk over the pile and the coins arc onto the stack on his back; stand on a pad and they pour in until the counter, clerk or zone appears. Staff work at 45% of his pace, so hiring frees him but never replaces him. The café and souvenir stall pay most: the first coins that arrive without him.</p>
+<a class="full" href="docs/CloudhavenSkyport_GDD.pdf#page=3">Read the full chapter in the GDD (page 3)</a></article>
+<article class="summary" id="s3"><h3><span class="n">03</span>The island: three zones, 22 pads</h3>
+<p>The Harbour is open from the start; the Terminal (about 4 minutes in) and the Promenade (about 29) are fenced, shaded and named, so the next goal is always in view. Each pad appears when the one before it is bought. Four kinds of pad: demand and staff pay back in 5 to 17 minutes; capacity keeps queues short as demand grows; new counters open the next purchases.</p>
+<a class="full" href="docs/CloudhavenSkyport_GDD.pdf#page=4">Read the full chapter in the GDD (page 4)</a></article>
+<article class="summary" id="s4"><h3><span class="n">04</span>Travellers: queues you can read</h3>
+<p>Arrivals clear customs to the town; departures pass tickets, bag drop and security, may stop at the shops, and board. After 40 seconds in queues a traveller turns grumpy, pays half and skips the shops. Moods show as speech bubbles (angry, a heart, sweat drops, a VIP star), so a failing counter is readable from across the island.</p>
+<a class="full" href="docs/CloudhavenSkyport_GDD.pdf#page=5">Read the full chapter in the GDD (page 5)</a></article>
+<article class="summary" id="s5"><h3><span class="n">05</span>The timetable: supply is the pacing lever</h3>
+<p>Income is capped by how many travellers the airships bring, so the timetable, not the counters, decides how fast an island can grow. A ship every 40 seconds; bigger airships and more flights raise demand with purchases, not with time; every fifth ship is a Grand Liner with twice the travellers and its own music; storms on Galewind bunch the crowds.</p>
+<a class="full" href="docs/CloudhavenSkyport_GDD.pdf#page=6">Read the full chapter in the GDD (page 6)</a></article>
+<article class="summary" id="s6"><h3><span class="n">06</span>Economy and balance: bots play the real rules</h3>
+<p>The simulator plays each island 40 times with a new player, a casual and an expert. The tuning story: everyone first finished in 15 minutes because skill didn't matter; demand upgrades and rising prices made it 52 minutes; slower staff made the harbourmaster matter but 46% of travellers turned grumpy; capacity to match demand brought that back to 10%. A hands-on player now finishes about six minutes sooner than a new one.</p>
+<a class="full" href="docs/CloudhavenSkyport_GDD.pdf#page=7">Read the full chapter in the GDD (page 7)</a></article>
+<article class="summary" id="s7"><h3><span class="n">07</span>Campaign and meta</h3>
+<p>Three islands with the same 22 pads and 10 goals but a new twist each: Cloudhaven teaches the ropes, Galewind brings storms, Lantern Reach brings VIPs who pay triple with half the patience. Prices scale with each island's multiplier, so a ×4 island isn't four times longer. Staffed islands earn while you're away (capped at two hours, doubled by an optional ad), and a daily event adds a bonus.</p>
+<a class="full" href="docs/CloudhavenSkyport_GDD.pdf#page=8">Read the full chapter in the GDD (page 8)</a></article>
+<article class="summary" id="s8"><h3><span class="n">08</span>Art, audio and feel</h3>
+<p>Chunky pastel low-poly from six CC0 Kenney kits, with a palette, light, fog and music for each island. Every action is animated: coins arc onto the stack with a rising clink, the stack leans as he walks, new counters land with a bounce and dust, and a zone opens post by post with confetti and a jingle.</p>
+<a class="full" href="docs/CloudhavenSkyport_GDD.pdf#page=9">Read the full chapter in the GDD (page 9)</a></article>
+<article class="summary" id="s9"><h3><span class="n">09</span>UX: teach by doing</h3>
+<p>Three hints, then silence. Goals come three at a time with rewards that land in the bag; a floating joystick works anywhere; signs on plates name every counter and price. The home screen shows the island playing itself behind a translucent menu.</p>
+<a class="full" href="docs/CloudhavenSkyport_GDD.pdf#page=10">Read the full chapter in the GDD (page 10)</a></article>
+<article class="summary" id="s10"><h3><span class="n">10</span>Technology and roadmap</h3>
+<p>Every rule is in a pure C# core that ticks at 60 Hz and runs both in the game and in the economy simulator, with 32 EditMode tests. Next: playtest the minutes 5–15 plateau, a fourth island and a helper booster, cosmetic airships, and a soft launch with the KPI plan.</p>
+<a class="full" href="docs/CloudhavenSkyport_GDD.pdf#page=11">Read the full chapter in the GDD (page 11)</a></article>
+</div>
+</div></section>
+
+<section class="block" id="screens"><div class="wrap">
+<div class="block-head"><div><div class="kicker" style="color:#5fd4c4">From the build</div><h2>Screenshots</h2></div>
+<p>Every image is captured from the game itself.</p></div>
+<div class="gallery"><img src="assets/cs-island.png" alt="The floating island with an airship docked" loading="lazy"><img src="assets/cs-port.png" alt="A finished port: counters, staff and travellers" loading="lazy"><img src="assets/cs-zone.png" alt="A new zone opens" loading="lazy"><img src="assets/cs-liner.png" alt="A Grand Liner docked" loading="lazy"><img src="assets/cs-storm.png" alt="A storm ship arriving at Galewind Isle" loading="lazy"><img src="assets/cs-lantern.png" alt="Lantern Reach at dusk" loading="lazy"><img src="assets/cs-moods.png" alt="Travellers&#x27; moods over the queues" loading="lazy"></div>
+</div></section>
+
+<section class="block" id="documents" style="--g:#5fd4c4"><div class="wrap">
+<div class="block-head"><div><div class="kicker" style="color:var(--g)">Design documents</div><h2>Read more</h2></div></div>
+<div class="docs"><a class="doc" href="docs/CloudhavenSkyport_OnePager.pdf"><span class="pdf">PDF</span><b>One-pager</b><span>The game on one page</span></a><a class="doc" href="docs/CloudhavenSkyport_GDD.pdf"><span class="pdf">PDF</span><b>Game design document</b><span>11 pages</span></a><a class="doc" href="docs/CloudhavenSkyport_Flowcharts.pdf"><span class="pdf">PDF</span><b>Flowcharts</b><span>Loops, screens and systems</span></a><a class="doc" href="docs/CloudhavenSkyport_Balance_Economy.pdf"><span class="pdf">PDF</span><b>Balance workbook</b><span>Pacing and prices</span></a><a class="doc" href="docs/CloudhavenSkyport_Ad_and_KPI_Plan.pdf"><span class="pdf">PDF</span><b>Ad test and KPI plan</b><span>Storyboard, CPI test, funnel</span></a></div>
+<p class="note" style="margin-top:18px">Built with an AI coding assistant (Claude). I designed the game, set the rules, targets and tuning, ran the balance simulations and play-tested every build phase.</p>
+</div></section>
+
+<section class="block"><div class="wrap pager">
+<a href="arcana-siege.html"><small>← Previous</small><b>Arcana Siege</b></a>
+<a class="next" href="arcana-match.html"><small>Next →</small><b>Arcana Match</b></a>
+</div></section>
+</main>
+<footer class="site-foot"><div class="wrap"><span>Umut Eren Demirci · Game Designer · Ankara, Türkiye</span>
+<span><a href="mailto:umuterendemirci@gmail.com">umuterendemirci@gmail.com</a></span></div></footer>
+<div id="lb" role="dialog" aria-modal="true" aria-label="Screenshot viewer">
+<button class="x" aria-label="Close">&times;</button><button class="prev" aria-label="Previous">&#8249;</button>
+<img alt=""><button class="next" aria-label="Next">&#8250;</button><p></p></div>
+<script src="site.js" defer></script>
+</body>
+</html>

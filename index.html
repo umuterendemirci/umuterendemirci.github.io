@@ -1,258 +1,154 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Umut Eren Demirci · Game Designer</title><meta name="description" content="Umut Eren Demirci, Game Designer: Systems · Levels · Progression. Portfolio with Arcana Match, The Mouth of Silence, game deconstructions and design samples."><link rel="icon" href="assets/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
-* { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-html, body { margin: 0; }
-body { font-family: Inter, Arial, sans-serif; color: #1c2230; font-size: 9.6pt; line-height: 1.45; background: #fff; }
-h1, h2, h3 { font-family: Fraunces, Georgia, serif; font-weight: 600; margin: 0; letter-spacing: -.01em; }
-a { color: inherit; text-decoration: none; }
-.mono { width: 13mm; height: 13mm; flex: none; }
-.page { width: 210mm; height: 297mm; padding: 14mm 15mm; position: relative; overflow: hidden; page-break-after: always; }
-.page:last-child { page-break-after: auto; }
-.kicker { font-size: 7.4pt; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #e8590c; }
-.muted { color: #5b6474; }
-ul { margin: 1mm 0 0; padding-left: 4.2mm; } li { margin: 0 0 1.1mm; }
-table { width: 100%; border-collapse: collapse; font-size: 8.8pt; }
-th { text-align: left; font-size: 7.2pt; letter-spacing: .08em; text-transform: uppercase; color: #5b6474; border-bottom: .4mm solid #1c2230; padding: 1.4mm 2mm; }
-td { border-bottom: .25mm solid #e4e0d8; padding: 1.6mm 2mm; vertical-align: top; }
-.foot { position: absolute; left: 15mm; right: 15mm; bottom: 8mm; display: flex; justify-content: space-between; font-size: 7.4pt; color: #5b6474;
-        border-top: .25mm solid #e4e0d8; padding-top: 2mm; }
-@page { size: A4; margin: 0; }
-
-body { font-size: 16px; line-height: 1.6; background: #ffffff; }
-:root { color-scheme: light; }
-.wrap { max-width: 1040px; margin: 0 auto; padding: 0 22px; }
-header { padding: 20px 0; } header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-header nav a { margin-left: 18px; color: #5b6474; font-weight: 500; font-size: 15px; }
-header .mono { width: 40px; height: 40px; }
-.hero { padding: 56px 22px 44px; display: grid; grid-template-columns: 1.4fr .6fr; gap: 40px; align-items: center; }
-.hero h1 { font-size: clamp(38px, 6vw, 64px); line-height: 1.02; }
-.hero .role { font-size: 20px; font-weight: 600; margin-top: 12px; } .hero .role span { color: #e8590c; }
-.hero p { font-size: 18px; color: #5b6474; max-width: 560px; }
-.hero img { width: 100%; max-width: 260px; aspect-ratio: 1; border-radius: 50%; object-fit: cover; justify-self: end; }
-.btn { display: inline-block; padding: 11px 18px; border-radius: 10px; border: 1.5px solid #1c2230; font-weight: 600; font-size: 15px; margin: 6px 8px 0 0; }
-.btn.primary { background: #e8590c; border-color: #e8590c; color: #fff; }
-.btn.ghost { border-style: dashed; color: #5b6474; border-color: #e4e0d8; }
-section.block { padding: 56px 0; border-top: 1px solid #e4e0d8; }
-section.block h2 { font-size: 34px; margin: 6px 0 12px; }
-.proj { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: start; }
-.hero > *, .proj > * { min-width: 0; }
-html, body { overflow-x: hidden; }
-.shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-.shots img { width: 100%; border-radius: 12px; display: block; box-shadow: 0 8px 24px rgba(20,20,40,.18); }
-.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 18px 0; }
-.stats div { background: #f5f2ed; border-radius: 12px; padding: 14px; font-size: 14px; color: #5b6474; }
-.stats b { display: block; font-family: Fraunces, serif; font-size: 28px; color: #1c2230; }
-.docs a { display: inline-block; margin: 4px 14px 4px 0; font-weight: 600; border-bottom: 2px solid #e8590c; }
-.bp { width: 100%; border-radius: 12px; border: 1px solid #e4e0d8; }
-.wide { display: grid; gap: 10px; }
-.wide img { width: 100%; border-radius: 12px; display: block; box-shadow: 0 8px 24px rgba(20,20,40,.18); image-rendering: pixelated; }
-.wide .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.note { font-size: 14px; color: #5b6474; }
-footer { padding: 40px 0 60px; border-top: 1px solid #e4e0d8; color: #5b6474; font-size: 14px; }
-@media (max-width: 760px) {
-  .hero, .proj { grid-template-columns: 1fr; }
-  .hero img { justify-self: start; max-width: 160px; order: -1; }
-  header nav { display: none; }
-  .stats { grid-template-columns: 1fr 1fr; }
-}
-
-main img:not([src*="photo"]) { cursor: zoom-in; transition: transform .15s; }
-main img:not([src*="photo"]):hover { transform: scale(1.015); }
-#lb { position: fixed; inset: 0; z-index: 100; display: none; align-items: center; justify-content: center;
-      background: rgba(10,10,20,.92); padding: 56px 16px 64px; }
-#lb.open { display: flex; }
-#lb img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 16px 48px rgba(0,0,0,.5); cursor: default; }
-#lb img.px { image-rendering: pixelated; }
-#lb p { position: absolute; left: 16px; right: 16px; bottom: 18px; margin: 0; text-align: center; color: #ddd; font-size: 14px; }
-#lb button { position: absolute; background: rgba(255,255,255,.12); color: #fff; border: 0; border-radius: 50%;
-             width: 44px; height: 44px; font-size: 22px; line-height: 44px; cursor: pointer; }
-#lb button:hover { background: rgba(255,255,255,.25); }
-#lb .x { top: 10px; right: 12px; } #lb .prev { left: 12px; top: 50%; } #lb .next { right: 12px; top: 50%; }
-body.lb-lock { overflow: hidden; }
-</style></head><body>
-<header><div class="wrap"><a href="#top" style="display:flex;align-items:center;gap:12px;font-weight:700"><svg class="mono" viewBox="0 0 64 64" aria-label="UED monogram"><rect x="2" y="2" width="60" height="60" rx="14" fill="#1c2230"/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Umut Eren Demirci · Game Designer</title>
+<meta name="description" content="Umut Eren Demirci, game designer for systems, levels and progression: Brushfall, Arcana Siege, Cloudhaven Skyport, Arcana Match and The Mouth of Silence, with design documents and balance data.">
+<meta name="theme-color" content="#0b0f18">
+<meta property="og:title" content="Umut Eren Demirci · Game Designer">
+<meta property="og:description" content="Umut Eren Demirci, game designer for systems, levels and progression: Brushfall, Arcana Siege, Cloudhaven Skyport, Arcana Match and The Mouth of Silence, with design documents and balance data.">
+<link rel="icon" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="2" y="2" width="60" height="60" rx="14" fill="#1a2336" stroke="rgba(255,255,255,.14)"/>
 <g transform="translate(1.5 0)"><path d="M9 20v13a6 6 0 0 0 12 0V20" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M27 20v24M27 20h9M27 32h7M27 44h9" fill="none" stroke="#e8590c" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M42 20v24h3a9 12 0 0 0 0-24z" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/></g></svg>Umut Eren Demirci</a>
-<nav><a href="#brushfall">Brushfall</a><a href="#siege">Arcana Siege</a><a href="#skyport">Cloudhaven Skyport</a><a href="#arcana">Arcana Match</a><a href="#mouth">The Mouth of Silence</a><a href="#deconstructions">Deconstructions</a><a href="#chronicles">Chronicles</a><a href="#about">About</a><a href="docs/Umut_Eren_Demirci_CV_2026.pdf">CV</a></nav></div></header>
-<main id="top">
-<div class="wrap hero">
-<div><div class="kicker">Portfolio</div><h1>Umut Eren Demirci</h1><div class="role">Game Designer <span>— Systems · Levels · Progression</span></div>
-<p>Readable systems, tuned with data. I design difficulty curves, progression and systems players can read at a glance, and I test them with data.</p>
-<a class="btn primary" href="#brushfall">See Brushfall</a><a class="btn" href="#siege">See Arcana Siege</a><a class="btn" href="docs/Umut_Eren_Demirci_CV_2026.pdf">Download CV</a></div>
-<img src="assets/photo.png" alt="Photo of Umut Eren Demirci">
-</div>
-
-<section class="block" id="brushfall"><div class="wrap">
-<div class="kicker">Featured project · Unity 6 · mobile and browser</div><h2>Brushfall</h2>
-<div class="proj">
+<path d="M27 20v24M27 20h9M27 32h7M27 44h9" fill="none" stroke="#ff7a33" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M42 20v24h3a9 12 0 0 0 0-24z" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/></g></svg><span>Umut Eren Demirci</span></a>
+<nav><a href="index.html#about">About</a><a href="index.html#games">Games</a><a href="index.html#more">More work</a><a href="index.html#contact">Contact</a><a class="cv" href="docs/Umut_Eren_Demirci_CV_2026.pdf">CV</a></nav>
+</div></header>
+<main>
+<section class="about" id="about"><div class="wrap">
 <div>
-<p>A hybrid-casual puzzle game that chains four genres with one currency per step. Thirty seconds of match-3 charge a
-small paint spirit; on the climb it eats every monster smaller than itself and banks their paint by colour; every third
-level that paint becomes coloured buckets that drain a famous painting turned to sand, until a brush sweeps it clean
-and you name the masterpiece for your gallery.</p>
-<p>I designed the chain, the climb and its levels, the sand restoration, a daily painting, a weekend Grand Climb and the
-skins economy, and balanced all of it with bots that play the real rules at human speed. The power-climb ad everyone
-has seen is here played for real: every frame of the ad storyboard is captured from the build.</p>
-<div class="stats"><div><b>1–2</b>extra climbs a chapter for a weak player, down from 9</div><div><b>90%+</b>climb wins for an average player</div><div><b>138</b>automated rule and play tests</div></div>
-<a class="btn primary" href="https://ueren.itch.io/brushfall">Play in your browser</a>
-<p class="docs" style="margin-top:18px"><a href="docs/Brushfall_OnePager.pdf">One-pager</a><a href="docs/Brushfall_GDD.pdf">GDD (12 pages)</a><a href="docs/Brushfall_Flowcharts.pdf">Flowcharts</a><a href="docs/Brushfall_Balance_Economy.pdf">Balance workbook</a><a href="docs/Brushfall_Ad_and_KPI_Plan.pdf">Ad test and KPI plan</a></p>
-<p class="note">Built with an AI coding assistant (Claude). I designed the game, set the rules and tuning, ran the balance
-simulations and reviewed every build phase; the sound and music are synthesized, the paintings are public domain.</p>
+<div class="kicker">Game designer · Systems · Levels · Progression</div>
+<h1>Umut Eren Demirci</h1>
+<p class="lead">I design difficulty curves, progression and systems players can read at a glance, and I test them with data:
+every game below was balanced by bots that play its real rules.</p>
+<p class="story">Before games I spent twelve years teaching English and designing courses. That job was mostly about difficulty
+curves: introduce one skill at a time, watch where people struggle, adjust the pace. I studied linguistics and English
+literature at Ankara University, and since 2013 I have been writing <i>The Chronicles of Demise</i>, a fantasy novel series I
+am now adapting into a game. I'm looking for game design roles in systems, levels or content, especially in mobile and
+hybrid-casual games.</p>
+<ul class="facts"><li>5 playable games</li><li>Bot-tested balance</li><li>GDDs, flowcharts, economy workbooks</li><li>Unity 6 · C#</li></ul>
+<a class="btn primary" href="#games">See the games</a><a class="btn" href="docs/Umut_Eren_Demirci_CV_2026.pdf">Download CV</a><a class="btn" href="mailto:umuterendemirci@gmail.com">Email me</a><a class="btn" href="https://linkedin.com/in/umut-eren-demirci-a68a39163">LinkedIn</a>
 </div>
-<div class="shots"><img src="assets/bf-charge.png" alt="The charge: sparks fly from a match-3 cascade into the hero"><img src="assets/bf-climb.png" alt="The climb: three bites in a row"><img src="assets/bf-restore.png" alt="The restoration: sand pouring off the Great Wave into buckets"></div>
-</div></div></section>
-
-<section class="block" id="siege"><div class="wrap">
-<div class="kicker">Featured project · Unity 6 · mobile</div><h2>Arcana Siege</h2>
-<div class="proj">
-<div>
-<p>A match-3 tower defense for phones. A road on top, a board below: every tile colour belongs to a tower, so every
-match is an order. The colour picks the tower, the size picks the strength, and the enemies march only as you move, so you can stop and think.</p>
-<p>I designed four towers, seven enemy types (armour, shields, healers, a brood that splits), a 1-of-3 upgrade draft
-with bad-luck protection, and a 12-siege campaign across four realms with permanent upgrades and a daily siege. Every
-number was tuned by bots playing the real rules, and the art and audio direction came from studying the genre's leaders.</p>
-<div class="stats"><div><b>87% → 10%</b>mashing's win rate, after a studio playtest led me to tie the road to the player's moves</div><div><b>50–76%</b>first-time win rate at any pace: thinking is never punished</div><div><b>12</b>sieges tuned into a sawtooth by a career bot</div></div>
-<a class="btn primary" href="https://ueren.itch.io/arcana-siege">Play in your browser</a>
-<p class="docs" style="margin-top:18px"><a href="docs/ArcanaSiege_OnePager.pdf">One-pager</a><a href="docs/ArcanaSiege_GDD.pdf">GDD (12 pages)</a><a href="docs/ArcanaSiege_Flowcharts.pdf">Flowcharts</a><a href="docs/ArcanaSiege_Balance_Economy.pdf">Balance workbook</a><a href="docs/ArcanaSiege_Ad_and_KPI_Plan.pdf">Ad test and KPI plan</a></p>
-<p class="note">Built with an AI coding assistant (Claude). I designed the game, set the rules, targets and tuning, ran
-the balance simulations and play-tested every build phase.</p>
-</div>
-<div class="shots"><img src="assets/as-home.png" alt="Arcana Siege home screen: the four Arcana behind the gate"><img src="assets/as-marsh.png" alt="A siege in the Moonlit Marsh, with Acolytes healing"><img src="assets/as-draft.png" alt="The upgrade draft between waves"></div>
-</div></div></section>
-
-<section class="block" id="skyport"><div class="wrap">
-<div class="kicker">Featured project · Unity 6 · mobile · new</div><h2>Cloudhaven Skyport</h2>
-<div class="proj">
-<div>
-<p>An arcade idle management game for phones. You run an airship port on a floating island: airships dock every forty
-seconds, travellers queue at customs, tickets, bag drop and security, and every counter serves only while someone
-stands behind it. You serve, carry the coins on your back, and walk them onto build pads.</p>
-<p>I designed the counter chain, 22 build pads and 10 goals per island, staff and second counters, a timetable with
-Grand Liners, three islands with their own twists (storms, VIPs), offline earnings and daily events, and opt-in
-rewarded ads only. An economy simulator played every island with three kinds of bot to set the pacing, and the art and
-audio direction came from studying the genre's leaders.</p>
-<div class="stats"><div><b>15 → 53 min</b>first island, once demand upgrades made skill matter</div><div><b>10%</b>of travellers turn grumpy (down from 46% mid-tuning)</div><div><b>360</b>bot playthroughs per balance pass</div></div>
-<a class="btn primary" href="https://ueren.itch.io/cloudhaven-skyport">Play in your browser</a>
-<p class="docs" style="margin-top:18px"><a href="docs/CloudhavenSkyport_OnePager.pdf">One-pager</a><a href="docs/CloudhavenSkyport_GDD.pdf">GDD (11 pages)</a><a href="docs/CloudhavenSkyport_Flowcharts.pdf">Flowcharts</a><a href="docs/CloudhavenSkyport_Balance_Economy.pdf">Balance workbook</a><a href="docs/CloudhavenSkyport_Ad_and_KPI_Plan.pdf">Ad test and KPI plan</a></p>
-<p class="note">Built with an AI coding assistant (Claude). I designed the game, set the rules, targets and tuning, ran
-the balance simulations and play-tested every build phase.</p>
-</div>
-<div class="shots"><img src="assets/cs-island.png" alt="Cloudhaven Skyport: the floating island with an airship docked"><img src="assets/cs-port.png" alt="A finished port: counters, staff and travellers"><img src="assets/cs-storm.png" alt="A storm ship arriving at Galewind Isle"></div>
-</div></div></section>
-
-<section class="block" id="arcana"><div class="wrap">
-<div class="kicker">Featured project · Unity 6 · mobile</div><h2>Arcana Match</h2>
-<div class="proj">
-<div>
-<p>A calm, tarot-themed match-3 for phones. Walk the Fool's Journey across 85 levels on a map; every win adds a card to
-your deck, and every chapter ends at a gate that awards one of the 22 major arcana. Pip, the Fool's dog, tells the story.</p>
-<p>I designed the board, 11 board shapes, three blockers, five special tiles and six combos, three boosters and a 78-card
-collection meta, wrote the story, and balanced every level with a bot that plays the real rules.</p>
-<div class="stats"><div><b>85</b>levels, each simulated by a bot</div><div><b>33% → 85%</b>level 18 win rate after tuning</div><div><b>78</b>original cards</div></div>
-<a class="btn primary" href="https://ueren.itch.io/arcana-match">Play in your browser</a>
-<p class="docs" style="margin-top:18px"><a href="docs/ArcanaMatch_OnePager.pdf">One-pager</a><a href="docs/ArcanaMatch_GDD.pdf">GDD (22 pages)</a><a href="docs/ArcanaMatch_Flowcharts.pdf">Flowcharts</a><a href="docs/ArcanaMatch_Balance_Economy.pdf">Balance workbook</a><a href="docs/ArcanaMatch_Card_Catalogue.pdf">Card catalogue</a></p>
-<p class="note">Built with an AI coding assistant (Claude). I designed the game, set the rules and tuning, ran the balance
-simulations and play-tested every build phase.</p>
-</div>
-<div class="shots"><img src="assets/am-map-walk.png" alt="The Fool's Journey map"><img src="assets/am-pip-prologue.png" alt="Pip the dog tells the story"><img src="assets/am-combo-starburst.png" alt="A special combo on a heart-shaped board"></div>
-</div></div></section>
-
-<section class="block" id="mouth"><div class="wrap">
-<div class="kicker">Featured project · Unity 6 · Windows and browser</div><h2>The Mouth of Silence</h2>
-<div class="proj">
-<div>
-<p>A narrative puzzle adventure and a playable chapter of my novel <i>The Chronicles of Demise</i>. Lyssia, a scholar
-expelled for heresy, leads a thief, a mercenary and a fake god to a vault the gods erased from every map. She has no
-weapon: she reads <b>Kha'shul</b>, the Ancients' language of definition, and speaks the world into new shapes.</p>
-<p>I designed Kha'shul as the puzzle system (10 words, 5 grammar rules, one rule taught per puzzle, with designed near
-misses instead of fail states), a star-code navigation puzzle, a crew that moves and talks like people, and a
-campfire night whose answers the final riddle calls back. I rewrote a star-chart puzzle after an outside playtest found
-it too obscure, and cast all four voices by ear.</p>
-<div class="stats"><div><b>10</b>words in a constructed language, 5 rules</div><div><b>343</b>voiced lines, zero budget</div><div><b>6</b>areas, 30-40 minutes</div></div>
-<a class="btn primary" href="https://ueren.itch.io/the-mouth-of-silence">Play in your browser</a>
-<p class="docs" style="margin-top:18px"><a href="docs/MouthOfSilence_OnePager.pdf">One-pager</a><a href="docs/MouthOfSilence_GDD.pdf">GDD (16 pages)</a><a href="docs/MouthOfSilence_Khashul_Reference.pdf">Kha'shul language reference</a><a href="docs/MouthOfSilence_Flowcharts.pdf">Flowcharts</a><a href="docs/MouthOfSilence_Script_Sample.pdf">Script sample</a></p>
-<p class="note">Built with an AI coding assistant (Claude). I wrote the story and the language, designed the puzzles and
-the crew, wrote and cast the dialogue, and play-tested every build phase.</p>
-</div>
-<div class="wide"><img src="assets/mos-banner.png" alt="The airship Icarus over the floating islands of Annea">
-<div class="pair"><img src="assets/mos-notebook.png" alt="Lyssia's notebook: composing Kel-Duun at the fallen bridge"><img src="assets/mos-star-chart.png" alt="The star chart puzzle"></div>
-<div class="pair"><img src="assets/mos-campfire.png" alt="The crew at the campfire"><img src="assets/mos-glass-floor.png" alt="Reading the glass floor with Caelus's tuning fork"></div></div>
-</div></div></section>
-
-<section class="block" id="deconstructions"><div class="wrap">
-<div class="kicker">Market analysis · live games</div><h2>Game deconstructions</h2>
-<p style="max-width:760px">How two successful mobile games work, from public data: store listings, patch notes, market estimates and
-player reviews. Each breakdown covers the core loop, meta, economy and live ops, and ends with proposals I would test, each with a
-hypothesis, an A/B test design and guardrail metrics.</p>
-<div class="proj" style="margin-top:18px">
-<div style="background:#f5f2ed;border-radius:14px;padding:22px 24px">
-<div class="kicker">Mid-core tower defense · Panteon</div>
-<h3 style="font-size:24px;margin:6px 0 8px">Raid Rush</h3>
-<p>Tower defense where you draft the road as well as the towers. I map its 12-tier merge ladder, three layers of spending,
-and the live-ops calendar of clan wars, league seasons and collabs, then propose a draft-protection rule that keeps the luck.</p>
-<p class="docs"><a href="docs/Deconstruction_Raid_Rush.pdf">Read the deconstruction (6 pages)</a></p>
-</div>
-<div style="background:#f5f2ed;border-radius:14px;padding:22px 24px">
-<div class="kicker">Casual match-3 · Dream Games</div>
-<h3 style="font-size:24px;margin:6px 0 8px">Royal Match</h3>
-<p>How execution beat novelty: a faster, clearer core, one monetisation moment at the end of a failed level, and 30+ event types
-that add variety without complexity. Includes a comparison with my own match-3, Arcana Match.</p>
-<p class="docs"><a href="docs/Deconstruction_Royal_Match.pdf">Read the deconstruction (5 pages)</a></p>
-</div>
-</div>
-<p class="note" style="margin-top:14px">Desk research from public sources. KPI statements are hypotheses, since I have no internal data;
-every source is listed in each document.</p>
+<div class="portrait"><img src="assets/photo.png" alt="Photo of Umut Eren Demirci"></div>
 </div></section>
 
-<section class="block" id="chronicles"><div class="wrap">
-<div class="kicker">Narrative and systems · Unreal Engine 5</div><h2>The Chronicles of Demise</h2>
-<div class="proj">
-<div><p>A narrative RPG concept set in worlds whose rules come from their stories. My prototype asks: can the player
-feel a character's emotions through movement alone?</p>
-<p>Trigger zones switch the character between Neutral, Anxious and Determined. Each state changes walk speed
-(500 / 150 / 800), braking and the world's colour, so anxiety feels heavy and hesitant before any text appears.</p>
-<p class="docs"><a href="docs/Umut_Eren_Demirci_Design_Sample.pdf">Read the design sample (4 pages)</a></p>
-<p class="note">A playable chapter of the same story, in Unity: <a href="#mouth" style="border-bottom:1px solid #e8590c">The Mouth of Silence</a>.</p></div>
-<img class="bp" src="assets/bp_movement.png" alt="Blueprint: state-driven movement controller">
-</div></div></section>
+<section class="block" id="games"><div class="wrap">
+<div class="block-head"><div><div class="kicker">Portfolio</div><h2>Games</h2></div>
+<p><span class="hint-hover">Hover a card to see it played; click it for the design summary.</span><span class="hint-touch">Tap a card to see it played; tap again for the design summary.</span></p></div>
+<div class="shelf">
+<a class="gcard" id="brushfall" href="brushfall.html" style="--g:#3ec6ff" aria-label="Brushfall: Thirty seconds of match-3 charge a paint spirit, the climb turns its power into paint, and the paint drains a famous painting out of the sand.">
+<div class="gcard-inner">
+<div class="face front">
+<img src="assets/bf-climb.png" alt="" loading="lazy" style="object-position:50% 40%;scale:1.14;transform-origin:50% 100%">
+<span class="numeral">I</span><span class="ribbon">Featured</span>
+<div class="front-meta"><h3>Brushfall</h3><div class="tags"><span>Hybrid-casual</span><span>Mobile + web</span></div></div>
+</div>
+<div class="face back">
+<img class="poster" src="assets/clips/brushfall.jpg" alt="" loading="lazy">
+<video muted loop playsinline preload="none" data-src="assets/clips/brushfall.mp4" poster="assets/clips/brushfall.jpg"></video>
+<div class="back-meta"><p class="pitch">Thirty seconds of match-3 charge a paint spirit, the climb turns its power into paint, and the paint drains a famous painting out of the sand.</p><span class="open">See the design</span></div>
+</div>
+</div>
+</a>
+<a class="gcard" id="siege" href="arcana-siege.html" style="--g:#ff6b5b" aria-label="Arcana Siege: A match-3 tower defense where every tile colour fires a tower, and the enemies only march when you move.">
+<div class="gcard-inner">
+<div class="face front">
+<img src="assets/as-home.png" alt="" loading="lazy" style="object-position:50% 12%;scale:1.12;transform-origin:50% 100%">
+<span class="numeral">II</span><span class="ribbon">Featured</span>
+<div class="front-meta"><h3>Arcana Siege</h3><div class="tags"><span>Match-3 × TD</span><span>Mobile + web</span></div></div>
+</div>
+<div class="face back">
+<img class="poster" src="assets/clips/arcana-siege.jpg" alt="" loading="lazy">
+<video muted loop playsinline preload="none" data-src="assets/clips/arcana-siege.mp4" poster="assets/clips/arcana-siege.jpg"></video>
+<div class="back-meta"><p class="pitch">A match-3 tower defense where every tile colour fires a tower, and the enemies only march when you move.</p><span class="open">See the design</span></div>
+</div>
+</div>
+</a>
+<a class="gcard" id="skyport" href="cloudhaven-skyport.html" style="--g:#5fd4c4" aria-label="Cloudhaven Skyport: Run an airship port on a floating island: serve travellers, carry the coins on your back and build it up.">
+<div class="gcard-inner">
+<div class="face front">
+<img src="assets/cs-island.png" alt="" loading="lazy" style="object-position:50% 50%;scale:1.24;transform-origin:50% 100%">
+<span class="numeral">III</span>
+<div class="front-meta"><h3>Cloudhaven Skyport</h3><div class="tags"><span>Arcade idle</span><span>Mobile + web</span></div></div>
+</div>
+<div class="face back">
+<img class="poster" src="assets/clips/skyport.jpg" alt="" loading="lazy">
+<video muted loop playsinline preload="none" data-src="assets/clips/skyport.mp4" poster="assets/clips/skyport.jpg"></video>
+<div class="back-meta"><p class="pitch">Run an airship port on a floating island: serve travellers, carry the coins on your back and build it up.</p><span class="open">See the design</span></div>
+</div>
+</div>
+</a>
+<a class="gcard" id="arcana" href="arcana-match.html" style="--g:#a284ff" aria-label="Arcana Match: A calm tarot match-3 along the Fool&#x27;s Journey, where every win adds a card to your deck.">
+<div class="gcard-inner">
+<div class="face front">
+<img src="assets/am-map-walk.png" alt="" loading="lazy" style="object-position:50% 50%;scale:1.12;transform-origin:50% 100%">
+<span class="numeral">IV</span>
+<div class="front-meta"><h3>Arcana Match</h3><div class="tags"><span>Match-3</span><span>Mobile + web</span></div></div>
+</div>
+<div class="face back">
+<img class="poster" src="assets/clips/arcana-match.jpg" alt="" loading="lazy">
+<video muted loop playsinline preload="none" data-src="assets/clips/arcana-match.mp4" poster="assets/clips/arcana-match.jpg"></video>
+<div class="back-meta"><p class="pitch">A calm tarot match-3 along the Fool&#x27;s Journey, where every win adds a card to your deck.</p><span class="open">See the design</span></div>
+</div>
+</div>
+</a>
+<a class="gcard" id="mouth" href="the-mouth-of-silence.html" style="--g:#e2b65a" aria-label="The Mouth of Silence: A narrative puzzle adventure where a scholar with no weapon rewrites the world in the Ancients&#x27; language.">
+<div class="gcard-inner">
+<div class="face front">
+<img src="assets/mos-campfire.png" alt="" loading="lazy" style="object-position:50% 30%;scale:1.0;transform-origin:50% 100%;image-rendering:pixelated">
+<span class="numeral">V</span>
+<div class="front-meta"><h3>The Mouth of Silence</h3><div class="tags"><span>Narrative puzzle</span><span>PC + web</span></div></div>
+</div>
+<div class="face back">
+<img class="poster" src="assets/clips/mouth.jpg" alt="" loading="lazy">
+<video muted loop playsinline preload="none" data-src="assets/clips/mouth.mp4" poster="assets/clips/mouth.jpg"></video>
+<div class="back-meta"><p class="pitch">A narrative puzzle adventure where a scholar with no weapon rewrites the world in the Ancients&#x27; language.</p><span class="open">See the design</span></div>
+</div>
+</div>
+</a>
+</div>
+</div></section>
 
-<section class="block" id="about"><div class="wrap">
-<div class="kicker">About</div><h2>From classrooms to game design</h2>
-<p style="max-width:720px">Before games I spent twelve years teaching English and designing courses. That job was mostly about difficulty curves:
-introduce one skill at a time, watch where people struggle, adjust the pace. I studied linguistics and English literature at
-Ankara University, and since 2013 I have been writing The Chronicles of Demise, a fantasy novel series I am now adapting into a game. I'm looking for game design roles in systems,
-levels or content, especially in mobile and hybrid-casual games.</p>
-<p><a class="btn primary" href="mailto:umuterendemirci@gmail.com">Email me</a><a class="btn" href="https://linkedin.com/in/umut-eren-demirci-a68a39163">LinkedIn</a><a class="btn" href="docs/Umut_Eren_Demirci_CV_2026.pdf">CV (PDF)</a></p>
+<section class="block" id="more"><div class="wrap">
+<div class="block-head"><div><div class="kicker">Analysis and writing</div><h2>More work</h2></div>
+<p>How live games work, from public data, and the design sample behind my narrative project.</p></div>
+<div class="tiles">
+<a class="tile" id="deconstructions" href="docs/Deconstruction_Raid_Rush.pdf">
+<div class="kicker">Deconstruction · Panteon</div><h3>Raid Rush</h3>
+<p>Tower defense where you draft the road as well as the towers: its 12-tier merge ladder, three layers of spending and the
+live-ops calendar, ending with a draft-protection rule I would test, with a hypothesis, an A/B design and guardrails.</p>
+<span class="more">Read it (6 pages)</span></a>
+<a class="tile" href="docs/Deconstruction_Royal_Match.pdf">
+<div class="kicker">Deconstruction · Dream Games</div><h3>Royal Match</h3>
+<p>How execution beat novelty: a faster, clearer core, one monetisation moment at the end of a failed level, and 30+ event
+types that add variety without complexity, compared with my own match-3, Arcana Match.</p>
+<span class="more">Read it (5 pages)</span></a>
+<a class="tile" id="chronicles" href="docs/Umut_Eren_Demirci_Design_Sample.pdf">
+<div class="kicker">Narrative and systems · Unreal Engine 5</div><h3>The Chronicles of Demise</h3>
+<img src="assets/bp_movement.png" alt="Blueprint: a state-driven movement controller" loading="lazy">
+<p>Can a player feel a character's emotions through movement alone? Trigger zones switch between Neutral, Anxious and
+Determined, changing walk speed, braking and the world's colour.</p>
+<span class="more">Read the design sample (4 pages)</span></a>
+</div>
+<p class="note" style="margin-top:16px">The deconstructions are desk research from public sources; KPI statements are hypotheses,
+and every source is listed in each document.</p>
+</div></section>
+
+<section class="block contact" id="contact"><div class="wrap">
+<div class="kicker">Contact</div><h2>Let's make something readable</h2>
+<p>Open to game design roles in systems, levels and content.</p>
+<a class="btn primary" href="mailto:umuterendemirci@gmail.com">Email me</a><a class="btn" href="https://linkedin.com/in/umut-eren-demirci-a68a39163">LinkedIn</a><a class="btn" href="docs/Umut_Eren_Demirci_CV_2026.pdf">CV (PDF)</a>
 </div></section>
 </main>
-<footer><div class="wrap">Umut Eren Demirci · Ankara, Türkiye · umuterendemirci@gmail.com</div></footer>
-<div id="lb" role="dialog" aria-modal="true" aria-label="Screenshot viewer">
-<button class="x" aria-label="Close">&times;</button><button class="prev" aria-label="Previous">&#8249;</button>
-<img alt=""><button class="next" aria-label="Next">&#8250;</button><p></p></div>
-<script>
-(() => {
-  const shots = [...document.querySelectorAll('main img:not([src*="photo"])')];
-  const lb = document.getElementById('lb'), big = lb.querySelector('img'), cap = lb.querySelector('p');
-  let i = 0, x0 = null;
-  const show = n => {
-    i = (n + shots.length) % shots.length;
-    big.src = shots[i].src; big.alt = cap.textContent = shots[i].alt;
-    big.classList.toggle('px', /mos-/.test(shots[i].src));
-  };
-  const open = n => { show(n); lb.classList.add('open'); document.body.classList.add('lb-lock'); lb.querySelector('.x').focus(); };
-  const close = () => { lb.classList.remove('open'); document.body.classList.remove('lb-lock'); shots[i].focus?.(); };
-  shots.forEach((s, n) => { s.tabIndex = 0; s.addEventListener('click', () => open(n));
-    s.addEventListener('keydown', e => { if (e.key === 'Enter') open(n); }); });
-  lb.querySelector('.x').onclick = close;
-  lb.querySelector('.prev').onclick = () => show(i - 1);
-  lb.querySelector('.next').onclick = () => show(i + 1);
-  lb.addEventListener('click', e => { if (e.target === lb) close(); });
-  document.addEventListener('keydown', e => {
-    if (!lb.classList.contains('open')) return;
-    if (e.key === 'Escape') close(); else if (e.key === 'ArrowLeft') show(i - 1); else if (e.key === 'ArrowRight') show(i + 1);
-  });
-  lb.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
-  lb.addEventListener('touchend', e => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; x0 = null;
-    if (Math.abs(dx) > 50) show(i + (dx < 0 ? 1 : -1)); });
-})();
-</script></body></html>
+<footer class="site-foot"><div class="wrap"><span>Umut Eren Demirci · Game Designer · Ankara, Türkiye</span>
+<span><a href="mailto:umuterendemirci@gmail.com">umuterendemirci@gmail.com</a></span></div></footer>
+<script src="site.js" defer></script>
+</body>
+</html>

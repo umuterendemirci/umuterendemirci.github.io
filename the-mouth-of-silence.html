@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Mouth of Silence · Umut Eren Demirci</title>
+<meta name="description" content="The Mouth of Silence: A narrative puzzle adventure where a scholar with no weapon rewrites the world in the Ancients&#x27; language. Design summary, documents and screenshots.">
+<meta name="theme-color" content="#0b0f18">
+<meta property="og:title" content="The Mouth of Silence · Umut Eren Demirci">
+<meta property="og:description" content="The Mouth of Silence: A narrative puzzle adventure where a scholar with no weapon rewrites the world in the Ancients&#x27; language. Design summary, documents and screenshots.">
+<meta property="og:image" content="assets/clips/mouth.jpg">
+<link rel="icon" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="2" y="2" width="60" height="60" rx="14" fill="#1a2336" stroke="rgba(255,255,255,.14)"/>
+<g transform="translate(1.5 0)"><path d="M9 20v13a6 6 0 0 0 12 0V20" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M27 20v24M27 20h9M27 32h7M27 44h9" fill="none" stroke="#ff7a33" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M42 20v24h3a9 12 0 0 0 0-24z" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/></g></svg><span>Umut Eren Demirci</span></a>
+<nav><a href="index.html#about">About</a><a href="index.html#games">Games</a><a href="index.html#more">More work</a><a href="index.html#contact">Contact</a><a class="cv" href="docs/Umut_Eren_Demirci_CV_2026.pdf">CV</a></nav>
+</div></header>
+<main>
+<section class="ghero wide" style="--g:#e2b65a"><div class="wrap">
+<div><a class="crumb" href="index.html#games">← All games</a></div>
+<div class="screen-wide"><video muted loop playsinline autoplay preload="metadata" poster="assets/clips/mouth-wide.jpg"><source src="assets/clips/mouth-wide.mp4" type="video/mp4"></video></div>
+<div class="text">
+<div><div class="kicker">Narrative puzzle adventure · Unity 6 · Windows and browser</div><h1>The Mouth of Silence</h1><p class="tagline">Reading is power.</p><a class="btn primary" href="https://ueren.itch.io/the-mouth-of-silence">Play in your browser</a><a class="btn" href="docs/MouthOfSilence_GDD.pdf">Read the GDD</a><a class="btn" href="docs/MouthOfSilence_OnePager.pdf">One-pager</a></div>
+<div><p class="lead">A narrative puzzle adventure and a playable chapter of my novel <i>The Chronicles of Demise</i>. Lyssia, a scholar expelled for heresy, leads a thief, a mercenary and a fake god to a vault the gods erased from every map. She has no weapon: she reads <b>Kha'shul</b>, the Ancients' language of definition, and speaks the world into new shapes.</p><p class="role">I designed Kha&#x27;shul as the puzzle system (10 words, 5 grammar rules, one rule taught per puzzle, with designed near misses instead of fail states), a star-code navigation puzzle, a crew that moves and talks like people, and a campfire night whose answers the final riddle calls back. I wrote and cast all the dialogue.</p></div>
+</div>
+<div class="stats"><div><b>10</b>words in a constructed language, 5 rules</div><div><b>343</b>voiced lines, zero budget</div><div><b>6</b>areas, 30–40 minutes</div></div>
+</div></section>
+
+<section class="block design" id="design" style="--g:#e2b65a"><div class="wrap">
+<nav class="toc" aria-label="Design summary"><span class="kicker">Design summary</span><ol><li><a href="#s1">Overview: reading is power</a></li><li><a href="#s2">Story and characters</a></li><li><a href="#s3">The chapter, area by area</a></li><li><a href="#s4">Kha&#x27;shul: learn, compose, speak</a></li><li><a href="#s5">Astromancy: the star chart</a></li><li><a href="#s6">The Sanctuary&#x27;s systems</a></li><li><a href="#s7">The crew: companions, not followers</a></li><li><a href="#s8">Conceptual Bleed</a></li><li><a href="#s9">Controls, UI, art and audio</a></li><li><a href="#s10">Saving, technology and process</a></li><li><a href="#s11">Scope and roadmap</a></li></ol></nav>
+<div>
+<div class="kicker" style="color:var(--g)">Game design document, summarised</div>
+<h2 style="margin:6px 0 10px">How it's designed</h2>
+<p class="design-intro">Each part below condenses one chapter of the game design document. Every summary ends with a link to
+the full chapter in the PDF.</p>
+<article class="summary" id="s1"><h3><span class="n">01</span>Overview: reading is power</h3>
+<p>A top-down pixel-art adventure where the only verb that matters is reading. Lyssia copies the words of Kha'shul into her notebook and speaks them at glowing places: stone rises, fire stills, mist holds. For players of Heaven's Vault and Chants of Sennaar; no combat, and failure never costs progress.</p><ul><li><b>One rule at a time:</b> each puzzle introduces exactly one grammar rule.</li><li><b>The crew talks:</b> wrong answers get a reaction, not a fail state.</li><li><b>Power rewrites you:</b> after the Touch, the language changes Lyssia.</li></ul>
+<a class="full" href="docs/MouthOfSilence_GDD.pdf#page=2">Read the full chapter in the GDD (page 2)</a></article>
+<article class="summary" id="s2"><h3><span class="n">02</span>Story and characters</h3>
+<p>The Tribunal Gods teach that nothing existed before them; Lyssia was expelled for writing otherwise. She has hired a crew to reach the Vault of the Ancients inside the Mouth of Silence. The chapter asks one question, what survives the fire, and at the campfire each companion answers it without being asked; the player's answer at the Black Mirror closes the thread. Characters and many lines come from the manuscript.</p>
+<a class="full" href="docs/MouthOfSilence_GDD.pdf#page=3">Read the full chapter in the GDD (page 3)</a></article>
+<article class="summary" id="s3"><h3><span class="n">03</span>The chapter, area by area</h3>
+<p>Six areas and seven beats, from the airship Icarus through the jungle, the campfire, the Throat and the Black Mirror to the Sanctuary of Orbits and the escape. Teaching peaks alternate with rests: the camp sits between the jungle and the Throat because Vesper refuses to go in after dark, a motivated rest before the densest stretch of teaching.</p>
+<a class="full" href="docs/MouthOfSilence_GDD.pdf#page=4">Read the full chapter in the GDD (page 4)</a></article>
+<article class="summary" id="s4"><h3><span class="n">04</span>Kha&#x27;shul: learn, compose, speak</h3>
+<p>Find a carving and copy its words; reach a definition point; compose STATE-ROOT (or a compound) in the notebook; speak. A correct definition changes the world, a grammatical near miss does something harmless and gets a reaction, an ungrammatical one a one-line lesson. Five rules, one per puzzle, from Kel-Duun (the bridge stands up) to Rhen-Sael (the orbits turn to Lyssia); the vocabulary grows from 4 words to 10.</p>
+<a class="full" href="docs/MouthOfSilence_GDD.pdf#page=5">Read the full chapter in the GDD (page 5)</a></article>
+<article class="summary" id="s5"><h3><span class="n">05</span>Astromancy: the star chart</h3>
+<p>The prologue's puzzle: three constellations pulse in a beat code that spells a message, then the player plots the quickest course along one-way updrafts to the hidden island. An outside playtest found it much harder than the language puzzles; the rules stayed, the information became visible (beats that write out, wrong answers that say why, a mark on every island).</p>
+<a class="full" href="docs/MouthOfSilence_GDD.pdf#page=6">Read the full chapter in the GDD (page 6)</a></article>
+<article class="summary" id="s6"><h3><span class="n">06</span>The Sanctuary&#x27;s systems</h3>
+<p>Three short variations on reading: a glass floor whose safe panes ring a C-major chord and whose traps ring D-minor when Caelus sweeps his fork; two orbiting rings of books that Rhen-Sael swings towards Lyssia; and an escape in which she can't move, so the first words the player learned become reflexes against three Sentinels.</p>
+<a class="full" href="docs/MouthOfSilence_GDD.pdf#page=7">Read the full chapter in the GDD (page 7)</a></article>
+<article class="summary" id="s7"><h3><span class="n">07</span>The crew: companions, not followers</h3>
+<p>Playtest feedback said the crew followed her like sheep. Now each companion steers to a personal place beside Lyssia with its own reaction time, walk and jog speeds and curiosity: Vesper at her shoulder, Rystak guarding behind, Caelus dawdling and wandering off to look at things. The dialogue is a plain-text script of 102 nodes and 33 choices; the plot is linear, but who says what branches.</p>
+<a class="full" href="docs/MouthOfSilence_GDD.pdf#page=8">Read the full chapter in the GDD (page 8)</a></article>
+<article class="summary" id="s8"><h3><span class="n">08</span>Conceptual Bleed</h3>
+<p>The slice's twist: when Lyssia touches the Verses, a vision plays and the game changes. 17 of her lines turn into metaphor ("It is heavier than the island"), and Integrity and Expression appear: Expression lengthens every stall in the escape, each Sentinel that reaches her costs Integrity. The cost of knowing becomes audible and mechanical, without a fail state.</p>
+<a class="full" href="docs/MouthOfSilence_GDD.pdf#page=9">Read the full chapter in the GDD (page 9)</a></article>
+<article class="summary" id="s9"><h3><span class="n">09</span>Controls, UI, art and audio</h3>
+<p>Keyboard, gamepad and mouse; prompts name every action and grammar mistakes get a one-line reason. LPC pixel art plus original art drawn by editor scripts (the airship, the obsidian Mouth, the Sanctuary), violet and gold for Annea. All 343 lines are voiced with an open text-to-speech model, cast by ear in two rounds, with every line subtitled.</p>
+<a class="full" href="docs/MouthOfSilence_GDD.pdf#page=10">Read the full chapter in the GDD (page 10)</a></article>
+<article class="summary" id="s10"><h3><span class="n">10</span>Saving, technology and process</h3>
+<p>One autosave slot written at every area, solved definition and camp. Rules live in a pure C# core (parser, dialogue, star chart, glass floor, escape) with 56 EditMode tests on the real data; scenes regenerate from text maps. Six phases, one outside playtest, and a table of what it changed: the star chart, a focus bug, the crew, the UI and the airship.</p>
+<a class="full" href="docs/MouthOfSilence_GDD.pdf#page=13">Read the full chapter in the GDD (page 13)</a></article>
+<article class="summary" id="s11"><h3><span class="n">11</span>Scope and roadmap</h3>
+<p>In the slice: six areas, a fully voiced chapter, Kha'shul, the Sanctuary's systems, branching dialogue and Conceptual Bleed. Out, on purpose: combat, inventory, a branching plot. Next: a hint ladder, Bleed as a choice (Expression opens alternative definitions, Integrity limits them), and a test of whether Kha'shul scales past ten words without becoming a vocabulary test.</p>
+<a class="full" href="docs/MouthOfSilence_GDD.pdf#page=16">Read the full chapter in the GDD (page 16)</a></article>
+</div>
+</div></section>
+
+<section class="block" id="screens"><div class="wrap">
+<div class="block-head"><div><div class="kicker" style="color:#e2b65a">From the build</div><h2>Screenshots</h2></div>
+<p>Every image is captured from the game itself.</p></div>
+<div class="gallery wide"><img src="assets/mos-banner.png" alt="The airship Icarus over the floating islands of Annea" loading="lazy"><img src="assets/mos-notebook.png" alt="Lyssia&#x27;s notebook: composing Kel-Duun at the fallen bridge" loading="lazy"><img src="assets/mos-star-chart.png" alt="The star chart puzzle" loading="lazy"><img src="assets/mos-campfire.png" alt="The crew at the campfire" loading="lazy"><img src="assets/mos-glass-floor.png" alt="Reading the glass floor with Caelus&#x27;s tuning fork" loading="lazy"></div>
+</div></section>
+
+<section class="block" id="documents" style="--g:#e2b65a"><div class="wrap">
+<div class="block-head"><div><div class="kicker" style="color:var(--g)">Design documents</div><h2>Read more</h2></div></div>
+<div class="docs"><a class="doc" href="docs/MouthOfSilence_OnePager.pdf"><span class="pdf">PDF</span><b>One-pager</b><span>The game on one page</span></a><a class="doc" href="docs/MouthOfSilence_GDD.pdf"><span class="pdf">PDF</span><b>Game design document</b><span>16 pages</span></a><a class="doc" href="docs/MouthOfSilence_Khashul_Reference.pdf"><span class="pdf">PDF</span><b>Kha&#x27;shul language reference</b><span>Words, grammar, glyphs</span></a><a class="doc" href="docs/MouthOfSilence_Flowcharts.pdf"><span class="pdf">PDF</span><b>Flowcharts</b><span>8 system diagrams</span></a><a class="doc" href="docs/MouthOfSilence_Script_Sample.pdf"><span class="pdf">PDF</span><b>Script sample</b><span>The campfire and the Mirror</span></a></div>
+<p class="note" style="margin-top:18px">Built with an AI coding assistant (Claude). I wrote the story and the language, designed the puzzles and the crew, wrote and cast the dialogue, and play-tested every build phase.</p>
+</div></section>
+
+<section class="block"><div class="wrap pager">
+<a href="arcana-match.html"><small>← Previous</small><b>Arcana Match</b></a>
+<a class="next" href="brushfall.html"><small>Next →</small><b>Brushfall</b></a>
+</div></section>
+</main>
+<footer class="site-foot"><div class="wrap"><span>Umut Eren Demirci · Game Designer · Ankara, Türkiye</span>
+<span><a href="mailto:umuterendemirci@gmail.com">umuterendemirci@gmail.com</a></span></div></footer>
+<div id="lb" role="dialog" aria-modal="true" aria-label="Screenshot viewer">
+<button class="x" aria-label="Close">&times;</button><button class="prev" aria-label="Previous">&#8249;</button>
+<img alt=""><button class="next" aria-label="Next">&#8250;</button><p></p></div>
+<script src="site.js" defer></script>
+</body>
+</html>

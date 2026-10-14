@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Arcana Siege · Umut Eren Demirci</title>
+<meta name="description" content="Arcana Siege: A match-3 tower defense where every tile colour fires a tower, and the enemies only march when you move. Design summary, documents and screenshots.">
+<meta name="theme-color" content="#0b0f18">
+<meta property="og:title" content="Arcana Siege · Umut Eren Demirci">
+<meta property="og:description" content="Arcana Siege: A match-3 tower defense where every tile colour fires a tower, and the enemies only march when you move. Design summary, documents and screenshots.">
+<meta property="og:image" content="assets/clips/arcana-siege.jpg">
+<link rel="icon" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="2" y="2" width="60" height="60" rx="14" fill="#1a2336" stroke="rgba(255,255,255,.14)"/>
+<g transform="translate(1.5 0)"><path d="M9 20v13a6 6 0 0 0 12 0V20" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M27 20v24M27 20h9M27 32h7M27 44h9" fill="none" stroke="#ff7a33" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M42 20v24h3a9 12 0 0 0 0-24z" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/></g></svg><span>Umut Eren Demirci</span></a>
+<nav><a href="index.html#about">About</a><a href="index.html#games">Games</a><a href="index.html#more">More work</a><a href="index.html#contact">Contact</a><a class="cv" href="docs/Umut_Eren_Demirci_CV_2026.pdf">CV</a></nav>
+</div></header>
+<main>
+<section class="ghero" style="--g:#ff6b5b"><div class="wrap">
+<div>
+<a class="crumb" href="index.html#games">← All games</a>
+<div class="kicker" style="margin-top:22px">Match-3 tower defense · Unity 6 · mobile and browser</div><h1>Arcana Siege</h1><p class="tagline">Match tiles to fire your towers. Hold the gate.</p>
+<p class="lead">A match-3 tower defense for phones. A road on top, a board below: every tile colour belongs to a tower, so every match is an order. The colour picks the tower, the size picks the strength, and the enemies march only as you move, so you can stop and think.</p><p class="role">I designed four towers, seven enemy types (armour, shields, healers, a brood that splits), a 1-of-3 upgrade draft with bad-luck protection, and a 12-siege campaign across four realms with permanent upgrades and a daily siege. Every number was tuned by bots playing the real rules.</p>
+<a class="btn primary" href="https://ueren.itch.io/arcana-siege">Play in your browser</a><a class="btn" href="docs/ArcanaSiege_GDD.pdf">Read the GDD</a><a class="btn" href="docs/ArcanaSiege_OnePager.pdf">One-pager</a>
+<div class="stats"><div><b>87% → 10%</b>mashing&#x27;s win rate, after a studio playtest tied the road to the player&#x27;s moves</div><div><b>50–76%</b>first-time win rate at any pace: thinking is never punished</div><div><b>12</b>sieges tuned into a sawtooth by a career bot</div></div>
+</div>
+<div class="phone"><video muted loop playsinline autoplay preload="metadata" poster="assets/clips/arcana-siege.jpg"><source src="assets/clips/arcana-siege.mp4" type="video/mp4"></video></div>
+</div></section>
+
+<section class="block design" id="design" style="--g:#ff6b5b"><div class="wrap">
+<nav class="toc" aria-label="Design summary"><span class="kicker">Design summary</span><ol><li><a href="#s1">The game in one screen</a></li><li><a href="#s2">Core loop: one move, about two seconds</a></li><li><a href="#s3">Enemies: each one asks a question</a></li><li><a href="#s4">The run: ten waves and a draft</a></li><li><a href="#s5">The campaign: a sawtooth on purpose</a></li><li><a href="#s6">Meta and economy</a></li><li><a href="#s7">Balancing: tuned by bots</a></li><li><a href="#s8">Art direction: cel-shaded stickers</a></li><li><a href="#s9">Audio and game feel</a></li><li><a href="#s10">UX and onboarding</a></li><li><a href="#s11">Technology</a></li></ol></nav>
+<div>
+<div class="kicker" style="color:var(--g)">Game design document, summarised</div>
+<h2 style="margin:6px 0 10px">How it's designed</h2>
+<p class="design-intro">Each part below condenses one chapter of the game design document. Every summary ends with a link to
+the full chapter in the PDF.</p>
+<article class="summary" id="s1"><h3><span class="n">01</span>The game in one screen</h3>
+<p>Enemies march down a road towards the gate; the player never places a tower, they fire them. The colour of a match picks the tower, its size the strength, and cascades multiply it.</p><ul><li><b>Every match is a decision:</b> the right colour at the right moment beats a big match of the wrong one.</li><li><b>Choosing beats speed:</b> every move costs the same stretch of road, so thinking is cheap.</li><li><b>A run in five minutes:</b> ten waves and a boss, always one more try close.</li></ul>
+<a class="full" href="docs/ArcanaSiege_GDD.pdf#page=2">Read the full chapter in the GDD (page 2)</a></article>
+<article class="summary" id="s2"><h3><span class="n">02</span>Core loop: one move, about two seconds</h3>
+<p>Read the road, pick a match, watch it land: motes fly from the board to the tower, which fires. Each cascade adds 25% more output. The road runs on moves: each move lets the enemies walk 1.6 seconds closer, and while the player thinks they only creep. Special tiles become tower moves (a line clearer volleys the whole road, a wheel quakes it, a star calls starfall), and they pierce armour and shields.</p>
+<a class="full" href="docs/ArcanaSiege_GDD.pdf#page=3">Read the full chapter in the GDD (page 3)</a></article>
+<article class="summary" id="s3"><h3><span class="n">03</span>Enemies: each one asks a question</h3>
+<p>Seven enemy types, each answered by a different tower: fast Runners (the Tide slows them), armoured Brutes (the Blade ignores armour), Shieldbearers (a shield eats the first hit, so many small hits win), healing Acolytes (strike them first) and Broodmothers that burst into Imps. Armour and shields are mirror images, so no single colour is ever the right answer. Every siege ends with a crowned champion or one of the Arcana.</p>
+<a class="full" href="docs/ArcanaSiege_GDD.pdf#page=4">Read the full chapter in the GDD (page 4)</a></article>
+<article class="summary" id="s4"><h3><span class="n">04</span>The run: ten waves and a draft</h3>
+<p>After each wave the clock stops for a draft: pick one of three cards that lasts the whole siege. Three offers in a row without a card for your weakest tower guarantee one next; re-deals cost gold from Sun tiles. Every card's worth was measured alone by a bot over 500 sieges: the weakest buffed, the strongest trimmed, until none is dead and none is a must-pick.</p>
+<a class="full" href="docs/ArcanaSiege_GDD.pdf#page=5">Read the full chapter in the GDD (page 5)</a></article>
+<article class="summary" id="s5"><h3><span class="n">05</span>The campaign: a sawtooth on purpose</h3>
+<p>Twelve sieges across four realms; each realm adds one enemy and ends with one of the Arcana. A career bot starts with nothing, banks gold and buys upgrades, and the curve is tuned so a realm's finale is a wall and the next siege a breather. A first-time player finishes the map in about 28 runs; Judgement, at seven tries, is the number to watch in a playtest.</p>
+<a class="full" href="docs/ArcanaSiege_GDD.pdf#page=6">Read the full chapter in the GDD (page 6)</a></article>
+<article class="summary" id="s6"><h3><span class="n">06</span>Meta and economy</h3>
+<p>Gold from every siege, won or lost, buys permanent tower levels (+12% each, ten per tower), so losing still moves you forward; towers show their rank on the road. Stars unlock sieges, and a daily siege with a modifier (Blood Moon, Iron March…) is seeded by the date. Monetisation is planned behind interfaces: a rewarded second chance, rare interstitials, no energy system.</p>
+<a class="full" href="docs/ArcanaSiege_GDD.pdf#page=7">Read the full chapter in the GDD (page 7)</a></article>
+<article class="summary" id="s7"><h3><span class="n">07</span>Balancing: tuned by bots</h3>
+<p>The rules are pure C#, so a console runner plays thousands of sieges in parallel with three kinds of player at measured paces. The data changed the design three times: armour on Brutes stopped fast random swiping from winning; the draft turned out to be the run (2% wins without it, 63% with it); and a studio playtester found the road too demanding. Tying the road to moves cut mashing from 87% to 10% and lifted slow thinkers from 10% to 50%.</p>
+<a class="full" href="docs/ArcanaSiege_GDD.pdf#page=8">Read the full chapter in the GDD (page 8)</a></article>
+<article class="summary" id="s8"><h3><span class="n">08</span>Art direction: cel-shaded stickers</h3>
+<p>Every character, boss, tower and prop is drawn in code from distance-field shapes: original, consistent and regenerated in seconds. Cel shading after Kingdom Rush, warm plum outlines, and a saturation hierarchy (tiles and towers brightest, enemies next, scenery muted). Four realms, each with its own palette and props: the Greenwood, the Sunscorched Road, the Moonlit Marsh and the Frozen Summit.</p>
+<a class="full" href="docs/ArcanaSiege_GDD.pdf#page=9">Read the full chapter in the GDD (page 9)</a></article>
+<article class="summary" id="s9"><h3><span class="n">09</span>Audio and game feel</h3>
+<p>One orchestral track per realm and an epic loop for bosses, crossfading. Recorded impacts lead where the real thing reads best (steel for the Blade, a rammed door for the gate), with synthesized magic underneath. Motes, hit-stop, white hit flashes and glancing grey numbers on armour teach the player which tower to use.</p>
+<a class="full" href="docs/ArcanaSiege_GDD.pdf#page=10">Read the full chapter in the GDD (page 10)</a></article>
+<article class="summary" id="s10"><h3><span class="n">10</span>UX and onboarding</h3>
+<p>Teach by the road, not by text: siege 1 has only grunts and runners; each new enemy arrives alone with one tip, and its answer is a tower the player already knows. Every tile has a colour, a shape and a glyph; the draft has no time limit; the layout is portrait and one-handed.</p>
+<a class="full" href="docs/ArcanaSiege_GDD.pdf#page=11">Read the full chapter in the GDD (page 11)</a></article>
+<article class="summary" id="s11"><h3><span class="n">11</span>Technology</h3>
+<p>The match-3 rules are reused from Arcana Match; the siege is its own pure C# assembly, fixed-step and deterministic, covered by 132 EditMode tests. The scene, art and sounds are generated by editor menus, so the project rebuilds from source. Web and Android builds; save, store, ads and analytics behind interfaces.</p>
+<a class="full" href="docs/ArcanaSiege_GDD.pdf#page=12">Read the full chapter in the GDD (page 12)</a></article>
+</div>
+</div></section>
+
+<section class="block" id="screens"><div class="wrap">
+<div class="block-head"><div><div class="kicker" style="color:#ff6b5b">From the build</div><h2>Screenshots</h2></div>
+<p>Every image is captured from the game itself.</p></div>
+<div class="gallery"><img src="assets/as-home.png" alt="Home: the four Arcana behind the gate" loading="lazy"><img src="assets/as-marsh.png" alt="A siege in the Moonlit Marsh, with Acolytes healing" loading="lazy"><img src="assets/as-draft.png" alt="The upgrade draft between waves" loading="lazy"><img src="assets/as-brood.png" alt="A Broodmother splits into Imps" loading="lazy"><img src="assets/as-champion.png" alt="A champion on the road" loading="lazy"><img src="assets/as-judgement.png" alt="Judgement, the last of the Arcana" loading="lazy"><img src="assets/as-map.png" alt="The campaign map" loading="lazy"><img src="assets/as-upgrades.png" alt="Permanent tower upgrades" loading="lazy"></div>
+</div></section>
+
+<section class="block" id="documents" style="--g:#ff6b5b"><div class="wrap">
+<div class="block-head"><div><div class="kicker" style="color:var(--g)">Design documents</div><h2>Read more</h2></div></div>
+<div class="docs"><a class="doc" href="docs/ArcanaSiege_OnePager.pdf"><span class="pdf">PDF</span><b>One-pager</b><span>The game on one page</span></a><a class="doc" href="docs/ArcanaSiege_GDD.pdf"><span class="pdf">PDF</span><b>Game design document</b><span>12 pages</span></a><a class="doc" href="docs/ArcanaSiege_Flowcharts.pdf"><span class="pdf">PDF</span><b>Flowcharts</b><span>Loops, screens and systems</span></a><a class="doc" href="docs/ArcanaSiege_Balance_Economy.pdf"><span class="pdf">PDF</span><b>Balance workbook</b><span>Bots, cards and the campaign curve</span></a><a class="doc" href="docs/ArcanaSiege_Ad_and_KPI_Plan.pdf"><span class="pdf">PDF</span><b>Ad test and KPI plan</b><span>Storyboard, CPI test, funnel</span></a></div>
+<p class="note" style="margin-top:18px">Built with an AI coding assistant (Claude). I designed the game, set the rules, targets and tuning, ran the balance simulations and play-tested every build phase.</p>
+</div></section>
+
+<section class="block"><div class="wrap pager">
+<a href="brushfall.html"><small>← Previous</small><b>Brushfall</b></a>
+<a class="next" href="cloudhaven-skyport.html"><small>Next →</small><b>Cloudhaven Skyport</b></a>
+</div></section>
+</main>
+<footer class="site-foot"><div class="wrap"><span>Umut Eren Demirci · Game Designer · Ankara, Türkiye</span>
+<span><a href="mailto:umuterendemirci@gmail.com">umuterendemirci@gmail.com</a></span></div></footer>
+<div id="lb" role="dialog" aria-modal="true" aria-label="Screenshot viewer">
+<button class="x" aria-label="Close">&times;</button><button class="prev" aria-label="Previous">&#8249;</button>
+<img alt=""><button class="next" aria-label="Next">&#8250;</button><p></p></div>
+<script src="site.js" defer></script>
+</body>
+</html>

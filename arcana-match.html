@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Arcana Match · Umut Eren Demirci</title>
+<meta name="description" content="Arcana Match: A calm tarot match-3 along the Fool&#x27;s Journey, where every win adds a card to your deck. Design summary, documents and screenshots.">
+<meta name="theme-color" content="#0b0f18">
+<meta property="og:title" content="Arcana Match · Umut Eren Demirci">
+<meta property="og:description" content="Arcana Match: A calm tarot match-3 along the Fool&#x27;s Journey, where every win adds a card to your deck. Design summary, documents and screenshots.">
+<meta property="og:image" content="assets/clips/arcana-match.jpg">
+<link rel="icon" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="2" y="2" width="60" height="60" rx="14" fill="#1a2336" stroke="rgba(255,255,255,.14)"/>
+<g transform="translate(1.5 0)"><path d="M9 20v13a6 6 0 0 0 12 0V20" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M27 20v24M27 20h9M27 32h7M27 44h9" fill="none" stroke="#ff7a33" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M42 20v24h3a9 12 0 0 0 0-24z" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/></g></svg><span>Umut Eren Demirci</span></a>
+<nav><a href="index.html#about">About</a><a href="index.html#games">Games</a><a href="index.html#more">More work</a><a href="index.html#contact">Contact</a><a class="cv" href="docs/Umut_Eren_Demirci_CV_2026.pdf">CV</a></nav>
+</div></header>
+<main>
+<section class="ghero" style="--g:#a284ff"><div class="wrap">
+<div>
+<a class="crumb" href="index.html#games">← All games</a>
+<div class="kicker" style="margin-top:22px">Casual match-3 · Unity 6 · mobile and browser</div><h1>Arcana Match</h1><p class="tagline">Match the suits, walk the Fool&#x27;s journey, collect all 78 cards.</p>
+<p class="lead">A calm, tarot-themed match-3 for phones. Walk the Fool's Journey across 85 levels on a map; every win adds a card to your deck, and every chapter ends at a gate that awards one of the 22 major arcana. Pip, the Fool's dog, tells the story.</p><p class="role">I designed the board, 11 board shapes, three blockers, five special tiles and six combos, three boosters and a 78-card collection meta, wrote the story, and balanced every level with a bot that plays the real rules.</p>
+<a class="btn primary" href="https://ueren.itch.io/arcana-match">Play in your browser</a><a class="btn" href="docs/ArcanaMatch_GDD.pdf">Read the GDD</a><a class="btn" href="docs/ArcanaMatch_OnePager.pdf">One-pager</a>
+<div class="stats"><div><b>85</b>levels, each simulated by a bot</div><div><b>33% → 85%</b>level 18 win rate after tuning</div><div><b>78</b>original cards</div></div>
+</div>
+<div class="phone"><video muted loop playsinline autoplay preload="metadata" poster="assets/clips/arcana-match.jpg"><source src="assets/clips/arcana-match.mp4" type="video/mp4"></video></div>
+</div></section>
+
+<section class="block design" id="design" style="--g:#a284ff"><div class="wrap">
+<nav class="toc" aria-label="Design summary"><span class="kicker">Design summary</span><ol><li><a href="#s1">Overview and pillars</a></li><li><a href="#s2">Core and meta loops</a></li><li><a href="#s3">The Fool&#x27;s Journey</a></li><li><a href="#s4">The board</a></li><li><a href="#s5">Special tiles and combos</a></li><li><a href="#s6">Blockers and board shapes</a></li><li><a href="#s7">Levels and balancing</a></li><li><a href="#s8">Boosters, winning and losing</a></li><li><a href="#s9">The collection and the daily draw</a></li><li><a href="#s10">Story: Pip, the Fool&#x27;s dog</a></li><li><a href="#s11">Economy, UX, art and audio</a></li><li><a href="#s12">Technology, playtesting and roadmap</a></li></ol></nav>
+<div>
+<div class="kicker" style="color:var(--g)">Game design document, summarised</div>
+<h2 style="margin:6px 0 10px">How it's designed</h2>
+<p class="design-intro">Each part below condenses one chapter of the game design document. Every summary ends with a link to
+the full chapter in the PDF.</p>
+<article class="summary" id="s1"><h3><span class="n">01</span>Overview and pillars</h3>
+<p>A calm, card-collecting match-3: the reward for a level is a tarot card with art and a line of insight, not just stars. Genre conventions stay (a map, swipe to swap, specials, blockers, move limits) so the game is instantly familiar; the originality goes into the reward, the theme and the tone.</p><ul><li><b>Readable at a glance:</b> colour, shape and glyph on every tile.</li><li><b>Every win gives you something to keep.</b></li><li><b>Gentle, not punishing:</b> free invalid swaps, automatic reshuffles, no energy system.</li></ul>
+<a class="full" href="docs/ArcanaMatch_GDD.pdf#page=2">Read the full chapter in the GDD (page 2)</a></article>
+<article class="summary" id="s2"><h3><span class="n">02</span>Core and meta loops</h3>
+<p>A level is 18 to 24 moves of reading the goals, swapping, and watching matches, cascades and specials fill them. Each win unlocks a card (foil with 5+ moves left), the Fool walks on along the map, and every fourth level is a gate with that chapter's major arcana. At three cards a daily draw opens: one card a day from your own deck, with no streak to lose.</p>
+<a class="full" href="docs/ArcanaMatch_GDD.pdf#page=4">Read the full chapter in the GDD (page 4)</a></article>
+<article class="summary" id="s3"><h3><span class="n">03</span>The Fool&#x27;s Journey</h3>
+<p>The levels are the tarot's own story: a prologue, then 21 chapters of three suit levels and a gate. Gates are the difficulty spikes and the next chapter opens with a breather. A fix found in my own spreadsheet: in v1 every Pentacles level was also a major level, so Pentacles cards arrived last; moving majors to chapter gates gives every suit its own card levels.</p>
+<a class="full" href="docs/ArcanaMatch_GDD.pdf#page=5">Read the full chapter in the GDD (page 5)</a></article>
+<article class="summary" id="s4"><h3><span class="n">04</span>The board</h3>
+<p>Four suits carry the theme and the goals; Moon and Sun tiles dilute them so only about a third of the board is ever the target. Every edge case resolves in the player's favour: a starting board with no matches and at least one move, invalid swaps that cost nothing, dead boards reshuffled for free, and goal suits 1.4× more likely to drop in so large late goals stay reachable.</p>
+<a class="full" href="docs/ArcanaMatch_GDD.pdf#page=6">Read the full chapter in the GDD (page 6)</a></article>
+<article class="summary" id="s5"><h3><span class="n">05</span>Special tiles and combos</h3>
+<p>Harder shapes make stronger tiles: a square makes a Wheel, a line of four a row or column clearer, an L or T a Star, a line of five an Arcana tile. A special made by the player's swap lands where they swapped, so it can be aimed. Swapping two specials combines them into crosses, big wheels, starbursts and Arcana infusions, a second layer of planning for skilled players. Squares and L/T shapes were added after the prototype showed specials were rare and always the same two.</p>
+<a class="full" href="docs/ArcanaMatch_GDD.pdf#page=7">Read the full chapter in the GDD (page 7)</a></article>
+<article class="summary" id="s6"><h3><span class="n">06</span>Blockers and board shapes</h3>
+<p>From level 5 the board takes one of 11 shapes (Arch, Pond, Heart, Four Wells…); eleven, not twelve, so every shape lands on a gate at some point. Three blockers, each themed to its gate's card: Veils (the High Priestess's curtain), Shackles (the Hierophant's old rules) and Stone Seals. Gravity slides tiles diagonally around holes, and a test deals and plays every level of the journey.</p>
+<a class="full" href="docs/ArcanaMatch_GDD.pdf#page=9">Read the full chapter in the GDD (page 9)</a></article>
+<article class="summary" id="s7"><h3><span class="n">07</span>Levels and balancing</h3>
+<p>85 levels come from a few rules: goals grow by two tiles a level, moves by one every three, scaled by the board's size, with gates as spikes. A bot plays the shipped rules on every level. A spawn-weight sweep chose 1.4× for goal suits (level 18 from 33% to 85% wins), and fixes for holey shapes and blocker gates lifted every gate to 68–100%. A random bot wins only 25% of levels after 40, so thinking matters.</p>
+<a class="full" href="docs/ArcanaMatch_GDD.pdf#page=10">Read the full chapter in the GDD (page 10)</a></article>
+<article class="summary" id="s8"><h3><span class="n">08</span>Boosters, winning and losing</h3>
+<p>Three boosters, none costing a move: Insight shows a valid move, Tower Strike clears a 3×3 (armed first, so a stray tap isn't wasted), Reshuffle deals a fresh board. A win is checked before a loss, the lose screen says exactly what was missing, and five extra moves are offered once per attempt.</p>
+<a class="full" href="docs/ArcanaMatch_GDD.pdf#page=12">Read the full chapter in the GDD (page 12)</a></article>
+<article class="summary" id="s9"><h3><span class="n">09</span>The collection and the daily draw</h3>
+<p>All 78 cards (22 major arcana, 56 minor), each with original art composed at runtime from shared layers and a one-line insight. Gates award that chapter's major in order; suit levels give a random missing card of their suit. Random draws within each pool replaced a fixed order that made every deck look the same.</p>
+<a class="full" href="docs/ArcanaMatch_GDD.pdf#page=13">Read the full chapter in the GDD (page 13)</a></article>
+<article class="summary" id="s10"><h3><span class="n">10</span>Story: Pip, the Fool&#x27;s dog</h3>
+<p>The little white dog from the Fool card tells the journey: loyal, excitable, a bit cheeky, and the only one who notices the cliff. 21 chapter openings, 21 gate scenes that introduce each blocker in the card's own terms, and four just-in-time tips, all in one plain text file a writer can edit, with five moods for his face.</p>
+<a class="full" href="docs/ArcanaMatch_GDD.pdf#page=14">Read the full chapter in the GDD (page 14)</a></article>
+<article class="summary" id="s11"><h3><span class="n">11</span>Economy, UX, art and audio</h3>
+<p>Monetisation is designed as optional time-savers: no energy, no card can be bought, ads only opt-in and rewarded. The art is a tarot deck read by candlelight (night sky, antique gold, jewel-bright tiles), Cinzel and EB Garamond type, and every sound is synthesized: glass bells that climb a pentatonic scale with each cascade, and two music moods that crossfade.</p>
+<a class="full" href="docs/ArcanaMatch_GDD.pdf#page=15">Read the full chapter in the GDD (page 15)</a></article>
+<article class="summary" id="s12"><h3><span class="n">12</span>Technology, playtesting and roadmap</h3>
+<p>Rules in plain C#, animation as playback: a move resolves instantly into ordered steps that the view animates, so the view can never disagree with the rules. 153 EditMode tests cover every rule and the whole journey. Seven checkpointed phases, each playtested; the table of what testing changed, a plan for the next round, and soft-launch KPIs close the document.</p>
+<a class="full" href="docs/ArcanaMatch_GDD.pdf#page=20">Read the full chapter in the GDD (page 20)</a></article>
+</div>
+</div></section>
+
+<section class="block" id="screens"><div class="wrap">
+<div class="block-head"><div><div class="kicker" style="color:#a284ff">From the build</div><h2>Screenshots</h2></div>
+<p>Every image is captured from the game itself.</p></div>
+<div class="gallery"><img src="assets/am-map-walk.png" alt="The Fool&#x27;s Journey map" loading="lazy"><img src="assets/am-pip-prologue.png" alt="Pip the dog tells the story" loading="lazy"><img src="assets/am-board.png" alt="Level 1: goals, moves, the board and boosters" loading="lazy"><img src="assets/am-combo-starburst.png" alt="A Star + Star combo on the Heart board" loading="lazy"><img src="assets/am-chain-blast.png" alt="An Arcana tile fires" loading="lazy"><img src="assets/am-strike.png" alt="Tower Strike" loading="lazy"><img src="assets/am-win-card.png" alt="A win: a new card" loading="lazy"><img src="assets/am-collection.png" alt="The collection" loading="lazy"></div>
+</div></section>
+
+<section class="block" id="documents" style="--g:#a284ff"><div class="wrap">
+<div class="block-head"><div><div class="kicker" style="color:var(--g)">Design documents</div><h2>Read more</h2></div></div>
+<div class="docs"><a class="doc" href="docs/ArcanaMatch_OnePager.pdf"><span class="pdf">PDF</span><b>One-pager</b><span>The game on one page</span></a><a class="doc" href="docs/ArcanaMatch_GDD.pdf"><span class="pdf">PDF</span><b>Game design document</b><span>22 pages</span></a><a class="doc" href="docs/ArcanaMatch_Flowcharts.pdf"><span class="pdf">PDF</span><b>Flowcharts</b><span>Loops, screens and systems</span></a><a class="doc" href="docs/ArcanaMatch_Balance_Economy.pdf"><span class="pdf">PDF</span><b>Balance workbook</b><span>The journey, simulated</span></a><a class="doc" href="docs/ArcanaMatch_Card_Catalogue.pdf"><span class="pdf">PDF</span><b>Card catalogue</b><span>All 78 cards and their insights</span></a></div>
+<p class="note" style="margin-top:18px">Built with an AI coding assistant (Claude). I designed the game, set the rules and tuning, ran the balance simulations and play-tested every build phase.</p>
+</div></section>
+
+<section class="block"><div class="wrap pager">
+<a href="cloudhaven-skyport.html"><small>← Previous</small><b>Cloudhaven Skyport</b></a>
+<a class="next" href="the-mouth-of-silence.html"><small>Next →</small><b>The Mouth of Silence</b></a>
+</div></section>
+</main>
+<footer class="site-foot"><div class="wrap"><span>Umut Eren Demirci · Game Designer · Ankara, Türkiye</span>
+<span><a href="mailto:umuterendemirci@gmail.com">umuterendemirci@gmail.com</a></span></div></footer>
+<div id="lb" role="dialog" aria-modal="true" aria-label="Screenshot viewer">
+<button class="x" aria-label="Close">&times;</button><button class="prev" aria-label="Previous">&#8249;</button>
+<img alt=""><button class="next" aria-label="Next">&#8250;</button><p></p></div>
+<script src="site.js" defer></script>
+</body>
+</html>
