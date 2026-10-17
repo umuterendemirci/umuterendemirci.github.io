@@ -47,6 +47,11 @@ img, video { display: block; max-width: 100%; }
 .site-head nav a { padding: 8px 12px; border-radius: 10px; color: var(--muted); font-weight: 500; font-size: 15px; transition: color .15s, background .15s; }
 .site-head nav a:hover { color: var(--text); background: rgba(255, 255, 255, .06); }
 .site-head nav a.cv { color: var(--text); border: 1px solid var(--line-2); margin-left: 6px; }
+.site-head nav a.lang { color: var(--text); font-weight: 700; font-size: 13px; letter-spacing: .06em; margin-left: 6px; padding: 7px 10px;
+  border: 1px solid var(--line-2); border-radius: 10px; }
+.site-head nav a.lang:hover { border-color: var(--text); }
+.en-badge { display: inline-block; margin-left: 8px; padding: 1px 6px; border-radius: 6px; font-size: 10px; font-weight: 700;
+  letter-spacing: .08em; vertical-align: 2px; color: var(--muted); border: 1px solid var(--line-2); text-transform: none; }
 
 /* ---------- buttons ---------- */
 .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border-radius: 12px; font-weight: 600; font-size: 15px;
@@ -236,7 +241,7 @@ body.lb-lock { overflow: hidden; }
   .about .wrap, .ghero .wrap { grid-template-columns: 1fr; gap: 32px; }
   .portrait { justify-self: start; width: 170px; order: -1; }
   .ghero .phone { max-width: 300px; }
-  .site-head nav a:not(.cv) { display: none; }
+  .site-head nav a:not(.cv):not(.lang) { display: none; }
 }
 @media (max-width: 680px) {
   .gcard { width: calc(50% - 8px); }
