@@ -134,6 +134,7 @@ img, video { display: block; max-width: 100%; }
 /* ---------- more work ---------- */
 .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .tiles.samples { grid-template-columns: repeat(2, 1fr); }
+.tiles.samples .tile.feature { grid-column: 1 / -1; }
 .tile { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; display: flex; flex-direction: column;
   transition: border-color .2s, transform .2s; }
 .tile:hover { border-color: var(--line-2); transform: translateY(-2px); }
