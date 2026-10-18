@@ -36,7 +36,7 @@
 </div></section>
 
 <section class="block design" id="design" style="--g:#5fd4c4"><div class="wrap">
-<nav class="toc" aria-label="Tasarım özeti"><span class="kicker">Tasarım özeti</span><ol><li><a href="#s1">Tek ekranda oyun</a></li><li><a href="#s2">Çekirdek döngü: hizmet et, topla, harca</a></li><li><a href="#s3">Ada: üç bölge, 22 inşa alanı</a></li><li><a href="#s4">Yolcular: okunabilen kuyruklar</a></li><li><a href="#s5">Sefer tarifesi: tempo aracı arz</a></li><li><a href="#s6">Ekonomi ve denge: botlar gerçek kuralları oynar</a></li><li><a href="#s7">Sefer ve meta</a></li><li><a href="#s8">Sanat, ses ve his</a></li><li><a href="#s9">Kullanıcı deneyimi: yaparak öğret</a></li><li><a href="#s10">Teknoloji ve yol haritası</a></li></ol></nav>
+<nav class="toc" aria-label="Tasarım özeti"><span class="kicker">Tasarım özeti</span><ol><li><a href="#s1">Tek ekranda oyun</a></li><li><a href="#s2">Çekirdek döngü: hizmet et, topla, harca</a></li><li><a href="#s3">Ada: üç bölge, 22 inşa alanı</a></li><li><a href="#s4">Yolcular: okunabilen kuyruklar</a></li><li><a href="#s5">Sefer tarifesi: tempoyu arz belirler</a></li><li><a href="#s6">Ekonomi ve denge: botlar gerçek kuralları oynar</a></li><li><a href="#s7">Kampanya ve meta</a></li><li><a href="#s8">Sanat, ses ve his</a></li><li><a href="#s9">Kullanıcı deneyimi: yaparak öğret</a></li><li><a href="#s10">Teknoloji ve yol haritası</a></li></ol></nav>
 <div>
 <div class="kicker" style="color:var(--g)">Oyun tasarım dokümanı, özetlenmiş</div>
 <h2 style="margin:6px 0 10px">Nasıl tasarlandı</h2>
@@ -53,13 +53,13 @@
 <article class="summary" id="s4"><h3><span class="n">04</span>Yolcular: okunabilen kuyruklar</h3>
 <p>Gelen yolcular gümrükten geçip kasabaya gider; giden yolcular bilet, bagaj ve güvenlikten geçer, belki dükkânlarda durur ve biner. Kuyruklarda 40 saniye geçiren yolcu huysuzlaşır, yarısını öder ve dükkânları atlar. Ruh hâlleri konuşma balonlarıyla görünür (kızgın, bir kalp, ter damlaları, VIP yıldızı); böylece aksayan bir gişe adanın öbür ucundan okunur.</p>
 <a class="full" href="../docs/CloudhavenSkyport_GDD_TR.pdf#page=5">Bölümün tamamını GDD&#x27;de oku (sayfa 5)</a></article>
-<article class="summary" id="s5"><h3><span class="n">05</span>Sefer tarifesi: tempo aracı arz</h3>
+<article class="summary" id="s5"><h3><span class="n">05</span>Sefer tarifesi: tempoyu arz belirler</h3>
 <p>Gelir, hava gemilerinin getirdiği yolcu sayısıyla sınırlıdır; bu yüzden bir adanın ne kadar hızlı büyüyeceğine gişeler değil tarife karar verir. Her 40 saniyede bir gemi; daha büyük hava gemileri ve daha fazla sefer talebi zamanla değil satın alımlarla artırır; her beşinci gemi iki kat yolculu ve kendi müziği olan bir Büyük Yolcu Gemisi'dir; Galewind'deki fırtınalar kalabalıkları yığar.</p>
 <a class="full" href="../docs/CloudhavenSkyport_GDD_TR.pdf#page=6">Bölümün tamamını GDD&#x27;de oku (sayfa 6)</a></article>
 <article class="summary" id="s6"><h3><span class="n">06</span>Ekonomi ve denge: botlar gerçek kuralları oynar</h3>
-<p>Simülatör her adayı yeni bir oyuncu, gündelik bir oyuncu ve bir uzmanla 40'ar kez oynar. Ayarın hikâyesi: beceri önemli olmadığı için önce herkes 15 dakikada bitirdi; talep geliştirmeleri ve artan fiyatlar bunu 52 dakikaya çıkardı; daha yavaş personel liman müdürünü önemli kıldı ama yolcuların %46'sı huysuzlaştı; talebe uygun kapasite bunu %10'a geri indirdi. Artık işin başında duran bir oyuncu, yeni bir oyuncudan yaklaşık altı dakika önce bitiriyor.</p>
+<p>Simülatör her adayı yeni bir oyuncu, casual bir oyuncu ve bir uzmanla 40'ar kez oynar. Ayarın hikâyesi: beceri önemli olmadığı için önce herkes 15 dakikada bitirdi; talep geliştirmeleri ve artan fiyatlar bunu 52 dakikaya çıkardı; daha yavaş personel liman müdürünü önemli kıldı ama yolcuların %46'sı huysuzlaştı; talebe uygun kapasite bunu %10'a geri indirdi. Artık işin başında duran bir oyuncu, yeni bir oyuncudan yaklaşık altı dakika önce bitiriyor.</p>
 <a class="full" href="../docs/CloudhavenSkyport_GDD_TR.pdf#page=7">Bölümün tamamını GDD&#x27;de oku (sayfa 7)</a></article>
-<article class="summary" id="s7"><h3><span class="n">07</span>Sefer ve meta</h3>
+<article class="summary" id="s7"><h3><span class="n">07</span>Kampanya ve meta</h3>
 <p>Aynı 22 alan ve 10 hedefe sahip ama her biri yeni bir kural getiren üç ada: Cloudhaven işi öğretir, Galewind fırtınalar getirir, Lantern Reach üç kat ödeyen ama sabrı yarı yarıya olan VIP'ler getirir. Fiyatlar her adanın çarpanıyla ölçeklenir; böylece ×4'lük bir ada dört kat uzun sürmez. Personeli olan adalar siz yokken kazanır (iki saatle sınırlı, isteğe bağlı bir reklamla iki katına çıkar) ve günlük bir etkinlik bonus ekler.</p>
 <a class="full" href="../docs/CloudhavenSkyport_GDD_TR.pdf#page=8">Bölümün tamamını GDD&#x27;de oku (sayfa 8)</a></article>
 <article class="summary" id="s8"><h3><span class="n">08</span>Sanat, ses ve his</h3>
@@ -69,7 +69,7 @@
 <p>Üç ipucu, sonra sessizlik. Hedefler üçer üçer, çantaya düşen ödüllerle gelir; yüzen bir joystick her yerde çalışır; plakalardaki tabelalar her gişeyi ve fiyatı adlandırır. Ana ekran, yarı saydam bir menünün arkasında kendi kendine oynayan adayı gösterir.</p>
 <a class="full" href="../docs/CloudhavenSkyport_GDD_TR.pdf#page=10">Bölümün tamamını GDD&#x27;de oku (sayfa 10)</a></article>
 <article class="summary" id="s10"><h3><span class="n">10</span>Teknoloji ve yol haritası</h3>
-<p>Her kural, 60 Hz'de işleyen ve hem oyunda hem ekonomi simülatöründe çalışan saf bir C# çekirdeğindedir; 32 EditMode testi vardır. Sırada: 5–15. dakika platosunun oyun testi, dördüncü bir ada ve bir yardımcı güçlendirici, kozmetik hava gemileri ve KPI planıyla bir yumuşak lansman.</p>
+<p>Her kural, 60 Hz'de işleyen ve hem oyunda hem ekonomi simülatöründe çalışan saf bir C# çekirdeğindedir; 32 EditMode testi vardır. Sırada: 5–15. dakika platosunun oyun testi, dördüncü bir ada ve bir yardımcı güçlendirici, kozmetik hava gemileri ve KPI planıyla bir soft launch.</p>
 <a class="full" href="../docs/CloudhavenSkyport_GDD_TR.pdf#page=11">Bölümün tamamını GDD&#x27;de oku (sayfa 11)</a></article>
 </div>
 </div></section>
@@ -82,7 +82,7 @@
 
 <section class="block" id="documents" style="--g:#5fd4c4"><div class="wrap">
 <div class="block-head"><div><div class="kicker" style="color:var(--g)">Tasarım dokümanları</div><h2>Daha fazlası</h2></div></div>
-<div class="docs"><a class="doc" href="../docs/CloudhavenSkyport_OnePager_TR.pdf"><span class="pdf">PDF</span><b>Tek sayfa özet</b><span>Oyun tek sayfada</span></a><a class="doc" href="../docs/CloudhavenSkyport_GDD_TR.pdf"><span class="pdf">PDF</span><b>Oyun tasarım dokümanı</b><span>11 sayfa</span></a><a class="doc" href="../docs/CloudhavenSkyport_Flowcharts_TR.pdf"><span class="pdf">PDF</span><b>Akış şemaları</b><span>Döngüler, ekranlar ve sistemler</span></a><a class="doc" href="../docs/CloudhavenSkyport_Balance_Economy_TR.pdf"><span class="pdf">PDF</span><b>Denge çalışma kitabı</b><span>Tempo ve fiyatlar</span></a><a class="doc" href="../docs/CloudhavenSkyport_Ad_and_KPI_Plan_TR.pdf"><span class="pdf">PDF</span><b>Reklam testi ve KPI planı</b><span>Storyboard, CPI testi, huni</span></a></div>
+<div class="docs"><a class="doc" href="../docs/CloudhavenSkyport_OnePager_TR.pdf"><span class="pdf">PDF</span><b>Tek sayfa özet</b><span>Oyun tek sayfada</span></a><a class="doc" href="../docs/CloudhavenSkyport_GDD_TR.pdf"><span class="pdf">PDF</span><b>Oyun tasarım dokümanı</b><span>11 sayfa</span></a><a class="doc" href="../docs/CloudhavenSkyport_Flowcharts_TR.pdf"><span class="pdf">PDF</span><b>Akış şemaları</b><span>Döngüler, ekranlar ve sistemler</span></a><a class="doc" href="../docs/CloudhavenSkyport_Balance_Economy_TR.pdf"><span class="pdf">PDF</span><b>Denge çalışma kitabı</b><span>Tempo ve fiyatlar</span></a><a class="doc" href="../docs/CloudhavenSkyport_Ad_and_KPI_Plan_TR.pdf"><span class="pdf">PDF</span><b>Reklam testi ve KPI planı</b><span>Storyboard, CPI testi, funnel</span></a></div>
 <p class="note" style="margin-top:18px">Bir yapay zekâ kodlama asistanıyla (Claude) geliştirildi. Oyunu tasarladım, kuralları, hedefleri ve ayarları belirledim, denge simülasyonlarını yürüttüm ve her geliştirme aşamasını oynayarak test ettim.</p>
 </div></section>
 

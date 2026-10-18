@@ -91,3 +91,17 @@
     if (Math.abs(dx) > 50) show(i + (dx < 0 ? 1 : -1));
   });
 })();
+
+// Analytics: when GoatCounter is on the page, count document downloads and outbound clicks as events
+// ("pdf/<file>", "itch/<game>", "linkedin", "email"). Without it, nothing happens.
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[href]');
+  if (!a || !window.goatcounter || !window.goatcounter.count) return;
+  const href = a.getAttribute('href');
+  let path = null;
+  if (/\.pdf$/i.test(href)) path = 'pdf/' + href.split('/').pop();
+  else if (href.includes('itch.io')) path = 'itch/' + href.replace(/\/+$/, '').split('/').pop();
+  else if (href.includes('linkedin.com')) path = 'linkedin';
+  else if (href.startsWith('mailto:')) path = 'email';
+  if (path) window.goatcounter.count({ path: path, title: document.documentElement.lang, event: true });
+});
