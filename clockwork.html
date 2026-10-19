@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clockwork · Umut Eren Demirci</title>
+<meta name="description" content="Clockwork: A ring-rotation puzzle with one twist: cogs link the rings at 2:1, so every turn moves more than one. Design summary, documents and screenshots.">
+<meta name="theme-color" content="#0b0f18">
+<meta property="og:title" content="Clockwork · Umut Eren Demirci">
+<meta property="og:description" content="Clockwork: A ring-rotation puzzle with one twist: cogs link the rings at 2:1, so every turn moves more than one. Design summary, documents and screenshots.">
+<link rel="alternate" hreflang="en" href="https://umuterendemirci.github.io/clockwork.html"><link rel="alternate" hreflang="tr" href="https://umuterendemirci.github.io/tr/clockwork.html">
+<meta property="og:image" content="assets/clips/clockwork.jpg">
+<link rel="icon" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script data-goatcounter="https://umuterendemirci.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="2" y="2" width="60" height="60" rx="14" fill="#1a2336" stroke="rgba(255,255,255,.14)"/>
+<g transform="translate(1.5 0)"><path d="M9 20v13a6 6 0 0 0 12 0V20" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M27 20v24M27 20h9M27 32h7M27 44h9" fill="none" stroke="#ff7a33" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M42 20v24h3a9 12 0 0 0 0-24z" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/></g></svg><span>Umut Eren Demirci</span></a>
+<nav><a href="index.html#about">About</a><a href="index.html#games">Games</a><a href="index.html#samples">Samples</a><a href="index.html#more">More work</a><a href="index.html#contact">Contact</a><a class="cv" href="docs/Umut_Eren_Demirci_CV_2026.pdf">CV</a><a class="lang" href="tr/clockwork.html" hreflang="tr" lang="tr" title="Türkçe">TR</a></nav>
+</div></header>
+<main>
+<section class="ghero" style="--g:#f25c9a"><div class="wrap">
+<div>
+<a class="crumb" href="index.html#games">← All games</a>
+<div class="kicker" style="margin-top:22px">Hyper-casual puzzle · Unity 6 · Android and browser</div><h1>Clockwork</h1><p class="tagline">Turn the rings. Line up the colours. Mind the cogs.</p>
+<p class="lead">A hyper-casual ring-rotation puzzle for phones. Rings sit inside each other with gems on their notches; line a spoke up in one colour and it clears. Cogs link neighbouring rings at 2:1, so every move is a small chain reaction to read ahead, and padlocked rings turn only through a cog.</p><p class="role">I designed the rules, the cog, 40 levels in four chapters with a sawtooth curve, and the look on a professional free UI kit, and changed each after playtests. A generator lays the levels out to my specs and a solver proves every par.</p>
+<a class="btn primary" href="https://ueren.itch.io/clockwork">Play in your browser</a><a class="btn" href="docs/Clockwork_GDD.pdf">Read the GDD</a><a class="btn" href="docs/Clockwork_OnePager.pdf">One-pager</a>
+<div class="stats"><div><b>2:1</b>cogs that turn both ways, rethought after the first playtest</div><div><b>40/40</b>levels whose par a solver proves</div><div><b>6 → 4</b>level 10&#x27;s best line, after a playtest found a wall</div></div>
+</div>
+<div class="phone"><video muted loop playsinline autoplay preload="metadata" poster="assets/clips/clockwork.jpg"><source src="assets/clips/clockwork.mp4" type="video/mp4"></video></div>
+</div></section>
+
+<section class="block design" id="design" style="--g:#f25c9a"><div class="wrap">
+<nav class="toc" aria-label="Design summary"><span class="kicker">Design summary</span><ol><li><a href="#s1">The game at a glance</a></li><li><a href="#s2">Rings, spokes, cogs and padlocks</a></li><li><a href="#s3">Four chapters, one idea each</a></li><li><a href="#s4">Levels made and proven</a></li><li><a href="#s5">What playtests changed</a></li><li><a href="#s6">Feel, art and next steps</a></li></ol></nav>
+<div>
+<div class="kicker" style="color:var(--g)">Game design document, summarised</div>
+<h2 style="margin:6px 0 10px">How it&#x27;s designed</h2>
+<p class="design-intro">Each part below condenses one chapter of the game design document. Every summary ends with a link to
+the full chapter in the PDF.</p>
+<article class="summary" id="s1"><h3><span class="n">01</span>The game at a glance</h3>
+<p>Look, turn, clear, win. Two to four rings with 8 or 12 notches; a tap turns a ring one notch, a drag turns it further. No timer and no fail: stars reward the fewest moves, a hint shows the solver's next move, and restart is free.</p><ul><li><b>Readable in one look:</b> every rule is drawn on the board.</li><li><b>One new idea per chapter,</b> brought in on a level the player will win.</li><li><b>Every level proven</b> by a solver that sets its par.</li></ul>
+<a class="full" href="docs/Clockwork_GDD.pdf#page=1">Read the full chapter in the GDD (page 1)</a></article>
+<article class="summary" id="s2"><h3><span class="n">02</span>Rings, spokes, cogs and padlocks</h3>
+<p>A spoke is the same notch on every ring; when it is full and one colour it clears. A cog links two rings as a meshing pair of wheels: turn the outer ring one notch and the inner one turns two the other way; turn the inner one and the outer turns back one. A padlocked ring refuses a turn by hand and moves only through a cog.</p>
+<a class="full" href="docs/Clockwork_GDD.pdf#page=2">Read the full chapter in the GDD (page 2)</a></article>
+<article class="summary" id="s3"><h3><span class="n">03</span>Four chapters, one idea each</h3>
+<p>The rules; four rings and chains; locked rings; everything together. Within each chapter the best line climbs in a sawtooth, from 1 to 8 moves across the game, with a breather after every peak. A one-line tip appears only where an idea is new.</p>
+<a class="full" href="docs/Clockwork_GDD.pdf#page=3">Read the full chapter in the GDD (page 3)</a></article>
+<article class="summary" id="s4"><h3><span class="n">04</span>Levels made and proven</h3>
+<p>I write each level as a spec: rings, colours, cogs, padlocks and a range for its par. A generator scrambles a solved board with legal moves only and keeps a layout when its par is in range, nothing starts complete and its cogs change the solution. Tests check every par against the solver.</p>
+<a class="full" href="docs/Clockwork_GDD.pdf#page=4">Read the full chapter in the GDD (page 4)</a></article>
+<article class="summary" id="s5"><h3><span class="n">05</span>What playtests changed</h3>
+<p>One-way cogs read as broken ("the gear mechanic doesn't work"), so they became two-way at 2:1. Levels 9 and 10 were a wall, so a new rule now arrives on an easy level: level 10's best line went from 6 moves to 4. The art went through three directions before settling on a professional free kit.</p>
+<a class="full" href="docs/Clockwork_GDD.pdf#page=5">Read the full chapter in the GDD (page 5)</a></article>
+<article class="summary" id="s6"><h3><span class="n">06</span>Feel, art and next steps</h3>
+<p>Rings swell when a cog turns them, clears pop in the gem's colour with praise for clears in a row, and wins rain confetti. The look follows Butabi's Mini Casual UI Kit. A monetisation plan (not built), the first KPIs to measure, and a roadmap close the document.</p>
+<a class="full" href="docs/Clockwork_GDD.pdf#page=6">Read the full chapter in the GDD (page 6)</a></article>
+</div>
+</div></section>
+
+<section class="block" id="screens"><div class="wrap">
+<div class="block-head"><div><div class="kicker" style="color:#f25c9a">From the build</div><h2>Screenshots</h2></div>
+<p>Every image is captured from the game itself.</p></div>
+<div class="gallery"><img src="assets/ck-cog.png" alt="Level 4: the first cog, mid-turn" loading="lazy"><img src="assets/ck-chain.png" alt="Level 14: a chain of three cogs" loading="lazy"><img src="assets/ck-padlock.png" alt="Level 21: a padlocked ring refuses a turn" loading="lazy"><img src="assets/ck-payoff.png" alt="One turn, four colours clear" loading="lazy"><img src="assets/ck-win.png" alt="Level complete: stars by moves" loading="lazy"><img src="assets/ck-map.png" alt="The level map, four chapters" loading="lazy"></div>
+</div></section>
+
+<section class="block" id="documents" style="--g:#f25c9a"><div class="wrap">
+<div class="block-head"><div><div class="kicker" style="color:var(--g)">Design documents</div><h2>Read more</h2></div></div>
+<div class="docs"><a class="doc" href="docs/Clockwork_OnePager.pdf"><span class="pdf">PDF</span><b>One-pager</b><span>The game on one page</span></a><a class="doc" href="docs/Clockwork_GDD.pdf"><span class="pdf">PDF</span><b>Game design document</b><span>6 pages</span></a><a class="doc" href="docs/Clockwork_Flowcharts.pdf"><span class="pdf">PDF</span><b>Flowcharts</b><span>Loop, screens, a move, the level pipeline</span></a><a class="doc" href="docs/Clockwork_Level_Design.pdf"><span class="pdf">PDF</span><b>Level design workbook</b><span>Every level measured by the solver</span></a><a class="doc" href="docs/Clockwork_Ad_and_KPI_Plan.pdf"><span class="pdf">PDF</span><b>Ad test and KPI plan</b><span>Storyboard, CPI test, KPIs</span></a></div>
+<p class="note" style="margin-top:18px">Built with an AI coding assistant (Claude). I designed the game, set the rules, the chapter plan and the tuning, and play-tested every build. Art: Mini Casual UI Kit by Butabi; sounds by Kenney; Montserrat.</p>
+</div></section>
+
+<section class="block"><div class="wrap pager">
+<a href="arcana-match.html"><small>← Previous</small><b>Arcana Match</b></a>
+<a class="next" href="the-mouth-of-silence.html"><small>Next →</small><b>The Mouth of Silence</b></a>
+</div></section>
+</main>
+<footer class="site-foot"><div class="wrap"><span>Umut Eren Demirci · Game Designer · Ankara, Türkiye</span>
+<span><a href="mailto:umuterendemirci@gmail.com">umuterendemirci@gmail.com</a></span></div></footer>
+<div id="lb" role="dialog" aria-modal="true" aria-label="Screenshot viewer">
+<button class="x" aria-label="Close">&times;</button><button class="prev" aria-label="Previous">&#8249;</button>
+<img alt=""><button class="next" aria-label="Next">&#8250;</button><p></p></div>
+<script src="site.js" defer></script>
+</body>
+</html>

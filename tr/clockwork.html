@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clockwork · Umut Eren Demirci</title>
+<meta name="description" content="Clockwork: Tek bir farkı olan bir halka çevirme bulmacası: dişliler halkaları 2:1 bağlar, yani her hamle birden fazla halkayı çevirir. Tasarım özeti, dokümanlar ve ekran görüntüleri.">
+<meta name="theme-color" content="#0b0f18">
+<meta property="og:title" content="Clockwork · Umut Eren Demirci">
+<meta property="og:description" content="Clockwork: Tek bir farkı olan bir halka çevirme bulmacası: dişliler halkaları 2:1 bağlar, yani her hamle birden fazla halkayı çevirir. Tasarım özeti, dokümanlar ve ekran görüntüleri.">
+<link rel="alternate" hreflang="en" href="https://umuterendemirci.github.io/clockwork.html"><link rel="alternate" hreflang="tr" href="https://umuterendemirci.github.io/tr/clockwork.html">
+<meta property="og:image" content="../assets/clips/clockwork.jpg">
+<link rel="icon" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<script data-goatcounter="https://umuterendemirci.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="2" y="2" width="60" height="60" rx="14" fill="#1a2336" stroke="rgba(255,255,255,.14)"/>
+<g transform="translate(1.5 0)"><path d="M9 20v13a6 6 0 0 0 12 0V20" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M27 20v24M27 20h9M27 32h7M27 44h9" fill="none" stroke="#ff7a33" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M42 20v24h3a9 12 0 0 0 0-24z" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/></g></svg><span>Umut Eren Demirci</span></a>
+<nav><a href="index.html#about">Hakkımda</a><a href="index.html#games">Oyunlar</a><a href="index.html#samples">Örnekler</a><a href="index.html#more">Diğer</a><a href="index.html#contact">İletişim</a><a class="cv" href="../docs/Umut_Eren_Demirci_CV_2026_TR.pdf">CV</a><a class="lang" href="../clockwork.html" hreflang="en" lang="en" title="English">EN</a></nav>
+</div></header>
+<main>
+<section class="ghero" style="--g:#f25c9a"><div class="wrap">
+<div>
+<a class="crumb" href="index.html#games">← Tüm oyunlar</a>
+<div class="kicker" style="margin-top:22px">Hyper-casual bulmaca · Unity 6 · Android ve tarayıcı</div><h1>Clockwork</h1><p class="tagline">Halkaları çevir. Renkleri hizala. Dişlilere dikkat.</p>
+<p class="lead">Telefonlar için hyper-casual bir halka çevirme bulmacası. Halkalar iç içe, çentiklerinde taşlar var; bir spoke'u tek renkte hizalayın, temizlensin. Dişliler komşu halkaları 2:1 bağlar; böylece her hamle önceden okunacak küçük bir zincirleme etkidir ve kilitli halkalar yalnızca bir dişli üzerinden döner.</p><p class="role">Kuralları, dişliyi, testere dişi eğrili dört bölümde 40 seviyeyi ve profesyonel, ücretsiz bir UI kiti üzerine kurulu görünümü tasarladım ve her birini playtest&#x27;lerden sonra değiştirdim. Bir generator seviyeleri benim spec&#x27;lerime göre yerleştirir, bir solver her par&#x27;ı kanıtlar.</p>
+<a class="btn primary" href="https://ueren.itch.io/clockwork">Tarayıcıda oyna</a><a class="btn" href="../docs/Clockwork_GDD_TR.pdf">GDD&#x27;yi oku</a><a class="btn" href="../docs/Clockwork_OnePager_TR.pdf">Tek sayfa özet</a>
+<div class="stats"><div><b>2:1</b>iki yöne dönen dişliler; ilk playtest&#x27;ten sonra yeniden düşünüldü</div><div><b>40/40</b>par&#x27;ı bir solver ile kanıtlanmış seviye</div><div><b>6 → 4</b>10. seviyenin en iyi çözümü; bir playtest duvarı bulduktan sonra</div></div>
+</div>
+<div class="phone"><video muted loop playsinline autoplay preload="metadata" poster="../assets/clips/clockwork.jpg"><source src="../assets/clips/clockwork.mp4" type="video/mp4"></video></div>
+</div></section>
+
+<section class="block design" id="design" style="--g:#f25c9a"><div class="wrap">
+<nav class="toc" aria-label="Tasarım özeti"><span class="kicker">Tasarım özeti</span><ol><li><a href="#s1">Bir bakışta oyun</a></li><li><a href="#s2">Halkalar, spoke&#x27;lar, dişliler ve kilitler</a></li><li><a href="#s3">Dört bölüm, her birinde tek fikir</a></li><li><a href="#s4">Seviyeler nasıl yapılıyor ve kanıtlanıyor</a></li><li><a href="#s5">Playtest&#x27;lerin değiştirdikleri</a></li><li><a href="#s6">His, sanat ve sonraki adımlar</a></li></ol></nav>
+<div>
+<div class="kicker" style="color:var(--g)">Oyun tasarım dokümanı, özetlenmiş</div>
+<h2 style="margin:6px 0 10px">Nasıl tasarlandı</h2>
+<p class="design-intro">Aşağıdaki her bölüm, oyun tasarım dokümanının bir bölümünü özetler. Her özet, PDF&#x27;teki tam bölüme bir bağlantıyla biter.</p>
+<article class="summary" id="s1"><h3><span class="n">01</span>Bir bakışta oyun</h3>
+<p>Bak, çevir, temizle, kazan. 8 ya da 12 çentikli iki ila dört halka; dokunuş halkayı bir çentik çevirir, sürükleme daha fazla. Süre yok, kaybetmek yok: yıldızlar en az hamleyi ödüllendirir, ipucu solver'ın sıradaki hamlesini gösterir, yeniden başlatmak ücretsizdir.</p><ul><li><b>Tek bakışta okunur:</b> her kural tahtada çizilidir.</li><li><b>Her bölümde tek yeni fikir,</b> oyuncunun kazanacağı bir seviyede gelir.</li><li><b>Her seviye kanıtlı:</b> par'ını bir solver belirler.</li></ul>
+<a class="full" href="../docs/Clockwork_GDD_TR.pdf#page=1">Bölümün tamamını GDD&#x27;de oku (sayfa 1)</a></article>
+<article class="summary" id="s2"><h3><span class="n">02</span>Halkalar, spoke&#x27;lar, dişliler ve kilitler</h3>
+<p>Spoke, her halkadaki aynı çentiktir; dolu ve tek renk olduğunda temizlenir. Dişli iki halkayı birbirine geçen iki çark olarak bağlar: dış halkayı bir çentik çevirin, iç halka ters yönde iki çentik döner; iç halkayı çevirin, dış halka bir çentik geri döner. Kilitli halka elle dönmez, yalnızca bir dişliyle döner.</p>
+<a class="full" href="../docs/Clockwork_GDD_TR.pdf#page=2">Bölümün tamamını GDD&#x27;de oku (sayfa 2)</a></article>
+<article class="summary" id="s3"><h3><span class="n">03</span>Dört bölüm, her birinde tek fikir</h3>
+<p>Kurallar; dört halka ve zincirler; kilitli halkalar; hepsi bir arada. Her bölümde en iyi çözüm testere dişi gibi tırmanır, oyun boyunca 1'den 8 hamleye; her zirveden sonra bir nefes seviyesi gelir. Tek satırlık bir ipucu yalnızca bir fikir yeni olduğunda çıkar.</p>
+<a class="full" href="../docs/Clockwork_GDD_TR.pdf#page=3">Bölümün tamamını GDD&#x27;de oku (sayfa 3)</a></article>
+<article class="summary" id="s4"><h3><span class="n">04</span>Seviyeler nasıl yapılıyor ve kanıtlanıyor</h3>
+<p>Her seviyeyi bir spec olarak yazarım: halkalar, renkler, dişliler, kilitler ve par için bir aralık. Bir generator çözülmüş bir tahtayı yalnızca geçerli hamlelerle karıştırır ve par'ı aralıkta olan, başta hiçbir spoke'u tamamlanmamış ve dişlileri çözümü değiştiren yerleşimi tutar. Testler her par'ı solver'a karşı kontrol eder.</p>
+<a class="full" href="../docs/Clockwork_GDD_TR.pdf#page=4">Bölümün tamamını GDD&#x27;de oku (sayfa 4)</a></article>
+<article class="summary" id="s5"><h3><span class="n">05</span>Playtest&#x27;lerin değiştirdikleri</h3>
+<p>Tek yönlü dişliler bozuk göründü ("dişli mekaniği çalışmıyor"), bu yüzden çift yönlü 2:1 oldular. 9. ve 10. seviyeler duvar gibiydi; artık yeni kural kolay bir seviyede geliyor: 10. seviyenin en iyi çözümü 6 hamleden 4'e indi. Sanat, profesyonel ve ücretsiz bir kite oturmadan önce üç yön denedi.</p>
+<a class="full" href="../docs/Clockwork_GDD_TR.pdf#page=5">Bölümün tamamını GDD&#x27;de oku (sayfa 5)</a></article>
+<article class="summary" id="s6"><h3><span class="n">06</span>His, sanat ve sonraki adımlar</h3>
+<p>Bir dişlinin çevirdiği halkalar büyür, temizlemeler taşın renginde patlar ve art arda temizlemelere övgü gelir; kazanınca konfeti yağar. Görünüm Butabi'nin Mini Casual UI Kit'ini izler. Doküman bir monetizasyon planı (yapılmadı), ilk ölçülecek KPI'lar ve bir yol haritasıyla biter.</p>
+<a class="full" href="../docs/Clockwork_GDD_TR.pdf#page=6">Bölümün tamamını GDD&#x27;de oku (sayfa 6)</a></article>
+</div>
+</div></section>
+
+<section class="block" id="screens"><div class="wrap">
+<div class="block-head"><div><div class="kicker" style="color:#f25c9a">Oyundan</div><h2>Ekran görüntüleri</h2></div>
+<p>Her görüntü doğrudan oyunun kendisinden alındı.</p></div>
+<div class="gallery"><img src="../assets/ck-cog.png" alt="4. seviye: ilk dişli, dönerken" loading="lazy"><img src="../assets/ck-chain.png" alt="14. seviye: üç dişlilik zincir" loading="lazy"><img src="../assets/ck-padlock.png" alt="21. seviye: kilitli halka dönüşü reddeder" loading="lazy"><img src="../assets/ck-payoff.png" alt="Tek hamle, dört renk temizlenir" loading="lazy"><img src="../assets/ck-win.png" alt="Seviye tamam: hamleye göre yıldız" loading="lazy"><img src="../assets/ck-map.png" alt="Seviye haritası, dört bölüm" loading="lazy"></div>
+</div></section>
+
+<section class="block" id="documents" style="--g:#f25c9a"><div class="wrap">
+<div class="block-head"><div><div class="kicker" style="color:var(--g)">Tasarım dokümanları</div><h2>Daha fazlası</h2></div></div>
+<div class="docs"><a class="doc" href="../docs/Clockwork_OnePager_TR.pdf"><span class="pdf">PDF</span><b>Tek sayfa özet</b><span>Oyun tek sayfada</span></a><a class="doc" href="../docs/Clockwork_GDD_TR.pdf"><span class="pdf">PDF</span><b>Oyun tasarım dokümanı</b><span>6 sayfa</span></a><a class="doc" href="../docs/Clockwork_Flowcharts_TR.pdf"><span class="pdf">PDF</span><b>Akış şemaları</b><span>Döngü, ekranlar, bir hamle, seviye hattı</span></a><a class="doc" href="../docs/Clockwork_Level_Design_TR.pdf"><span class="pdf">PDF</span><b>Level design çalışma kitabı</b><span>Solver&#x27;ın ölçtüğü her seviye</span></a><a class="doc" href="../docs/Clockwork_Ad_and_KPI_Plan_TR.pdf"><span class="pdf">PDF</span><b>Reklam testi ve KPI planı</b><span>Storyboard, CPI testi, KPI&#x27;lar</span></a></div>
+<p class="note" style="margin-top:18px">Bir yapay zekâ kodlama asistanıyla (Claude) geliştirildi. Oyunu tasarladım, kuralları, bölüm planını ve ayarları belirledim ve her build&#x27;i oynayarak test ettim. Sanat: Mini Casual UI Kit by Butabi; sesler Kenney; Montserrat.</p>
+</div></section>
+
+<section class="block"><div class="wrap pager">
+<a href="arcana-match.html"><small>← Önceki</small><b>Arcana Match</b></a>
+<a class="next" href="the-mouth-of-silence.html"><small>Sonraki →</small><b>The Mouth of Silence</b></a>
+</div></section>
+</main>
+<footer class="site-foot"><div class="wrap"><span>Umut Eren Demirci · Oyun Tasarımcısı · Ankara, Türkiye</span>
+<span><a href="mailto:umuterendemirci@gmail.com">umuterendemirci@gmail.com</a></span></div></footer>
+<div id="lb" role="dialog" aria-modal="true" aria-label="Ekran görüntüsü görüntüleyici">
+<button class="x" aria-label="Kapat">&times;</button><button class="prev" aria-label="Önceki">&#8249;</button>
+<img alt=""><button class="next" aria-label="Sonraki">&#8250;</button><p></p></div>
+<script src="../site.js" defer></script>
+</body>
+</html>
