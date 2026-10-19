@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shelf Life · Umut Eren Demirci</title>
+<meta name="description" content="Shelf Life: A book sort puzzle with one twist: height. Tall volumes fit only on the few tall shelves. Design summary, documents and screenshots.">
+<meta name="theme-color" content="#0b0f18">
+<meta property="og:title" content="Shelf Life · Umut Eren Demirci">
+<meta property="og:description" content="Shelf Life: A book sort puzzle with one twist: height. Tall volumes fit only on the few tall shelves. Design summary, documents and screenshots.">
+<link rel="alternate" hreflang="en" href="https://umuterendemirci.github.io/shelf-life.html"><link rel="alternate" hreflang="tr" href="https://umuterendemirci.github.io/tr/shelf-life.html">
+<meta property="og:image" content="assets/clips/shelf-life.jpg">
+<link rel="icon" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script data-goatcounter="https://umuterendemirci.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="2" y="2" width="60" height="60" rx="14" fill="#1a2336" stroke="rgba(255,255,255,.14)"/>
+<g transform="translate(1.5 0)"><path d="M9 20v13a6 6 0 0 0 12 0V20" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M27 20v24M27 20h9M27 32h7M27 44h9" fill="none" stroke="#ff7a33" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M42 20v24h3a9 12 0 0 0 0-24z" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/></g></svg><span>Umut Eren Demirci</span></a>
+<nav><a href="index.html#about">About</a><a href="index.html#games">Games</a><a href="index.html#samples">Samples</a><a href="index.html#more">More work</a><a href="index.html#contact">Contact</a><a class="cv" href="docs/Umut_Eren_Demirci_CV_2026.pdf">CV</a><a class="lang" href="tr/shelf-life.html" hreflang="tr" lang="tr" title="Türkçe">TR</a></nav>
+</div></header>
+<main>
+<section class="ghero" style="--g:#ff9a3c"><div class="wrap">
+<div>
+<a class="crumb" href="index.html#games">← All games</a>
+<div class="kicker" style="margin-top:22px">Hyper-casual puzzle · Unity 6 · Android and browser</div><h1>Shelf Life</h1><p class="tagline">Sort the shelves. Mind the tall volumes.</p>
+<p class="lead">A hyper-casual book sort puzzle for phones. Tap a shelf to lift the books on its end and tap where they go; fill a shelf with one colour and it is shelved. Some volumes are tall and only a few shelves have room for them, so a set with an atlas in it has to finish on a tall shelf. Later chapters add a returns cart you can only take from and locked cases that open when a colour is finished.</p><p class="role">I designed the rules, the three mechanics, 40 levels in four chapters and the look on a professional free UI kit. A generator deals the levels to my specs, a solver proves every par, and a level is kept only if its newest mechanic changes the best line.</p>
+<a class="btn primary" href="https://ueren.itch.io/shelf-life">Play in your browser</a><a class="btn" href="docs/ShelfLife_GDD.pdf">Read the GDD</a><a class="btn" href="docs/ShelfLife_OnePager.pdf">One-pager</a>
+<div class="stats"><div><b>30/30</b>levels where the newest mechanic changes the best line</div><div><b>2</b>first ideas the solver showed did nothing, both redesigned</div><div><b>75–98%</b>of a careless bot&#x27;s games dead-end on 9 of 11 height levels</div></div>
+</div>
+<div class="phone"><video muted loop playsinline autoplay preload="metadata" poster="assets/clips/shelf-life.jpg"><source src="assets/clips/shelf-life.mp4" type="video/mp4"></video></div>
+</div></section>
+
+<section class="block design" id="design" style="--g:#ff9a3c"><div class="wrap">
+<nav class="toc" aria-label="Design summary"><span class="kicker">Design summary</span><ol><li><a href="#s1">The game at a glance</a></li><li><a href="#s2">Height, the cart and locked cases</a></li><li><a href="#s3">Four chapters, one idea each</a></li><li><a href="#s4">Levels made and proven</a></li><li><a href="#s5">What the solver and the bots found</a></li><li><a href="#s6">Feel, art and next steps</a></li></ol></nav>
+<div>
+<div class="kicker" style="color:var(--g)">Game design document, summarised</div>
+<h2 style="margin:6px 0 10px">How it&#x27;s designed</h2>
+<p class="design-intro">Each part below condenses one chapter of the game design document. Every summary ends with a link to
+the full chapter in the PDF.</p>
+<article class="summary" id="s1"><h3><span class="n">01</span>The game at a glance</h3>
+<p>Look, lift, place, finish. Books go onto the same colour or an empty shelf; a full shelf of one colour turns gold. No timer and no fail: stars reward the fewest moves, a hint shows the solver's next move, and restart is free.</p><ul><li><b>Readable at a glance:</b> tall books look tall.</li><li><b>One new idea per chapter,</b> brought in on an easy level.</li><li><b>No decoration:</b> every mechanic must change the best line.</li></ul>
+<a class="full" href="docs/ShelfLife_GDD.pdf#page=1">Read the full chapter in the GDD (page 1)</a></article>
+<article class="summary" id="s2"><h3><span class="n">02</span>Height, the cart and locked cases</h3>
+<p>Shelves are low or tall, and any run with a tall volume in it fits only on a tall shelf. The returns cart only gives and must end empty. A locked case holds books nobody can touch until a shelf of its tag's colour is finished; then the padlock pops off.</p>
+<a class="full" href="docs/ShelfLife_GDD.pdf#page=2">Read the full chapter in the GDD (page 2)</a></article>
+<article class="summary" id="s3"><h3><span class="n">03</span>Four chapters, one idea each</h3>
+<p>The shelves; bigger collections; the returns cart; locked cases and everything together. Within each chapter the best line climbs in a sawtooth, from 3 to 12 moves across the game, with a breather after the peaks. A one-line tip appears only where an idea is new.</p>
+<a class="full" href="docs/ShelfLife_GDD.pdf#page=3">Read the full chapter in the GDD (page 3)</a></article>
+<article class="summary" id="s4"><h3><span class="n">04</span>Levels made and proven</h3>
+<p>I write each level as a spec: shelves, colour sets with their tall volumes, a range for its par and its focus, the newest mechanic. A generator deals the books and keeps a deal only if nothing starts finished, the par is in range and switching the focus off changes the best line. Tests check every par.</p>
+<a class="full" href="docs/ShelfLife_GDD.pdf#page=4">Read the full chapter in the GDD (page 4)</a></article>
+<article class="summary" id="s5"><h3><span class="n">05</span>What the solver and the bots found</h3>
+<p>Heights per colour did nothing, and an empty reserved shelf was decoration; both were redesigned. Bots found the height rule's real job: careless play dead-ends, so the game now says so and points at restart. Shelf Life has not been playtested by people yet, and the document lists what only they can show.</p>
+<a class="full" href="docs/ShelfLife_GDD.pdf#page=5">Read the full chapter in the GDD (page 5)</a></article>
+<article class="summary" id="s6"><h3><span class="n">06</span>Feel, art and next steps</h3>
+<p>Lifted runs rise, books fly home in an arc, a finished shelf turns gold and its books hop, and a case opens with a pop. The interface is SunGraphica's Casual Mobile Game UI Kit. A monetisation plan (not built), the first KPIs to measure, and a roadmap close the document.</p>
+<a class="full" href="docs/ShelfLife_GDD.pdf#page=6">Read the full chapter in the GDD (page 6)</a></article>
+</div>
+</div></section>
+
+<section class="block" id="screens"><div class="wrap">
+<div class="block-head"><div><div class="kicker" style="color:#ff9a3c">From the build</div><h2>Screenshots</h2></div>
+<p>Every image is captured from the game itself.</p></div>
+<div class="gallery"><img src="assets/sl-tall.png" alt="Level 4: the first tall volume" loading="lazy"><img src="assets/sl-cart.png" alt="Level 21: the returns cart only gives" loading="lazy"><img src="assets/sl-lock.png" alt="Level 31: locked until red is finished" loading="lazy"><img src="assets/sl-opened.png" alt="Red is done, the case is open" loading="lazy"><img src="assets/sl-win.png" alt="Level complete: stars by moves" loading="lazy"><img src="assets/sl-map.png" alt="The level map, four chapters" loading="lazy"></div>
+</div></section>
+
+<section class="block" id="documents" style="--g:#ff9a3c"><div class="wrap">
+<div class="block-head"><div><div class="kicker" style="color:var(--g)">Design documents</div><h2>Read more</h2></div></div>
+<div class="docs"><a class="doc" href="docs/ShelfLife_OnePager.pdf"><span class="pdf">PDF</span><b>One-pager</b><span>The game on one page</span></a><a class="doc" href="docs/ShelfLife_GDD.pdf"><span class="pdf">PDF</span><b>Game design document</b><span>6 pages</span></a><a class="doc" href="docs/ShelfLife_Flowcharts.pdf"><span class="pdf">PDF</span><b>Flowcharts</b><span>Loop, screens, a move, the level pipeline</span></a><a class="doc" href="docs/ShelfLife_Level_Design.pdf"><span class="pdf">PDF</span><b>Level design workbook</b><span>Every level measured by the solver and bots</span></a><a class="doc" href="docs/ShelfLife_Ad_and_KPI_Plan.pdf"><span class="pdf">PDF</span><b>Ad test and KPI plan</b><span>Storyboard, CPI test, KPIs</span></a></div>
+<p class="note" style="margin-top:18px">Built with an AI coding assistant (Claude). I designed the game, set the rules, the chapter plan and the tuning, and reviewed every build. Interface: Casual Mobile Game UI Kit by SunGraphica; sounds by Kenney; Montserrat.</p>
+</div></section>
+
+<section class="block"><div class="wrap pager">
+<a href="arcana-match.html"><small>← Previous</small><b>Arcana Match</b></a>
+<a class="next" href="clockwork.html"><small>Next →</small><b>Clockwork</b></a>
+</div></section>
+</main>
+<footer class="site-foot"><div class="wrap"><span>Umut Eren Demirci · Game Designer · Ankara, Türkiye</span>
+<span><a href="mailto:umuterendemirci@gmail.com">umuterendemirci@gmail.com</a></span></div></footer>
+<div id="lb" role="dialog" aria-modal="true" aria-label="Screenshot viewer">
+<button class="x" aria-label="Close">&times;</button><button class="prev" aria-label="Previous">&#8249;</button>
+<img alt=""><button class="next" aria-label="Next">&#8250;</button><p></p></div>
+<script src="site.js" defer></script>
+</body>
+</html>
