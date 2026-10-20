@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pull-out · Umut Eren Demirci</title>
+<meta name="description" content="Pull-out: A tap-away puzzle with a queue of colour boxes: the wrong colour waits in a tray of five. Design summary, documents and screenshots.">
+<meta name="theme-color" content="#0b0f18">
+<meta property="og:title" content="Pull-out · Umut Eren Demirci">
+<meta property="og:description" content="Pull-out: A tap-away puzzle with a queue of colour boxes: the wrong colour waits in a tray of five. Design summary, documents and screenshots.">
+<link rel="alternate" hreflang="en" href="https://umuterendemirci.github.io/pull-out.html"><link rel="alternate" hreflang="tr" href="https://umuterendemirci.github.io/tr/pull-out.html">
+<meta property="og:image" content="assets/clips/pull-out.jpg">
+<link rel="icon" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script data-goatcounter="https://umuterendemirci.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="2" y="2" width="60" height="60" rx="14" fill="#1a2336" stroke="rgba(255,255,255,.14)"/>
+<g transform="translate(1.5 0)"><path d="M9 20v13a6 6 0 0 0 12 0V20" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M27 20v24M27 20h9M27 32h7M27 44h9" fill="none" stroke="#ff7a33" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M42 20v24h3a9 12 0 0 0 0-24z" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/></g></svg><span>Umut Eren Demirci</span></a>
+<nav><a href="index.html#about">About</a><a href="index.html#games">Games</a><a href="index.html#samples">Samples</a><a href="index.html#more">More work</a><a href="index.html#contact">Contact</a><a class="cv" href="docs/Umut_Eren_Demirci_CV_2026.pdf">CV</a><a class="lang" href="tr/pull-out.html" hreflang="tr" lang="tr" title="Türkçe">TR</a></nav>
+</div></header>
+<main>
+<section class="ghero" style="--g:#3fbf8a"><div class="wrap">
+<div>
+<a class="crumb" href="index.html#games">← All games</a>
+<div class="kicker" style="margin-top:22px">Hyper-casual puzzle · Unity 6 · Android and browser</div><h1>Pull-out</h1><p class="tagline">Tap the pencils out. Mind the tray.</p>
+<p class="lead">A hyper-casual tap-away puzzle for phones. Pencils point one way and slide out when nothing blocks them, into the box at the front if it is their colour, otherwise into a tray of five. Three pencils fill a box, it rolls away and the waiting pencils of the next colour hop in; fill the tray and nothing else can come out. Later chapters add rubber bands, paper clips and ink blots, two boosters and levels against the clock.</p><p class="role">I designed the rules, the three mechanics, the boosters and the clock, 40 levels in four chapters and the look on a free cartoony UI kit. A generator deals the levels to my specs, a solver proves every par, and a level is kept only if its newest mechanic changes the par or the tray it needs.</p>
+<a class="btn primary" href="https://ueren.itch.io/pull-out">Play in your browser</a><a class="btn" href="docs/PullOut_GDD.pdf">Read the GDD</a><a class="btn" href="docs/PullOut_OnePager.pdf">One-pager</a>
+<div class="stats"><div><b>30/30</b>levels where the newest mechanic changes the par or the tray needed</div><div><b>0 of 300</b>deals where clips and blots tied to boxes mattered, so they were redesigned</div><div><b>89–99%</b>of a careless bot&#x27;s games dead-end on six of the 40 levels</div></div>
+</div>
+<div class="phone"><video muted loop playsinline autoplay preload="metadata" poster="assets/clips/pull-out.jpg"><source src="assets/clips/pull-out.mp4" type="video/mp4"></video></div>
+</div></section>
+
+<section class="block design" id="design" style="--g:#3fbf8a"><div class="wrap">
+<nav class="toc" aria-label="Design summary"><span class="kicker">Design summary</span><ol><li><a href="#s1">The game at a glance</a></li><li><a href="#s2">Bands, clips, ink and boosters</a></li><li><a href="#s3">Four chapters, one idea each</a></li><li><a href="#s4">Levels made and proven</a></li><li><a href="#s5">What the solver and the bots found</a></li><li><a href="#s6">Feel, art and next steps</a></li></ol></nav>
+<div>
+<div class="kicker" style="color:var(--g)">Game design document, summarised</div>
+<h2 style="margin:6px 0 10px">How it&#x27;s designed</h2>
+<p class="design-intro">Each part below condenses one chapter of the game design document. Every summary ends with a link to
+the full chapter in the PDF.</p>
+<article class="summary" id="s1"><h3><span class="n">01</span>The game at a glance</h3>
+<p>Read, pull, box or park. A free pencil slides out the way it points; the front box takes its colour and anything else waits in the tray. Stars reward the fewest pencils parked, a hint shows the solver's next pull, and restart is free; only timed levels can be lost.</p><ul><li><b>Readable at a glance:</b> a pencil points the way it goes.</li><li><b>One new idea per chapter,</b> brought in on an easy level.</li><li><b>No decoration:</b> every mechanic must change the par or the tray needed.</li></ul>
+<a class="full" href="docs/PullOut_GDD.pdf#page=1">Read the full chapter in the GDD (page 1)</a></article>
+<article class="summary" id="s2"><h3><span class="n">02</span>Bands, clips, ink and boosters</h3>
+<p>Two banded pencils leave together and both need a clear way out. A clipped pencil waits until that many pulls have been made. Ink blocks the way until a pencil of its colour is out. An extra tray slot and undo help when stuck, and every fifth level from 10 is against the clock.</p>
+<a class="full" href="docs/PullOut_GDD.pdf#page=2">Read the full chapter in the GDD (page 2)</a></article>
+<article class="summary" id="s3"><h3><span class="n">03</span>Four chapters, one idea each</h3>
+<p>The desk; rubber bands; paper clips; ink blots and everything together. Within each chapter par climbs in a sawtooth, from 0 to 6 pencils parked, with a breather after the peaks. A one-line tip appears only where an idea is new.</p>
+<a class="full" href="docs/PullOut_GDD.pdf#page=3">Read the full chapter in the GDD (page 3)</a></article>
+<article class="summary" id="s4"><h3><span class="n">04</span>Levels made and proven</h3>
+<p>I write each level as a spec: the mat, the pencils of each colour, a range for its par and its focus, the newest mechanic. A generator deals the pencils and keeps a deal only if its par is in range and switching the focus off changes the par or the tray it needs. Tests check every par.</p>
+<a class="full" href="docs/PullOut_GDD.pdf#page=4">Read the full chapter in the GDD (page 4)</a></article>
+<article class="summary" id="s5"><h3><span class="n">05</span>What the solver and the bots found</h3>
+<p>Clips and blots released by boxes never mattered, since the box order is fixed; released by the player's own pulls, they do. Par alone missed how full the tray gets, so the generator now checks the tray a level needs too. Pull-out has not been playtested by people yet, and the document lists what only they can show.</p>
+<a class="full" href="docs/PullOut_GDD.pdf#page=5">Read the full chapter in the GDD (page 5)</a></article>
+<article class="summary" id="s6"><h3><span class="n">06</span>Feel, art and next steps</h3>
+<p>Pulled pencils shoot off the mat and arc into their box, a full box gets a red tick and rolls away, and waiting pencils hop across. Buttons and panels come from Coffee Beans Studio's Cute Cartoony UI Pack; the pencils and desk are drawn in code. A monetisation plan (not built), the first KPIs to measure, and a roadmap close the document.</p>
+<a class="full" href="docs/PullOut_GDD.pdf#page=6">Read the full chapter in the GDD (page 6)</a></article>
+</div>
+</div></section>
+
+<section class="block" id="screens"><div class="wrap">
+<div class="block-head"><div><div class="kicker" style="color:#3fbf8a">From the build</div><h2>Screenshots</h2></div>
+<p>Every image is captured from the game itself.</p></div>
+<div class="gallery"><img src="assets/po-tray.png" alt="Level 4: the wrong colours wait in the tray" loading="lazy"><img src="assets/po-band.png" alt="Level 11: a banded pair leaves together" loading="lazy"><img src="assets/po-clip.png" alt="Level 21: a clip refuses, three pulls to go" loading="lazy"><img src="assets/po-ink.png" alt="Level 31: ink blocks the way" loading="lazy"><img src="assets/po-win.png" alt="Level 40 packed: stars by pencils parked" loading="lazy"><img src="assets/po-map.png" alt="The level map, four chapters" loading="lazy"></div>
+</div></section>
+
+<section class="block" id="documents" style="--g:#3fbf8a"><div class="wrap">
+<div class="block-head"><div><div class="kicker" style="color:var(--g)">Design documents</div><h2>Read more</h2></div></div>
+<div class="docs"><a class="doc" href="docs/PullOut_OnePager.pdf"><span class="pdf">PDF</span><b>One-pager</b><span>The game on one page</span></a><a class="doc" href="docs/PullOut_GDD.pdf"><span class="pdf">PDF</span><b>Game design document</b><span>6 pages</span></a><a class="doc" href="docs/PullOut_Flowcharts.pdf"><span class="pdf">PDF</span><b>Flowcharts</b><span>Loop, screens, a pull, the level pipeline</span></a><a class="doc" href="docs/PullOut_Level_Design.pdf"><span class="pdf">PDF</span><b>Level design workbook</b><span>Every level measured by the solver and bots</span></a><a class="doc" href="docs/PullOut_Ad_and_KPI_Plan.pdf"><span class="pdf">PDF</span><b>Ad test and KPI plan</b><span>Storyboard, CPI test, KPIs</span></a></div>
+<p class="note" style="margin-top:18px">Built with an AI coding assistant (Claude). I designed the game, set the rules, the chapter plan and the tuning, and reviewed every build. Buttons and panels: Cute Cartoony UI Pack by Coffee Beans Studio; sounds by Kenney; Montserrat.</p>
+</div></section>
+
+<section class="block"><div class="wrap pager">
+<a href="arcana-match.html"><small>← Previous</small><b>Arcana Match</b></a>
+<a class="next" href="shelf-life.html"><small>Next →</small><b>Shelf Life</b></a>
+</div></section>
+</main>
+<footer class="site-foot"><div class="wrap"><span>Umut Eren Demirci · Game Designer · Ankara, Türkiye</span>
+<span><a href="mailto:umuterendemirci@gmail.com">umuterendemirci@gmail.com</a></span></div></footer>
+<div id="lb" role="dialog" aria-modal="true" aria-label="Screenshot viewer">
+<button class="x" aria-label="Close">&times;</button><button class="prev" aria-label="Previous">&#8249;</button>
+<img alt=""><button class="next" aria-label="Next">&#8250;</button><p></p></div>
+<script src="site.js" defer></script>
+</body>
+</html>
