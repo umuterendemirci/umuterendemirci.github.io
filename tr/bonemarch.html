@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bonemarch · Umut Eren Demirci</title>
+<meta name="description" content="Bonemarch: Kulelerin bir kart draft&#x27;ından geldiği, sekiz yerlik bir adada geçen sakin bir 3D tower defense. Tasarım özeti, dokümanlar ve ekran görüntüleri.">
+<meta name="theme-color" content="#0b0f18">
+<meta property="og:title" content="Bonemarch · Umut Eren Demirci">
+<meta property="og:description" content="Bonemarch: Kulelerin bir kart draft&#x27;ından geldiği, sekiz yerlik bir adada geçen sakin bir 3D tower defense. Tasarım özeti, dokümanlar ve ekran görüntüleri.">
+<link rel="alternate" hreflang="en" href="https://umuterendemirci.github.io/bonemarch.html"><link rel="alternate" hreflang="tr" href="https://umuterendemirci.github.io/tr/bonemarch.html">
+<meta property="og:image" content="../assets/clips/bonemarch.jpg">
+<link rel="icon" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<script data-goatcounter="https://umuterendemirci.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="2" y="2" width="60" height="60" rx="14" fill="#1a2336" stroke="rgba(255,255,255,.14)"/>
+<g transform="translate(1.5 0)"><path d="M9 20v13a6 6 0 0 0 12 0V20" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M27 20v24M27 20h9M27 32h7M27 44h9" fill="none" stroke="#ff7a33" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M42 20v24h3a9 12 0 0 0 0-24z" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/></g></svg><span>Umut Eren Demirci</span></a>
+<nav><a href="index.html#about">Hakkımda</a><a href="index.html#games">Oyunlar</a><a href="index.html#samples">Örnekler</a><a href="index.html#more">Diğer</a><a href="index.html#contact">İletişim</a><a class="cv" href="../docs/Umut_Eren_Demirci_CV_2026_TR.pdf">CV</a><a class="lang" href="../bonemarch.html" hreflang="en" lang="en" title="English">EN</a></nav>
+</div></header>
+<main>
+<section class="ghero" style="--g:#d9822b"><div class="wrap">
+<div>
+<a class="crumb" href="index.html#games">← Tüm oyunlar</a>
+<div class="kicker" style="margin-top:22px">Hybrid-casual tower defense · Unity 6 · Android ve tarayıcı</div><h1>Bonemarch</h1><p class="tagline">Kulelerini seç. Kapıyı tut.</p>
+<p class="lead">Telefonlar için sakin bir 3D tower defense. Her seviyeden önce savunmanı draft edersin: üç karttan iki seçim, sonra yol kenarındaki pad'lere kurulum; her dalgayı hazır olunca başlatırsın ve her dalgadan sonra yeniden seçersin. Her seviye adada yeni bir yer; kulelerin yerini değiştiren bir landmark (köprü, tepe, bataklık, yol çatalı, yıkıntı) ve yeni bir soru soran yeni bir iskelet getirir.</p><p class="role">Kuralları, draft&#x27;ı, beş kuleyi, yedi düşmanı ve on boon&#x27;u, ember ekonomisini, landmark&#x27;ları ve her seviyenin brief&#x27;ini tasarladım, zorluk hedeflerini belirledim. Oyunun kendi kurallarını oynayan botlar her seviyeyi bu hedeflere oturttu. Bu build&#x27;deki sekiz seviye, yeniden tasarladığım AI destekli taslaklardır.</p>
+<a class="btn primary" href="https://ueren.itch.io/bonemarch">Tarayıcıda oyna</a><a class="btn" href="../docs/Bonemarch_GDD_TR.pdf">GDD&#x27;yi oku</a><a class="btn" href="../docs/Bonemarch_OnePager_TR.pdf">Tek sayfa özet</a>
+<div class="stats"><div><b>%100 → %60</b>ilk kez botunun 1&#x27;den 8&#x27;e kazanma oranı, seviye seviye ayarlandı</div><div><b>24 → 13,5</b>üretilen haritalar el yapımı seviyelere dönünce 7. seviyedeki savaş dakikası</div><div><b>−3 ile +2</b>bir boon&#x27;un botlar için puan değeri; bu yüzden boon&#x27;lar yeniden tasarlanacak</div></div>
+</div>
+<div class="phone"><video muted loop playsinline autoplay preload="metadata" poster="../assets/clips/bonemarch.jpg"><source src="../assets/clips/bonemarch.mp4" type="video/mp4"></video></div>
+</div></section>
+
+<section class="block design" id="design" style="--g:#d9822b"><div class="wrap">
+<nav class="toc" aria-label="Tasarım özeti"><span class="kicker">Tasarım özeti</span><ol><li><a href="#s1">Bir bakışta oyun</a></li><li><a href="#s2">Adım adım bir seviye</a></li><li><a href="#s3">Yedi düşman, on boon</a></li><li><a href="#s4">Sekiz yer, her birinde tek yeni fikir</a></li><li><a href="#s5">Botlarla ayarlandı, tasarımcıyla okundu</a></li><li><a href="#s6">Art, ses, teknik ve yol haritası</a></li></ol></nav>
+<div>
+<div class="kicker" style="color:var(--g)">Oyun tasarım dokümanı, özetlenmiş</div>
+<h2 style="margin:6px 0 10px">Nasıl tasarlandı</h2>
+<p class="design-intro">Aşağıdaki her bölüm, oyun tasarım dokümanının bir bölümünü özetler. Her özet, PDF&#x27;teki tam bölüme bir bağlantıyla biter.</p>
+<article class="summary" id="s1"><h3><span class="n">01</span>Bir bakışta oyun</h3>
+<p>Draft, kur, savun, yeniden draft. Bir seviye oyuncunun temposunda 2,5 ile 13,5 dakika savaş sürer: Başla'ya basılana kadar hiçbir şey hareket etmez, 2× hız isteğe bağlıdır.</p><ul><li><b>Sakin, yavaş değil:</b> zorluk acele ettirmekten değil, yeni düşmanlardan ve haritadan gelir.</li><li><b>Strateji draft'ta:</b> bir seviyenin her oynanışı farklı bir el.</li><li><b>Her seviye bir yer:</b> landmark'ı kuleleri yerinden oynatır.</li></ul>
+<a class="full" href="../docs/Bonemarch_GDD_TR.pdf#page=1">Bölümün tamamını GDD&#x27;de oku (sayfa 1)</a></article>
+<article class="summary" id="s2"><h3><span class="n">02</span>Adım adım bir seviye</h3>
+<p>Haritayı oku, iki kart seç, parlayan pad'lere kur, dalgayı başlat. Öldürmeler upgrade için ember düşürür, haritada kristaller belirir ve her dalga temizliği bir seçim daha getirir; 3. seviyeden itibaren boon'larla. Ember Surge her yeni düşmanın ilk dalgasını yumuşatır. Yıldızlar kalan candan gelir.</p>
+<a class="full" href="../docs/Bonemarch_GDD_TR.pdf#page=2">Bölümün tamamını GDD&#x27;de oku (sayfa 2)</a></article>
+<article class="summary" id="s3"><h3><span class="n">03</span>Yedi düşman, on boon</h3>
+<p>Shieldbearer'lar zayıf vuruşları savuşturur, Runner'lar koşar, Brute'lar parçalanır, Wraith'ler Cannon ve Flame'in üstünden uçar, Necromancer'lar iyileştirir, Bone Giant'lar kapıda beş can götürür. Her kule botlar için 1 ile 10 puan kazanma oranı değerinde; boon'lar onu pek oynatmıyor, çünkü boon bir kule kartının yerini alıyor.</p>
+<a class="full" href="../docs/Bonemarch_GDD_TR.pdf#page=3">Bölümün tamamını GDD&#x27;de oku (sayfa 3)</a></article>
+<article class="summary" id="s4"><h3><span class="n">04</span>Sekiz yer, her birinde tek yeni fikir</h3>
+<p>Her seviye oyunun, testlerin ve botların okuduğu düz bir metin dosyasında yazılı; bir kontrolcü her hatanın satırını söyler. Haritalar 9 × 13'ten 17 × 22 kareye büyür. Taslaklar landmark kuralları kurulup test edilebilsin diye benim brief'imden bir AI asistanıyla yapıldı; onları yeniden çiziyorum.</p>
+<a class="full" href="../docs/Bonemarch_GDD_TR.pdf#page=4">Bölümün tamamını GDD&#x27;de oku (sayfa 4)</a></article>
+<article class="summary" id="s5"><h3><span class="n">05</span>Botlarla ayarlandı, tasarımcıyla okundu</h3>
+<p>Dikkatsiz, ilk kez ve deneyimli botlar her seviyeyi 300 kez oynar. Sonuçları her seviyenin canını belirledi, üretilen son seviyelerin 24 ve 37 dakika sürdüğünü ve ikinci turdan sonra doğru karşı kulenin 3-5. seviyelerde 11 ile 21 puan değerinde olduğunu gösterdi. Bonemarch henüz insanlarla playtest edilmedi.</p>
+<a class="full" href="../docs/Bonemarch_GDD_TR.pdf#page=5">Bölümün tamamını GDD&#x27;de oku (sayfa 5)</a></article>
+<article class="summary" id="s6"><h3><span class="n">06</span>Art, ses, teknik ve yol haritası</h3>
+<p>Ücretsiz CC0 kitlerle low-poly 3D, her hedefte efekt, aynı ölçüde crossfade yapan iki müzik loop'u. Kurallar 71 testli saf bir C# assembly'sinde; oyun ve botlar aynı kodu kullanır. Doküman bir monetizasyon planı (yapılmadı) ve bir yol haritasıyla biter.</p>
+<a class="full" href="../docs/Bonemarch_GDD_TR.pdf#page=6">Bölümün tamamını GDD&#x27;de oku (sayfa 6)</a></article>
+</div>
+</div></section>
+
+<section class="block" id="screens"><div class="wrap">
+<div class="block-head"><div><div class="kicker" style="color:#d9822b">Oyundan</div><h2>Ekran görüntüleri</h2></div>
+<p>Her görüntü doğrudan oyunun kendisinden alındı.</p></div>
+<div class="gallery"><img src="../assets/bm-draft.png" alt="Draft: üç karttan iki seçim" loading="lazy"><img src="../assets/bm-fight.png" alt="4. seviye: Brute&#x27;lar kulelere yürüyor" loading="lazy"><img src="../assets/bm-fen.png" alt="5. seviye: Wraith&#x27;ler bataklığın üstünden süzülür" loading="lazy"><img src="../assets/bm-giant.png" alt="7. seviye: bir Bone Giant" loading="lazy"><img src="../assets/bm-win.png" alt="Kalan cana göre yıldız" loading="lazy"><img src="../assets/bm-map.png" alt="Ada: sekiz yer" loading="lazy"></div>
+</div></section>
+
+<section class="block" id="documents" style="--g:#d9822b"><div class="wrap">
+<div class="block-head"><div><div class="kicker" style="color:var(--g)">Tasarım dokümanları</div><h2>Daha fazlası</h2></div></div>
+<div class="docs"><a class="doc" href="../docs/Bonemarch_OnePager_TR.pdf"><span class="pdf">PDF</span><b>Tek sayfa özet</b><span>Oyun tek sayfada</span></a><a class="doc" href="../docs/Bonemarch_GDD_TR.pdf"><span class="pdf">PDF</span><b>Oyun tasarım dokümanı</b><span>6 sayfa</span></a><a class="doc" href="../docs/Bonemarch_Flowcharts_TR.pdf"><span class="pdf">PDF</span><b>Akış şemaları</b><span>Döngü, ekranlar, draft, bir dalga, araçlar</span></a><a class="doc" href="../docs/Bonemarch_Balance_Economy_TR.pdf"><span class="pdf">PDF</span><b>Denge ve ekonomi çalışma kitabı</b><span>Hedeflere karşı üç bot</span></a><a class="doc" href="../docs/Bonemarch_Ad_and_KPI_Plan_TR.pdf"><span class="pdf">PDF</span><b>Reklam testi ve KPI planı</b><span>Storyboard, CPI testi, KPI&#x27;lar</span></a></div>
+<p class="note" style="margin-top:18px">Bir yapay zekâ kodlama asistanıyla (Claude) geliştirildi. Oyunu tasarladım, kuralları, hedefleri ve ayarları belirledim ve her build&#x27;i inceledim. 3D modeller: Kay Lousberg&#x27;in KayKit&#x27;i; arayüz: Kenney (hepsi CC0); Lilita One ve Fredoka.</p>
+</div></section>
+
+<section class="block"><div class="wrap pager">
+<a href="arcana-match.html"><small>← Önceki</small><b>Arcana Match</b></a>
+<a class="next" href="pull-out.html"><small>Sonraki →</small><b>Pull-out</b></a>
+</div></section>
+</main>
+<footer class="site-foot"><div class="wrap"><span>Umut Eren Demirci · Oyun Tasarımcısı · Ankara, Türkiye</span>
+<span><a href="mailto:umuterendemirci@gmail.com">umuterendemirci@gmail.com</a></span></div></footer>
+<div id="lb" role="dialog" aria-modal="true" aria-label="Ekran görüntüsü görüntüleyici">
+<button class="x" aria-label="Kapat">&times;</button><button class="prev" aria-label="Önceki">&#8249;</button>
+<img alt=""><button class="next" aria-label="Sonraki">&#8250;</button><p></p></div>
+<script src="../site.js" defer></script>
+</body>
+</html>

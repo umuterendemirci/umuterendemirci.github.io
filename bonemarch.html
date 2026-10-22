@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bonemarch · Umut Eren Demirci</title>
+<meta name="description" content="Bonemarch: A calm 3D tower defense where the towers come from a card draft, on an island of eight places. Design summary, documents and screenshots.">
+<meta name="theme-color" content="#0b0f18">
+<meta property="og:title" content="Bonemarch · Umut Eren Demirci">
+<meta property="og:description" content="Bonemarch: A calm 3D tower defense where the towers come from a card draft, on an island of eight places. Design summary, documents and screenshots.">
+<link rel="alternate" hreflang="en" href="https://umuterendemirci.github.io/bonemarch.html"><link rel="alternate" hreflang="tr" href="https://umuterendemirci.github.io/tr/bonemarch.html">
+<meta property="og:image" content="assets/clips/bonemarch.jpg">
+<link rel="icon" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script data-goatcounter="https://umuterendemirci.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="2" y="2" width="60" height="60" rx="14" fill="#1a2336" stroke="rgba(255,255,255,.14)"/>
+<g transform="translate(1.5 0)"><path d="M9 20v13a6 6 0 0 0 12 0V20" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M27 20v24M27 20h9M27 32h7M27 44h9" fill="none" stroke="#ff7a33" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M42 20v24h3a9 12 0 0 0 0-24z" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/></g></svg><span>Umut Eren Demirci</span></a>
+<nav><a href="index.html#about">About</a><a href="index.html#games">Games</a><a href="index.html#samples">Samples</a><a href="index.html#more">More work</a><a href="index.html#contact">Contact</a><a class="cv" href="docs/Umut_Eren_Demirci_CV_2026.pdf">CV</a><a class="lang" href="tr/bonemarch.html" hreflang="tr" lang="tr" title="Türkçe">TR</a></nav>
+</div></header>
+<main>
+<section class="ghero" style="--g:#d9822b"><div class="wrap">
+<div>
+<a class="crumb" href="index.html#games">← All games</a>
+<div class="kicker" style="margin-top:22px">Hybrid-casual tower defense · Unity 6 · Android and browser</div><h1>Bonemarch</h1><p class="tagline">Draft your towers. Hold the gate.</p>
+<p class="lead">A calm 3D tower defense for phones. Before each level you draft your defence, two cards from three, and build on pads beside the road; you start each wave when you're ready, and draft again after every wave. Each level is a new place on an island, with one landmark that changes where towers belong (a bridge, a hill, a fen, a fork in the road, ruins) and one new skeleton that asks a new question.</p><p class="role">I designed the rules, the draft, the five towers, seven enemies and ten boons, the ember economy, the landmarks and the brief for every level, and set the difficulty targets. Bots playing the game&#x27;s own rules fitted each level to those targets. The eight levels in this build are AI-assisted drafts I am redesigning.</p>
+<a class="btn primary" href="https://ueren.itch.io/bonemarch">Play in your browser</a><a class="btn" href="docs/Bonemarch_GDD.pdf">Read the GDD</a><a class="btn" href="docs/Bonemarch_OnePager.pdf">One-pager</a>
+<div class="stats"><div><b>100% → 60%</b>the first-time bot&#x27;s win rate from level 1 to 8, fitted level by level</div><div><b>24 → 13.5</b>minutes of fighting on level 7 once the generated maps became hand-made levels</div><div><b>−3 to +2</b>points a boon is worth to the bots, so the boons are up for redesign</div></div>
+</div>
+<div class="phone"><video muted loop playsinline autoplay preload="metadata" poster="assets/clips/bonemarch.jpg"><source src="assets/clips/bonemarch.mp4" type="video/mp4"></video></div>
+</div></section>
+
+<section class="block design" id="design" style="--g:#d9822b"><div class="wrap">
+<nav class="toc" aria-label="Design summary"><span class="kicker">Design summary</span><ol><li><a href="#s1">The game at a glance</a></li><li><a href="#s2">One level, step by step</a></li><li><a href="#s3">Seven enemies, ten boons</a></li><li><a href="#s4">Eight places, one new idea each</a></li><li><a href="#s5">Tuned by bots, read by a designer</a></li><li><a href="#s6">Art, audio, tech and the roadmap</a></li></ol></nav>
+<div>
+<div class="kicker" style="color:var(--g)">Game design document, summarised</div>
+<h2 style="margin:6px 0 10px">How it&#x27;s designed</h2>
+<p class="design-intro">Each part below condenses one chapter of the game design document. Every summary ends with a link to
+the full chapter in the PDF.</p>
+<article class="summary" id="s1"><h3><span class="n">01</span>The game at a glance</h3>
+<p>Draft, build, defend, draft again. A level runs 2.5 to 13.5 minutes of fighting at the player's pace: nothing moves until Start, and 2× speed is optional.</p><ul><li><b>Calm, not slow:</b> difficulty comes from new enemies and the map, not from rushing.</li><li><b>The draft is the strategy:</b> every run of a level is a different hand.</li><li><b>Every level is a place:</b> its landmark moves the towers.</li></ul>
+<a class="full" href="docs/Bonemarch_GDD.pdf#page=1">Read the full chapter in the GDD (page 1)</a></article>
+<article class="summary" id="s2"><h3><span class="n">02</span>One level, step by step</h3>
+<p>Read the map, draft two cards, build on glowing pads, start the wave. Kills drop embers for upgrades, crystals appear around the map, and each wave clear brings one more pick, with boons from level 3. An Ember Surge softens the first wave of each new enemy. Stars come from lives left.</p>
+<a class="full" href="docs/Bonemarch_GDD.pdf#page=2">Read the full chapter in the GDD (page 2)</a></article>
+<article class="summary" id="s3"><h3><span class="n">03</span>Seven enemies, ten boons</h3>
+<p>Shieldbearers shrug off weak hits, Runners rush, Brutes fall apart, Wraiths fly over Cannon and Flame, Necromancers heal, and Bone Giants cost five lives at the gate. Every tower is worth 1 to 10 points of win rate to the bots; boons barely move it, because a boon replaces a tower card.</p>
+<a class="full" href="docs/Bonemarch_GDD.pdf#page=3">Read the full chapter in the GDD (page 3)</a></article>
+<article class="summary" id="s4"><h3><span class="n">04</span>Eight places, one new idea each</h3>
+<p>Each level is written in a plain text file the game, the tests and the bots all read, with a checker that names the line of any mistake. Maps grow from 9 × 13 to 17 × 22 tiles. The drafts were made with an AI assistant from my brief so the landmark rules could be built and tested; I am redrawing them.</p>
+<a class="full" href="docs/Bonemarch_GDD.pdf#page=4">Read the full chapter in the GDD (page 4)</a></article>
+<article class="summary" id="s5"><h3><span class="n">05</span>Tuned by bots, read by a designer</h3>
+<p>Careless, first-time and practised bots play every level 300 times. Their results set each level's health, showed that the generated late levels ran 24 and 37 minutes, and that after the second pass the right counter is worth 11 to 21 points on levels 3 to 5. Bonemarch has not been playtested by people yet.</p>
+<a class="full" href="docs/Bonemarch_GDD.pdf#page=5">Read the full chapter in the GDD (page 5)</a></article>
+<article class="summary" id="s6"><h3><span class="n">06</span>Art, audio, tech and the roadmap</h3>
+<p>Low-poly 3D on free CC0 kits, effects at every target, two music loops that cross-fade at the same bar. The rules live in a pure C# assembly with 71 tests, shared by the game and the bots. A monetisation plan (not built) and a roadmap close the document.</p>
+<a class="full" href="docs/Bonemarch_GDD.pdf#page=6">Read the full chapter in the GDD (page 6)</a></article>
+</div>
+</div></section>
+
+<section class="block" id="screens"><div class="wrap">
+<div class="block-head"><div><div class="kicker" style="color:#d9822b">From the build</div><h2>Screenshots</h2></div>
+<p>Every image is captured from the game itself.</p></div>
+<div class="gallery"><img src="assets/bm-draft.png" alt="The draft: two picks from three" loading="lazy"><img src="assets/bm-fight.png" alt="Level 4: Brutes march on the towers" loading="lazy"><img src="assets/bm-fen.png" alt="Level 5: Wraiths float over the fen" loading="lazy"><img src="assets/bm-giant.png" alt="Level 7: a Bone Giant" loading="lazy"><img src="assets/bm-win.png" alt="Stars from lives left" loading="lazy"><img src="assets/bm-map.png" alt="The island: eight places" loading="lazy"></div>
+</div></section>
+
+<section class="block" id="documents" style="--g:#d9822b"><div class="wrap">
+<div class="block-head"><div><div class="kicker" style="color:var(--g)">Design documents</div><h2>Read more</h2></div></div>
+<div class="docs"><a class="doc" href="docs/Bonemarch_OnePager.pdf"><span class="pdf">PDF</span><b>One-pager</b><span>The game on one page</span></a><a class="doc" href="docs/Bonemarch_GDD.pdf"><span class="pdf">PDF</span><b>Game design document</b><span>6 pages</span></a><a class="doc" href="docs/Bonemarch_Flowcharts.pdf"><span class="pdf">PDF</span><b>Flowcharts</b><span>Loop, screens, the draft, a wave, the tools</span></a><a class="doc" href="docs/Bonemarch_Balance_Economy.pdf"><span class="pdf">PDF</span><b>Balance and economy workbook</b><span>Three bots against the targets</span></a><a class="doc" href="docs/Bonemarch_Ad_and_KPI_Plan.pdf"><span class="pdf">PDF</span><b>Ad test and KPI plan</b><span>Storyboard, CPI test, KPIs</span></a></div>
+<p class="note" style="margin-top:18px">Built with an AI coding assistant (Claude). I designed the game, set the rules, the targets and the tuning, and reviewed every build. 3D models: KayKit by Kay Lousberg; interface: Kenney (all CC0); Lilita One and Fredoka.</p>
+</div></section>
+
+<section class="block"><div class="wrap pager">
+<a href="arcana-match.html"><small>← Previous</small><b>Arcana Match</b></a>
+<a class="next" href="pull-out.html"><small>Next →</small><b>Pull-out</b></a>
+</div></section>
+</main>
+<footer class="site-foot"><div class="wrap"><span>Umut Eren Demirci · Game Designer · Ankara, Türkiye</span>
+<span><a href="mailto:umuterendemirci@gmail.com">umuterendemirci@gmail.com</a></span></div></footer>
+<div id="lb" role="dialog" aria-modal="true" aria-label="Screenshot viewer">
+<button class="x" aria-label="Close">&times;</button><button class="prev" aria-label="Previous">&#8249;</button>
+<img alt=""><button class="next" aria-label="Next">&#8250;</button><p></p></div>
+<script src="site.js" defer></script>
+</body>
+</html>
