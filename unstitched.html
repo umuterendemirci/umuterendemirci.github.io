@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unstitched · Umut Eren Demirci</title>
+<meta name="description" content="Unstitched: Crocheted toys unravel round by round onto spools of their colour; the wrong colour waits in a tiny tray. Design summary, documents and screenshots.">
+<meta name="theme-color" content="#0b0f18">
+<meta property="og:title" content="Unstitched · Umut Eren Demirci">
+<meta property="og:description" content="Unstitched: Crocheted toys unravel round by round onto spools of their colour; the wrong colour waits in a tiny tray. Design summary, documents and screenshots.">
+<link rel="alternate" hreflang="en" href="https://umuterendemirci.github.io/unstitched.html"><link rel="alternate" hreflang="tr" href="https://umuterendemirci.github.io/tr/unstitched.html">
+<meta property="og:image" content="assets/clips/unstitched.jpg">
+<link rel="icon" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script data-goatcounter="https://umuterendemirci.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="2" y="2" width="60" height="60" rx="14" fill="#1a2336" stroke="rgba(255,255,255,.14)"/>
+<g transform="translate(1.5 0)"><path d="M9 20v13a6 6 0 0 0 12 0V20" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M27 20v24M27 20h9M27 32h7M27 44h9" fill="none" stroke="#ff7a33" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M42 20v24h3a9 12 0 0 0 0-24z" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/></g></svg><span>Umut Eren Demirci</span></a>
+<nav><a href="index.html#about">About</a><a href="index.html#games">Games</a><a href="index.html#samples">Samples</a><a href="index.html#more">More work</a><a href="index.html#contact">Contact</a><a class="cv" href="docs/Umut_Eren_Demirci_CV_2026.pdf">CV</a><a class="lang" href="tr/unstitched.html" hreflang="tr" lang="tr" title="Türkçe">TR</a></nav>
+</div></header>
+<main>
+<section class="ghero" style="--g:#a46fd6"><div class="wrap">
+<div>
+<a class="crumb" href="index.html#games">← All games</a>
+<div class="kicker" style="margin-top:22px">Hyper-casual 3D puzzle · Unity 6 · browser</div><h1>Unstitched</h1><p class="tagline">Unravel crocheted toys, stitch by stitch.</p>
+<p class="lead">A hyper-casual 3D puzzle for phones, inspired by Yarn Fever! Unravel Puzzle. Tap a part with a loose end and its next round comes off stitch by stitch onto an open spool of its colour; with no spool open it waits in a tray of 0 to 3 places, and a full tray tangles the toy. Sewn-on parts must go first, and from level 5 a dress, a sweater or a bigger doll hides what is underneath, with an eye that shows one layer down.</p><p class="role">I designed the rules, the sewing and the layers, the 13 toys and their order, and the look. Every toy is built from its stitches in code, with no 3D model. A tuner visits every position a toy can reach, and I chose each toy&#x27;s spool order and tray from what it measured.</p>
+<a class="btn primary" href="https://ueren.itch.io/unstitched">Play in your browser</a><a class="btn" href="docs/Unstitched_GDD.pdf">Read the GDD</a><a class="btn" href="docs/Unstitched_OnePager.pdf">One-pager</a>
+<div class="stats"><div><b>100% → 10%</b>of games a random player wins, from the first toy to the hardest (1,000 games each)</div><div><b>84%</b>of 80 sampled winnable spool orders for the bear can&#x27;t be lost at all, so the queue is chosen on purpose</div><div><b>0 of 13</b>toys where a first pull already loses</div></div>
+</div>
+<div class="phone"><video muted loop playsinline autoplay preload="metadata" poster="assets/clips/unstitched.jpg"><source src="assets/clips/unstitched.mp4" type="video/mp4"></video></div>
+</div></section>
+
+<section class="block design" id="design" style="--g:#a46fd6"><div class="wrap">
+<nav class="toc" aria-label="Design summary"><span class="kicker">Design summary</span><ol><li><a href="#s1">The game at a glance</a></li><li><a href="#s2">Parts, spools, the tray and layers</a></li><li><a href="#s3">Thirteen toys, one new idea each</a></li><li><a href="#s4">How difficulty is measured and chosen</a></li><li><a href="#s5">What the measurements and the builds showed</a></li><li><a href="#s6">Feel, art and next steps</a></li></ol></nav>
+<div>
+<div class="kicker" style="color:var(--g)">Game design document, summarised</div>
+<h2 style="margin:6px 0 10px">How it&#x27;s designed</h2>
+<p class="design-intro">Each part below condenses one chapter of the game design document. Every summary ends with a link to
+the full chapter in the PDF.</p>
+<article class="summary" id="s1"><h3><span class="n">01</span>The game at a glance</h3>
+<p>Look, pull, fill, unravel. Turn the toy to see which parts are free, read the queue of spools, and pull: four rounds fill a spool, it pops and the next opens. Take every round off to win; if nothing can be pulled, the toy tangles and Again is free.</p><ul><li><b>It comes apart like crochet:</b> stitch by stitch, round by round.</li><li><b>Every rule shows on the toy:</b> loose ends, sewing, layers.</li><li><b>Hidden, but fair:</b> the eye shows one layer down.</li></ul>
+<a class="full" href="docs/Unstitched_GDD.pdf#page=1">Read the full chapter in the GDD (page 1)</a></article>
+<article class="summary" id="s2"><h3><span class="n">02</span>Parts, spools, the tray and layers</h3>
+<p>A toy is parts made of rounds. A part sewn on another must go before the rounds beneath it, and tapping a stuck part names what holds it. Two spools are open at a time; the tray holds the rest. Layers hide colours from level 5, and the eye turns them see-through one layer at a time.</p>
+<a class="full" href="docs/Unstitched_GDD.pdf#page=2">Read the full chapter in the GDD (page 2)</a></article>
+<article class="summary" id="s3"><h3><span class="n">03</span>Thirteen toys, one new idea each</h3>
+<p>From a chick that can't be lost to a doll inside a doll inside a doll. A random player wins every game on the first two toys and about one in ten on the last; a careful player who pulls whatever fits does even worse on the snowman, bear, rocket and doll, where reading ahead matters.</p>
+<a class="full" href="docs/Unstitched_GDD.pdf#page=3">Read the full chapter in the GDD (page 3)</a></article>
+<article class="summary" id="s4"><h3><span class="n">04</span>How difficulty is measured and chosen</h3>
+<p>Toys are data. ToyReport visits every position a toy can reach and walks back from the wins, so it knows which are lost. The tuner measures spool orders and trays; most orders turn out too safe (84% of the bear's sampled orders can't be lost), so I choose each queue on purpose.</p>
+<a class="full" href="docs/Unstitched_GDD.pdf#page=4">Read the full chapter in the GDD (page 4)</a></article>
+<article class="summary" id="s5"><h3><span class="n">05</span>What the measurements and the builds showed</h3>
+<p>The first test toy held no decision; tags gave way to tapping the toy itself; layers were tried on the bear alone; the gift and doll were re-sewn. Measured again with 1,000 games, the rocket is easier than the bear before it. Unstitched has not been playtested by first-time players yet.</p>
+<a class="full" href="docs/Unstitched_GDD.pdf#page=5">Read the full chapter in the GDD (page 5)</a></article>
+<article class="summary" id="s6"><h3><span class="n">06</span>Feel, art and next steps</h3>
+<p>Stitches lift before they let go, a 3D rope reels into a spool that squashes and pops, and the toy rocks on each pull. A hand-written wool shader on fibres from Poly Haven; MintoDog's music, Kenney's buttons. A monetisation plan (not built), the first KPIs and a roadmap close the document.</p>
+<a class="full" href="docs/Unstitched_GDD.pdf#page=6">Read the full chapter in the GDD (page 6)</a></article>
+</div>
+</div></section>
+
+<section class="block" id="screens"><div class="wrap">
+<div class="block-head"><div><div class="kicker" style="color:#a46fd6">From the build</div><h2>Screenshots</h2></div>
+<p>Every image is captured from the game itself.</p></div>
+<div class="gallery"><img src="assets/un-unravel.png" alt="Level 9: a round reels onto its spool" loading="lazy"><img src="assets/un-tray.png" alt="Level 6: no red spool, so the flag waits in the tray" loading="lazy"><img src="assets/un-eye.png" alt="The eye: under the bear&#x27;s sweater" loading="lazy"><img src="assets/un-doll.png" alt="Level 13: the eye shows one doll down" loading="lazy"><img src="assets/un-gift.png" alt="Level 12: the teddy inside the gift" loading="lazy"><img src="assets/un-picker.png" alt="The level picker: 13 toys" loading="lazy"></div>
+</div></section>
+
+<section class="block" id="documents" style="--g:#a46fd6"><div class="wrap">
+<div class="block-head"><div><div class="kicker" style="color:var(--g)">Design documents</div><h2>Read more</h2></div></div>
+<div class="docs"><a class="doc" href="docs/Unstitched_OnePager.pdf"><span class="pdf">PDF</span><b>One-pager</b><span>The game on one page</span></a><a class="doc" href="docs/Unstitched_GDD.pdf"><span class="pdf">PDF</span><b>Game design document</b><span>6 pages</span></a><a class="doc" href="docs/Unstitched_Flowcharts.pdf"><span class="pdf">PDF</span><b>Flowcharts</b><span>Loop, screens, a pull, choosing a toy&#x27;s difficulty</span></a><a class="doc" href="docs/Unstitched_Level_Design.pdf"><span class="pdf">PDF</span><b>Level design workbook</b><span>Every toy measured by the tuner and bots</span></a><a class="doc" href="docs/Unstitched_Ad_and_KPI_Plan.pdf"><span class="pdf">PDF</span><b>Ad test and KPI plan</b><span>Storyboard, CPI test, KPIs</span></a></div>
+<p class="note" style="margin-top:18px">Built with an AI coding assistant (Claude). I designed the game, set the rules, the toys, their order and the tuning, and reviewed every build. Music: MintoDog; wool fibres: Poly Haven; buttons: Kenney (all CC0); Montserrat.</p>
+</div></section>
+
+<section class="block"><div class="wrap pager">
+<a href="arcana-match.html"><small>← Previous</small><b>Arcana Match</b></a>
+<a class="next" href="bonemarch.html"><small>Next →</small><b>Bonemarch</b></a>
+</div></section>
+</main>
+<footer class="site-foot"><div class="wrap"><span>Umut Eren Demirci · Game Designer · Ankara, Türkiye</span>
+<span><a href="mailto:umuterendemirci@gmail.com">umuterendemirci@gmail.com</a></span></div></footer>
+<div id="lb" role="dialog" aria-modal="true" aria-label="Screenshot viewer">
+<button class="x" aria-label="Close">&times;</button><button class="prev" aria-label="Previous">&#8249;</button>
+<img alt=""><button class="next" aria-label="Next">&#8250;</button><p></p></div>
+<script src="site.js" defer></script>
+</body>
+</html>

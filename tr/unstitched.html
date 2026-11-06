@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unstitched · Umut Eren Demirci</title>
+<meta name="description" content="Unstitched: Örgü oyuncaklar tur tur, kendi renklerindeki makaralara sökülür; yanlış renk küçük bir tepside bekler. Tasarım özeti, dokümanlar ve ekran görüntüleri.">
+<meta name="theme-color" content="#0b0f18">
+<meta property="og:title" content="Unstitched · Umut Eren Demirci">
+<meta property="og:description" content="Unstitched: Örgü oyuncaklar tur tur, kendi renklerindeki makaralara sökülür; yanlış renk küçük bir tepside bekler. Tasarım özeti, dokümanlar ve ekran görüntüleri.">
+<link rel="alternate" hreflang="en" href="https://umuterendemirci.github.io/unstitched.html"><link rel="alternate" hreflang="tr" href="https://umuterendemirci.github.io/tr/unstitched.html">
+<meta property="og:image" content="../assets/clips/unstitched.jpg">
+<link rel="icon" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+<script data-goatcounter="https://umuterendemirci.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="2" y="2" width="60" height="60" rx="14" fill="#1a2336" stroke="rgba(255,255,255,.14)"/>
+<g transform="translate(1.5 0)"><path d="M9 20v13a6 6 0 0 0 12 0V20" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M27 20v24M27 20h9M27 32h7M27 44h9" fill="none" stroke="#ff7a33" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M42 20v24h3a9 12 0 0 0 0-24z" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/></g></svg><span>Umut Eren Demirci</span></a>
+<nav><a href="index.html#about">Hakkımda</a><a href="index.html#games">Oyunlar</a><a href="index.html#samples">Örnekler</a><a href="index.html#more">Diğer</a><a href="index.html#contact">İletişim</a><a class="cv" href="../docs/Umut_Eren_Demirci_CV_2026_TR.pdf">CV</a><a class="lang" href="../unstitched.html" hreflang="en" lang="en" title="English">EN</a></nav>
+</div></header>
+<main>
+<section class="ghero" style="--g:#a46fd6"><div class="wrap">
+<div>
+<a class="crumb" href="index.html#games">← Tüm oyunlar</a>
+<div class="kicker" style="margin-top:22px">Hyper-casual 3D bulmaca · Unity 6 · tarayıcı</div><h1>Unstitched</h1><p class="tagline">Örgü oyuncakları ilmek ilmek sök.</p>
+<p class="lead">Telefonlar için, Yarn Fever! Unravel Puzzle'dan esinlenen hyper-casual bir 3D bulmaca. Boştaki ucu olan bir parçaya dokun, sıradaki turu ilmek ilmek kendi renginde açık bir makaraya sökülsün; açık makara yoksa 0-3 yerlik bir tepside bekler, tepsi dolarsa oyuncak dolanır. Dikili parçalar önce gitmeli; 5. seviyeden itibaren bir elbise, bir kazak ya da daha büyük bir matruşka altındakini gizler ve bir göz bir katman altını gösterir.</p><p class="role">Kuralları, dikişleri ve katmanları, 13 oyuncağı ve sıralarını, görünümü tasarladım. Her oyuncak 3D model olmadan, ilmeklerinden kodla kurulur. Bir tuner oyuncağın ulaşabileceği her konumu gezer; her oyuncağın makara dizilimini ve tepsisini onun ölçtüklerinden ben seçtim.</p>
+<a class="btn primary" href="https://ueren.itch.io/unstitched">Tarayıcıda oyna</a><a class="btn" href="../docs/Unstitched_GDD_TR.pdf">GDD&#x27;yi oku</a><a class="btn" href="../docs/Unstitched_OnePager_TR.pdf">Tek sayfa özet</a>
+<div class="stats"><div><b>%100 → %10</b>rastgele bir oyuncunun kazandığı oyun, ilk oyuncaktan en zora (her biri 1.000 oyun)</div><div><b>%84</b>ayının örneklenen 80 kazanılabilir makara diziliminden hiç kaybedilemeyenlerin payı; bu yüzden kuyruk bilerek seçiliyor</div><div><b>13&#x27;te 0</b>ilk çekişin zaten kaybettirdiği oyuncak</div></div>
+</div>
+<div class="phone"><video muted loop playsinline autoplay preload="metadata" poster="../assets/clips/unstitched.jpg"><source src="../assets/clips/unstitched.mp4" type="video/mp4"></video></div>
+</div></section>
+
+<section class="block design" id="design" style="--g:#a46fd6"><div class="wrap">
+<nav class="toc" aria-label="Tasarım özeti"><span class="kicker">Tasarım özeti</span><ol><li><a href="#s1">Bir bakışta oyun</a></li><li><a href="#s2">Parçalar, makaralar, tepsi ve katmanlar</a></li><li><a href="#s3">On üç oyuncak, her birinde tek yeni fikir</a></li><li><a href="#s4">Zorluk nasıl ölçülür ve seçilir</a></li><li><a href="#s5">Ölçümlerin ve build&#x27;lerin gösterdikleri</a></li><li><a href="#s6">His, art ve sonraki adımlar</a></li></ol></nav>
+<div>
+<div class="kicker" style="color:var(--g)">Oyun tasarım dokümanı, özetlenmiş</div>
+<h2 style="margin:6px 0 10px">Nasıl tasarlandı</h2>
+<p class="design-intro">Aşağıdaki her bölüm, oyun tasarım dokümanının bir bölümünü özetler. Her özet, PDF&#x27;teki tam bölüme bir bağlantıyla biter.</p>
+<article class="summary" id="s1"><h3><span class="n">01</span>Bir bakışta oyun</h3>
+<p>Bak, çek, doldur, sök. Hangi parçaların serbest olduğunu görmek için oyuncağı çevir, makara kuyruğunu oku ve çek: dört tur bir makarayı doldurur, makara patlar, sıradaki açılır. Kazanmak için bütün turları çıkar; çekilecek bir şey kalmazsa oyuncak dolanır ve Again ücretsizdir.</p><ul><li><b>Örgü gibi sökülür:</b> ilmek ilmek, tur tur.</li><li><b>Her kural oyuncakta görünür:</b> boştaki uçlar, dikiş, katmanlar.</li><li><b>Gizli ama adil:</b> göz bir katman altını gösterir.</li></ul>
+<a class="full" href="../docs/Unstitched_GDD_TR.pdf#page=1">Bölümün tamamını GDD&#x27;de oku (sayfa 1)</a></article>
+<article class="summary" id="s2"><h3><span class="n">02</span>Parçalar, makaralar, tepsi ve katmanlar</h3>
+<p>Oyuncak turlardan oluşan parçalardır. Başka bir parçaya dikili olan parça, altındaki turlardan önce gitmeli; takılan bir parçaya dokunmak onu neyin tuttuğunu söyler. Aynı anda iki makara açıktır, gerisini tepsi tutar. Katmanlar 5. seviyeden itibaren renkleri gizler; göz onları her seferinde bir katman saydamlaştırır.</p>
+<a class="full" href="../docs/Unstitched_GDD_TR.pdf#page=2">Bölümün tamamını GDD&#x27;de oku (sayfa 2)</a></article>
+<article class="summary" id="s3"><h3><span class="n">03</span>On üç oyuncak, her birinde tek yeni fikir</h3>
+<p>Kaybedilemeyen bir civcivden matruşka içinde matruşka içinde matruşkaya. Rastgele bir oyuncu ilk iki oyuncakta her oyunu, sonuncuda yaklaşık onda birini kazanır; ne uyarsa onu çeken dikkatli bir oyuncu, ileriyi okumanın önemli olduğu kardan adam, ayı, roket ve matruşkada daha da kötü yapar.</p>
+<a class="full" href="../docs/Unstitched_GDD_TR.pdf#page=3">Bölümün tamamını GDD&#x27;de oku (sayfa 3)</a></article>
+<article class="summary" id="s4"><h3><span class="n">04</span>Zorluk nasıl ölçülür ve seçilir</h3>
+<p>Oyuncaklar veridir. ToyReport bir oyuncağın ulaşabileceği her konumu gezer ve kazançlardan geriye yürür; böylece hangilerinin kaybedildiğini bilir. Tuner makara dizilimlerini ve tepsileri ölçer; çoğu dizilim fazla güvenli çıkıyor (ayının örneklenen dizilimlerinin %84'ü kaybedilemez), bu yüzden her kuyruğu bilerek seçiyorum.</p>
+<a class="full" href="../docs/Unstitched_GDD_TR.pdf#page=4">Bölümün tamamını GDD&#x27;de oku (sayfa 4)</a></article>
+<article class="summary" id="s5"><h3><span class="n">05</span>Ölçümlerin ve build&#x27;lerin gösterdikleri</h3>
+<p>İlk test oyuncağında karar yoktu; etiketler yerini oyuncağın kendisine dokunmaya bıraktı; katmanlar önce yalnızca ayıda denendi; hediye ve matruşka yeniden dikildi. 1.000 oyunla yeniden ölçülünce roket, önündeki ayıdan daha kolay. Unstitched henüz ilk kez oynayanlarla playtest edilmedi.</p>
+<a class="full" href="../docs/Unstitched_GDD_TR.pdf#page=5">Bölümün tamamını GDD&#x27;de oku (sayfa 5)</a></article>
+<article class="summary" id="s6"><h3><span class="n">06</span>His, art ve sonraki adımlar</h3>
+<p>İlmekler bırakmadan önce kalkar, bir 3D ip ezilip patlayan bir makaraya sarılır ve oyuncak her çekişte sallanır. Poly Haven liflerinden elle yazılmış bir yün shader'ı; MintoDog'un müziği, Kenney'nin butonları. Doküman bir monetizasyon planı (yapılmadı), ilk KPI'lar ve bir yol haritasıyla biter.</p>
+<a class="full" href="../docs/Unstitched_GDD_TR.pdf#page=6">Bölümün tamamını GDD&#x27;de oku (sayfa 6)</a></article>
+</div>
+</div></section>
+
+<section class="block" id="screens"><div class="wrap">
+<div class="block-head"><div><div class="kicker" style="color:#a46fd6">Oyundan</div><h2>Ekran görüntüleri</h2></div>
+<p>Her görüntü doğrudan oyunun kendisinden alındı.</p></div>
+<div class="gallery"><img src="../assets/un-unravel.png" alt="9. seviye: bir tur makarasına sarılır" loading="lazy"><img src="../assets/un-tray.png" alt="6. seviye: kırmızı makara yok, bayrak tepside bekler" loading="lazy"><img src="../assets/un-eye.png" alt="Göz: ayının kazağının altı" loading="lazy"><img src="../assets/un-doll.png" alt="13. seviye: göz bir matruşka altını gösterir" loading="lazy"><img src="../assets/un-gift.png" alt="12. seviye: hediyenin içindeki ayıcık" loading="lazy"><img src="../assets/un-picker.png" alt="Seviye seçici: 13 oyuncak" loading="lazy"></div>
+</div></section>
+
+<section class="block" id="documents" style="--g:#a46fd6"><div class="wrap">
+<div class="block-head"><div><div class="kicker" style="color:var(--g)">Tasarım dokümanları</div><h2>Daha fazlası</h2></div></div>
+<div class="docs"><a class="doc" href="../docs/Unstitched_OnePager_TR.pdf"><span class="pdf">PDF</span><b>Tek sayfa özet</b><span>Oyun tek sayfada</span></a><a class="doc" href="../docs/Unstitched_GDD_TR.pdf"><span class="pdf">PDF</span><b>Oyun tasarım dokümanı</b><span>6 sayfa</span></a><a class="doc" href="../docs/Unstitched_Flowcharts_TR.pdf"><span class="pdf">PDF</span><b>Akış şemaları</b><span>Döngü, ekranlar, bir çekiş, bir oyuncağın zorluğunu seçmek</span></a><a class="doc" href="../docs/Unstitched_Level_Design_TR.pdf"><span class="pdf">PDF</span><b>Level design çalışma kitabı</b><span>Tuner&#x27;ın ve botların ölçtüğü her oyuncak</span></a><a class="doc" href="../docs/Unstitched_Ad_and_KPI_Plan_TR.pdf"><span class="pdf">PDF</span><b>Reklam testi ve KPI planı</b><span>Storyboard, CPI testi, KPI&#x27;lar</span></a></div>
+<p class="note" style="margin-top:18px">Bir yapay zekâ kodlama asistanıyla (Claude) geliştirildi. Oyunu tasarladım, kuralları, oyuncakları, sıralarını ve ayarları belirledim ve her build&#x27;i inceledim. Müzik: MintoDog; yün lifleri: Poly Haven; butonlar: Kenney (hepsi CC0); Montserrat.</p>
+</div></section>
+
+<section class="block"><div class="wrap pager">
+<a href="arcana-match.html"><small>← Önceki</small><b>Arcana Match</b></a>
+<a class="next" href="bonemarch.html"><small>Sonraki →</small><b>Bonemarch</b></a>
+</div></section>
+</main>
+<footer class="site-foot"><div class="wrap"><span>Umut Eren Demirci · Oyun Tasarımcısı · Ankara, Türkiye</span>
+<span><a href="mailto:umuterendemirci@gmail.com">umuterendemirci@gmail.com</a></span></div></footer>
+<div id="lb" role="dialog" aria-modal="true" aria-label="Ekran görüntüsü görüntüleyici">
+<button class="x" aria-label="Kapat">&times;</button><button class="prev" aria-label="Önceki">&#8249;</button>
+<img alt=""><button class="next" aria-label="Sonraki">&#8250;</button><p></p></div>
+<script src="../site.js" defer></script>
+</body>
+</html>
